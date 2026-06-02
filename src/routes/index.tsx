@@ -1,29 +1,41 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import { Manifesto } from "@/components/site/Manifesto";
+import { Marquee } from "@/components/site/Marquee";
+import { Laboratorio } from "@/components/site/Laboratorio";
+import { PodCalculator } from "@/components/site/PodCalculator";
+import { Portfolio } from "@/components/site/Portfolio";
+import { QuoteWizard } from "@/components/site/QuoteWizard";
+import { Footer } from "@/components/site/Footer";
+import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Imprenta Dorrego — Impresión editorial bajo demanda en Buenos Aires" },
+      { name: "description", content: "Impresión digital de alta calidad: Xerox Iridesse, Web Approval y encuadernación PUR. Libros, catálogos y revistas bajo demanda, desde un ejemplar." },
+      { property: "og:title", content: "Imprenta Dorrego — Editorial · Digital · POD" },
+      { property: "og:description", content: "Precisión editorial, flexibilidad digital. Impresión bajo demanda con calidad de autor." },
+      { property: "og:type", content: "website" },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  useReveal();
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="bg-paper">
+      <Nav />
+      <Hero />
+      <Manifesto />
+      <Marquee />
+      <Laboratorio />
+      <PodCalculator />
+      <Portfolio />
+      <QuoteWizard />
+      <Footer />
+    </main>
   );
 }
