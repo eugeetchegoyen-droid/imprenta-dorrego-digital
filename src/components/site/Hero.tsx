@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import heroImg from "@/assets/hero-press.jpg";
-import logoAsset from "@/assets/dorrego-logo.png.asset.json";
 
 export function Hero() {
   const [y, setY] = useState(0);
@@ -42,21 +41,12 @@ export function Hero() {
         </div>
 
         {/* Brand lockup */}
-        <div className="mt-10 flex items-center gap-5">
-          <div className="relative">
-            <div className="absolute -inset-2 bg-gold/15 blur-xl" />
-            <div className="relative flex h-16 w-16 items-center justify-center bg-paper p-1.5 md:h-20 md:w-20">
-              <img src={logoAsset.url} alt="Imprenta Dorrego" className="h-full w-auto" />
-            </div>
+        <div className="mt-10">
+          <div className="font-display text-2xl tracking-tight text-paper md:text-[1.7rem]">
+            Imprenta <span className="gold-text italic">Dorrego</span>
           </div>
-          <div className="h-14 w-px bg-gradient-to-b from-transparent via-gold/60 to-transparent md:h-16" />
-          <div className="leading-tight">
-            <div className="font-display text-2xl tracking-tight text-paper md:text-[1.7rem]">
-              Imprenta <span className="gold-text italic">Dorrego</span>
-            </div>
-            <div className="mt-1 text-[10px] uppercase tracking-[0.32em] text-paper/55 md:text-[11px]">
-              Desde 1952 · Editorial · Digital · POD
-            </div>
+          <div className="mt-1 text-[10px] uppercase tracking-[0.32em] text-paper/55 md:text-[11px]">
+            Desde 1952 · Editorial · Digital · POD
           </div>
         </div>
 
