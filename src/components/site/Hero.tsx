@@ -41,8 +41,19 @@ export function Hero() {
           <span className="hidden md:block">Impresión bajo demanda</span>
         </div>
 
+        {/* Brand lockup */}
+        <div className="mt-10 flex items-center gap-5">
+          <div className="flex h-16 w-16 items-center justify-center rounded-sm bg-paper/95 p-2 shadow-[0_8px_30px_rgb(0_0_0/0.35)] ring-1 ring-gold/30 md:h-20 md:w-20">
+            <img src={logoAsset.url} alt="Imprenta Dorrego" className="h-full w-auto" />
+          </div>
+          <div className="leading-tight">
+            <div className="font-display text-2xl tracking-tight text-paper md:text-3xl">Imprenta Dorrego</div>
+            <div className="text-[10px] uppercase tracking-[0.32em] text-gold/90 md:text-[11px]">72 años · Editorial · Digital · POD</div>
+          </div>
+        </div>
+
         {/* Headline */}
-        <div className="max-w-[1100px]">
+        <div className="mt-8 max-w-[1100px]">
           <h1 className="font-display text-[clamp(3rem,9vw,9.5rem)] font-light leading-[0.92] tracking-[-0.02em] text-balance">
             Precisión <span className="italic font-normal">editorial</span>,
             <br />
