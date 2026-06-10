@@ -43,12 +43,19 @@ export function Hero() {
 
         {/* Brand lockup */}
         <div className="mt-10 flex items-center gap-5">
-          <div className="flex h-16 w-16 items-center justify-center rounded-sm bg-paper/95 p-2 shadow-[0_8px_30px_rgb(0_0_0/0.35)] ring-1 ring-gold/30 md:h-20 md:w-20">
-            <img src={logoAsset.url} alt="Imprenta Dorrego" className="h-full w-auto" />
-          </div>
+          <img
+            src={logoAsset.url}
+            alt="Imprenta Dorrego"
+            className="h-16 w-auto md:h-20 [filter:brightness(0)_invert(1)] opacity-90 mix-blend-screen"
+          />
+          <div className="h-14 w-px bg-gradient-to-b from-transparent via-gold/60 to-transparent md:h-16" />
           <div className="leading-tight">
-            <div className="font-display text-2xl tracking-tight text-paper md:text-3xl">Imprenta Dorrego</div>
-            <div className="text-[10px] uppercase tracking-[0.32em] text-gold/90 md:text-[11px]">72 años · Editorial · Digital · POD</div>
+            <div className="font-display text-2xl tracking-tight text-paper md:text-[1.7rem]">
+              Imprenta <span className="gold-text italic">Dorrego</span>
+            </div>
+            <div className="mt-1 text-[10px] uppercase tracking-[0.32em] text-paper/55 md:text-[11px]">
+              Desde 1952 · Editorial · Digital · POD
+            </div>
           </div>
         </div>
 
