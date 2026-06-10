@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logoAsset from "@/assets/dorrego-logo.png.asset.json";
 
 const links = [
   { href: "#laboratorio", label: "Laboratorio" },
@@ -28,13 +29,11 @@ export function Nav() {
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 lg:px-10">
         <a href="#top" className="group flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center border border-ink/80 text-ink transition-colors group-hover:bg-ink group-hover:text-paper">
-            <span className="font-display text-lg leading-none">D</span>
-          </div>
-          <div className="leading-tight">
-            <div className="font-display text-base tracking-tight">Imprenta Dorrego</div>
-            <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Editorial · Digital · POD</div>
-          </div>
+          <img
+            src={logoAsset.url}
+            alt="Imprenta Dorrego"
+            className="h-10 w-auto md:h-12"
+          />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
