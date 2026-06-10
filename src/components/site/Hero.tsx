@@ -43,11 +43,12 @@ export function Hero() {
 
         {/* Brand lockup */}
         <div className="mt-10 flex items-center gap-5">
-          <img
-            src={logoAsset.url}
-            alt="Imprenta Dorrego"
-            className="h-16 w-auto md:h-20 [filter:brightness(0)_invert(1)] opacity-90 mix-blend-screen"
-          />
+          <div className="relative">
+            <div className="absolute -inset-2 bg-gold/15 blur-xl" />
+            <div className="relative flex h-16 w-16 items-center justify-center bg-paper p-1.5 md:h-20 md:w-20">
+              <img src={logoAsset.url} alt="Imprenta Dorrego" className="h-full w-auto" />
+            </div>
+          </div>
           <div className="h-14 w-px bg-gradient-to-b from-transparent via-gold/60 to-transparent md:h-16" />
           <div className="leading-tight">
             <div className="font-display text-2xl tracking-tight text-paper md:text-[1.7rem]">
