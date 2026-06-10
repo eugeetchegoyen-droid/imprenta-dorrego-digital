@@ -8,6 +8,7 @@ import { PodCalculator } from "@/components/site/PodCalculator";
 import { Portfolio } from "@/components/site/Portfolio";
 import { QuoteWizard } from "@/components/site/QuoteWizard";
 import { Footer } from "@/components/site/Footer";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
