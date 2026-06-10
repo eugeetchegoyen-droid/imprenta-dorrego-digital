@@ -37,6 +37,7 @@ function Index() {
       <Portfolio />
       <QuoteWizard />
       <Footer />
+      <WhatsAppButton />
     </main>
   );
 }
