@@ -32,8 +32,12 @@ export function Nav() {
           <img
             src={logoAsset.url}
             alt="Imprenta Dorrego"
-            className="h-10 w-auto md:h-12"
+            className="h-10 w-auto md:h-11"
           />
+          <div className="leading-tight">
+            <div className="font-display text-base tracking-tight text-ink">Imprenta Dorrego</div>
+            <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Editorial · Digital · POD</div>
+          </div>
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
