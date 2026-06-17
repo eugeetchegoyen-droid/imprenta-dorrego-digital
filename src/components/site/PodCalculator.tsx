@@ -10,8 +10,12 @@ export function PodCalculator() {
     const tradTotal = qty < traditionalMin ? 0 : tradPerUnit * qty;
     const podPerUnit = Math.max(8, 22 - Math.log10(qty + 1) * 3);
     const podTotal = podPerUnit * qty;
-    const waste = qty < traditionalMin ? "100%" : `${Math.max(0, Math.round((1 - qty / 1500) * 60))}%`;
-    return { tradPerUnit, tradTotal, podPerUnit, podTotal, waste, traditionalMin };
+
+    // Time-to-delivery: traditional vs POD (days)
+    const tradTime = qty < traditionalMin ? null : Math.round(18 + qty / 200); // ~18–26 días
+    const podTime = Math.round(2 + Math.log10(qty + 1) * 0.8); // ~2–5 días
+
+    return { tradPerUnit, tradTotal, podPerUnit, podTotal, tradTime, podTime, traditionalMin };
   }, [qty]);
 
   return (
@@ -28,8 +32,7 @@ export function PodCalculator() {
             </h2>
             <p className="mt-6 text-muted-foreground md:text-lg">
               Calidad de lomo cuadrado, fresado y encuadernación editorial sin
-              mínimos prohibitivos. Eliminá el costo de almacenamiento y el
-              stock muerto.
+              mínimos prohibitivos. Recibí tus libros en días, no en semanas.
             </p>
             <div className="mt-10 space-y-4 text-sm">
               {[
@@ -54,8 +57,10 @@ export function PodCalculator() {
                   <div className="mt-2 font-display text-3xl md:text-4xl">{qty} ejemplares</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Stock muerto</div>
-                  <div className="mt-2 font-display text-2xl text-gold">{data.waste === "100%" ? "—" : data.waste}</div>
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Tiempo de entrega</div>
+                  <div className="mt-2 font-display text-2xl text-gold">
+                    {data.tradTime === null ? "—" : `${data.podTime} días`}
+                  </div>
                 </div>
               </div>
 
@@ -89,11 +94,29 @@ export function PodCalculator() {
                 />
               </div>
 
+              {/* Tiempo de entrega */}
+              <div className="mt-10 space-y-6">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Tiempos de entrega estimados</div>
+                <Row
+                  label="Imprenta tradicional"
+                  helper={data.tradTime === null ? `No imprime · mínimo ${data.traditionalMin}` : `≈ ${data.tradTime} días`}
+                  pct={data.tradTime === null ? 100 : Math.min(100, (data.tradTime / 30) * 100)}
+                  variant="trad"
+                  disabled={data.tradTime === null}
+                />
+                <Row
+                  label="Dorrego · POD"
+                  helper={`≈ ${data.podTime} días`}
+                  pct={Math.min(100, (data.podTime / 30) * 100)}
+                  variant="pod"
+                />
+              </div>
+
               <div className="mt-10 border-t border-border pt-6 text-sm text-muted-foreground">
                 <span className="font-display text-base text-ink">El cambio de paradigma:</span>{" "}
                 la imprenta tradicional necesita escala para amortizar planchas.
                 La impresión digital bajo demanda elimina esa barrera —
-                imprimís de a uno con el mismo costo unitario.
+                recibís tus ejemplares en días, no en semanas.
               </div>
             </div>
           </div>
