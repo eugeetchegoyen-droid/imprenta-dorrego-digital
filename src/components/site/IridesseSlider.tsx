@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import baseImg from "@/assets/iridesse-base.jpg";
-import finishImg from "@/assets/iridesse-finish.jpg";
+import baseImg from "@/assets/iridesse-illust-base.jpg";
+import finishImg from "@/assets/iridesse-illust-pink.jpg";
 
 export function IridesseSlider() {
   const [pos, setPos] = useState(50);
@@ -36,10 +36,10 @@ export function IridesseSlider() {
 
         {/* Labels */}
         <div className="absolute left-4 top-4 bg-paper/10 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.25em] text-paper backdrop-blur">
-          Convencional
+          Ilustración tradicional
         </div>
         <div className="absolute right-4 top-4 bg-gold/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-onyx backdrop-blur">
-          Xerox Iridesse
+          Rosa iridiscente Iridesse
         </div>
 
         {/* Handle */}

@@ -36,7 +36,7 @@ export function Laboratorio() {
             <h3 className="mt-4 font-display text-4xl md:text-5xl">Xerox Iridesse</h3>
             <p className="mt-4 text-paper/70">
               Hasta 6 estaciones de impresión simultáneas. Tintas
-              especiales <strong className="text-paper">oro</strong>, <strong className="text-paper">plata</strong>, <strong className="text-paper">blanco opaco</strong> y <strong className="text-paper">laca brillante</strong> sobre cualquier sustrato — incluso papeles oscuros, metalizados y traslúcidos.
+              especiales <strong className="text-paper">rosa iridiscente</strong>, <strong className="text-paper">plata</strong>, <strong className="text-paper">blanco opaco</strong> y <strong className="text-paper">laca brillante</strong> sobre cualquier sustrato — incluso papeles oscuros, metalizados y traslúcidos.
             </p>
             <ul className="mt-8 space-y-3 text-sm">
               {[
