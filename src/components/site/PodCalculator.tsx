@@ -32,8 +32,7 @@ export function PodCalculator() {
             </h2>
             <p className="mt-6 text-muted-foreground md:text-lg">
               Calidad de lomo cuadrado, fresado y encuadernación editorial sin
-              mínimos prohibitivos. Eliminá el costo de almacenamiento y el
-              stock muerto.
+              mínimos prohibitivos. Recibí tus libros en días, no en semanas.
             </p>
             <div className="mt-10 space-y-4 text-sm">
               {[
