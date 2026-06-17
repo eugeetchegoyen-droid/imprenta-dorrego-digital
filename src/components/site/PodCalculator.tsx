@@ -58,8 +58,10 @@ export function PodCalculator() {
                   <div className="mt-2 font-display text-3xl md:text-4xl">{qty} ejemplares</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Stock muerto</div>
-                  <div className="mt-2 font-display text-2xl text-gold">{data.waste === "100%" ? "—" : data.waste}</div>
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Tiempo de entrega</div>
+                  <div className="mt-2 font-display text-2xl text-gold">
+                    {data.tradTime === null ? "—" : `${data.podTime} días`}
+                  </div>
                 </div>
               </div>
 
