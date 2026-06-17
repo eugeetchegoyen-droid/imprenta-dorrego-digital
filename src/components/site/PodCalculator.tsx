@@ -94,11 +94,29 @@ export function PodCalculator() {
                 />
               </div>
 
+              {/* Tiempo de entrega */}
+              <div className="mt-10 space-y-6">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Tiempos de entrega estimados</div>
+                <Row
+                  label="Imprenta tradicional"
+                  helper={data.tradTime === null ? `No imprime · mínimo ${data.traditionalMin}` : `≈ ${data.tradTime} días`}
+                  pct={data.tradTime === null ? 100 : Math.min(100, (data.tradTime / 30) * 100)}
+                  variant="trad"
+                  disabled={data.tradTime === null}
+                />
+                <Row
+                  label="Dorrego · POD"
+                  helper={`≈ ${data.podTime} días`}
+                  pct={Math.min(100, (data.podTime / 30) * 100)}
+                  variant="pod"
+                />
+              </div>
+
               <div className="mt-10 border-t border-border pt-6 text-sm text-muted-foreground">
                 <span className="font-display text-base text-ink">El cambio de paradigma:</span>{" "}
                 la imprenta tradicional necesita escala para amortizar planchas.
                 La impresión digital bajo demanda elimina esa barrera —
-                imprimís de a uno con el mismo costo unitario.
+                recibís tus ejemplares en días, no en semanas.
               </div>
             </div>
           </div>
