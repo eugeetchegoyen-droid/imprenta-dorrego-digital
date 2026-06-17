@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import baseImg from "@/assets/iridesse-base.jpg";
-import finishImg from "@/assets/iridesse-finish.jpg";
+import baseImg from "@/assets/iridesse-illust-base.jpg";
+import finishImg from "@/assets/iridesse-illust-pink.jpg";
 
 export function IridesseSlider() {
   const [pos, setPos] = useState(50);
