@@ -33,7 +33,7 @@ export function Portfolio() {
               Showroom digital
             </div>
             <h2 className="mt-6 font-display text-[clamp(2.2rem,5vw,4.6rem)] font-light leading-[1.02] tracking-[-0.02em]">
-              Obra reciente.
+              Nuestros trabajos.
             </h2>
           </div>
           <div className="flex flex-wrap gap-2">
