@@ -10,8 +10,12 @@ export function PodCalculator() {
     const tradTotal = qty < traditionalMin ? 0 : tradPerUnit * qty;
     const podPerUnit = Math.max(8, 22 - Math.log10(qty + 1) * 3);
     const podTotal = podPerUnit * qty;
-    const waste = qty < traditionalMin ? "100%" : `${Math.max(0, Math.round((1 - qty / 1500) * 60))}%`;
-    return { tradPerUnit, tradTotal, podPerUnit, podTotal, waste, traditionalMin };
+
+    // Time-to-delivery: traditional vs POD (days)
+    const tradTime = qty < traditionalMin ? null : Math.round(18 + qty / 200); // ~18–26 días
+    const podTime = Math.round(2 + Math.log10(qty + 1) * 0.8); // ~2–5 días
+
+    return { tradPerUnit, tradTotal, podPerUnit, podTotal, tradTime, podTime, traditionalMin };
   }, [qty]);
 
   return (
