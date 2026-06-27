@@ -18,7 +18,7 @@ export function IridesseSlider() {
     <div className="reveal">
       <div
         ref={ref}
-        className="relative aspect-[4/5] w-full select-none overflow-hidden border border-paper/10 shadow-elegant"
+        className="relative aspect-[327/186] w-full select-none overflow-hidden border border-paper/10 shadow-elegant"
         onMouseDown={(e) => { dragging.current = true; onMove(e.clientX); }}
         onMouseMove={(e) => dragging.current && onMove(e.clientX)}
         onMouseUp={() => (dragging.current = false)}
