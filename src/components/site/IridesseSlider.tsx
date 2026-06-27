@@ -18,7 +18,7 @@ export function IridesseSlider() {
     <div className="reveal">
       <div
         ref={ref}
-        className="relative aspect-[792/497] w-full select-none overflow-hidden border border-paper/10 shadow-elegant"
+        className="relative aspect-[1000/1154] w-full select-none overflow-hidden border border-paper/10 shadow-elegant"
         onMouseDown={(e) => { dragging.current = true; onMove(e.clientX); }}
         onMouseMove={(e) => dragging.current && onMove(e.clientX)}
         onMouseUp={() => (dragging.current = false)}
@@ -36,10 +36,10 @@ export function IridesseSlider() {
 
         {/* Labels */}
         <div className="absolute left-4 top-4 bg-paper/10 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.25em] text-paper backdrop-blur">
-          Ilustración tradicional
+          Impresión CMYK
         </div>
         <div className="absolute right-4 top-4 bg-gold/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-onyx backdrop-blur">
-          Rosa iridiscente Iridesse
+          Xerox Iridesse · PINK
         </div>
 
         {/* Handle */}
