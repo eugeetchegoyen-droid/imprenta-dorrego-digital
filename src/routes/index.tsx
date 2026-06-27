@@ -7,6 +7,7 @@ import { Laboratorio } from "@/components/site/Laboratorio";
 import { PodCalculator } from "@/components/site/PodCalculator";
 import { Portfolio } from "@/components/site/Portfolio";
 import { QuoteWizard } from "@/components/site/QuoteWizard";
+import { UniteEquipo } from "@/components/site/UniteEquipo";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { useReveal } from "@/hooks/use-reveal";
@@ -36,6 +37,7 @@ function Index() {
       <PodCalculator />
       <Portfolio />
       <QuoteWizard />
+      <UniteEquipo />
       <Footer />
       <WhatsAppButton />
     </main>

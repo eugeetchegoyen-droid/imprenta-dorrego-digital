@@ -6,6 +6,7 @@ const links = [
   { href: "#editorial", label: "Editorial / POD" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "#cotizar", label: "Cotizar" },
+  { href: "#unite", label: "Unite al equipo" },
 ];
 
 export function Nav() {
