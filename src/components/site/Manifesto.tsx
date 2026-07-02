@@ -6,22 +6,23 @@ export function Manifesto() {
           <div className="md:col-span-3">
             <div className="sticky top-32 flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
               <span className="h-px w-10 bg-ink" />
-              Manifiesto
+              Nuestra historia
             </div>
           </div>
           <div className="md:col-span-9 reveal">
             <p className="font-display text-[clamp(1.6rem,3.6vw,3.4rem)] font-light leading-[1.1] tracking-[-0.015em] text-balance">
-              Creemos que un libro es un{" "}
-              <span className="italic">objeto vivo</span>. Que la calidad no
-              debería medirse en miles de ejemplares apilados en un depósito,
-              sino en la <span className="gold-text italic">precisión</span> de
-              cada uno que sale por nuestra puerta.
+              Más de <span className="gold-text italic">70 años</span> de
+              soluciones gráficas. Un oficio que se{" "}
+              <span className="italic">reinventa</span> con cada tecnología —
+              sin perder la precisión que nos define.
             </p>
             <p className="mt-10 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              Combinamos décadas de oficio editorial con tecnología digital de
-              última generación. Te damos la libertad de imprimir lo que
-              necesitás, cuando lo necesitás — sin mínimos, sin stock muerto,
-              sin perder calidad.
+              Somos una empresa dedicada a proveer soluciones gráficas desde
+              1952. Nuestra experiencia, junto al compromiso de permanente
+              actualización técnica, nos permite brindar los mejores resultados
+              en tiempo, calidad y costos. El todo es más que la suma de las
+              partes — por eso tantas marcas, editoriales y estudios confían en
+              nosotros desde hace décadas.
             </p>
             <div className="mt-12 grid grid-cols-1 gap-px bg-border sm:grid-cols-3">
               {[

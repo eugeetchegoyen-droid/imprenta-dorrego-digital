@@ -5,6 +5,7 @@ import { Manifesto } from "@/components/site/Manifesto";
 import { Marquee } from "@/components/site/Marquee";
 import { Laboratorio } from "@/components/site/Laboratorio";
 import { PodCalculator } from "@/components/site/PodCalculator";
+import { Servicios } from "@/components/site/Servicios";
 import { Portfolio } from "@/components/site/Portfolio";
 import { QuoteWizard } from "@/components/site/QuoteWizard";
 import { UniteEquipo } from "@/components/site/UniteEquipo";
@@ -35,6 +36,7 @@ function Index() {
       <Marquee />
       <Laboratorio />
       <PodCalculator />
+      <Servicios />
       <Portfolio />
       <QuoteWizard />
       <UniteEquipo />
