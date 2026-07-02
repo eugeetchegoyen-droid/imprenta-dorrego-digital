@@ -36,6 +36,7 @@ function Index() {
       <Marquee />
       <Laboratorio />
       <PodCalculator />
+      <Servicios />
       <Portfolio />
       <QuoteWizard />
       <UniteEquipo />
