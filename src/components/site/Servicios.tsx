@@ -70,16 +70,24 @@ function WebApprovalCard() {
         >
           <div>
             <span className="font-display text-3xl text-gold">01</span>
-            <div className="mt-6 overflow-hidden border border-paper/10">
+            <div className="relative mt-6 mx-auto max-w-[75%] overflow-hidden">
               <img
                 src={webApprovalHero.url}
                 alt="Vista previa de Web Approval"
                 className="block h-auto w-full"
-                style={{ aspectRatio: "760 / 415", objectFit: "cover" }}
+                style={{ aspectRatio: "16 / 10", objectFit: "cover" }}
+              />
+              <div
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3"
+                style={{
+                  background:
+                    "linear-gradient(to bottom, rgba(15,15,20,0) 0%, rgba(15,15,20,0.55) 55%, var(--color-onyx, #0f0f14) 100%)",
+                }}
+                aria-hidden="true"
               />
             </div>
-            <h3 className="mt-6 font-display text-2xl tracking-tight">Web Approval</h3>
-            <ul className="mt-4 space-y-1.5 text-sm text-paper/75">
+            <h3 className="mt-4 text-center font-display text-2xl tracking-tight">Web Approval</h3>
+            <ul className="mt-4 mx-auto max-w-[80%] space-y-1.5 text-sm text-paper/75">
               {[
                 "Revisión en línea",
                 "Transferencia de archivos",
@@ -94,6 +102,7 @@ function WebApprovalCard() {
               ))}
             </ul>
           </div>
+
           <div className="mt-8 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
               <path d="M2.5 4.2 A5 5 0 0 1 11.5 4.2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
