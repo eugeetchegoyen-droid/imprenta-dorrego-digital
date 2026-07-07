@@ -18,7 +18,7 @@ export function Laboratorio() {
         <div className="flex flex-col gap-4 reveal">
           <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-paper/60">
             <span className="h-px w-10 bg-gold" />
-            Tecnología de punta
+            Nuestra tecnología
           </div>
           <h2 className="max-w-3xl font-display text-[clamp(2.2rem,5.5vw,5rem)] font-light leading-[1] tracking-[-0.02em] text-balance">
             La precisión del <span className="italic">oficio</span> en la era <span className="gold-text italic">digital</span>.
