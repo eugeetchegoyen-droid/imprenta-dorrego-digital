@@ -1,10 +1,7 @@
+import { useState } from "react";
+import webApprovalHero from "@/assets/webapproval-hero.jpg.asset.json";
+
 const services = [
-  {
-    n: "01",
-    title: "Web Approval",
-    body: "Revisión y aprobación en línea, transferencia de archivos, reemplazo de páginas y notificaciones automáticas. Control total del proyecto, desde cualquier lugar.",
-    tag: "Workflow digital",
-  },
   {
     n: "02",
     title: "Producción 24 hs",
@@ -37,6 +34,118 @@ const services = [
   },
 ];
 
+function WebApprovalCard() {
+  const [flipped, setFlipped] = useState(false);
+  const toggle = () => setFlipped((v) => !v);
+
+  return (
+    <article
+      className="group relative min-h-[280px] bg-paper transition-colors"
+      style={{ perspective: "1400px" }}
+    >
+      <div
+        role="button"
+        tabIndex={0}
+        aria-pressed={flipped}
+        aria-label="Ver los pasos para aprobar tu trabajo"
+        onClick={toggle}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggle();
+          }
+        }}
+        className="relative h-full w-full cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-gold"
+        style={{
+          transformStyle: "preserve-3d",
+          transition: "transform 0.7s cubic-bezier(0.4, 0.1, 0.2, 1)",
+          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          minHeight: "inherit",
+        }}
+      >
+        {/* Front */}
+        <div
+          className="absolute inset-0 flex min-h-[280px] flex-col justify-between bg-onyx p-10 text-paper"
+          style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
+        >
+          <div>
+            <span className="font-display text-3xl text-gold">01</span>
+            <div className="mt-6 overflow-hidden border border-paper/10">
+              <img
+                src={webApprovalHero.url}
+                alt="Vista previa de Web Approval"
+                className="block h-auto w-full"
+                style={{ aspectRatio: "760 / 415", objectFit: "cover" }}
+              />
+            </div>
+            <h3 className="mt-6 font-display text-2xl tracking-tight">Web Approval</h3>
+            <ul className="mt-4 space-y-1.5 text-sm text-paper/75">
+              {[
+                "Revisión en línea",
+                "Transferencia de archivos",
+                "Reemplazo de páginas",
+                "Envío de notificaciones",
+                "Aprobación de trabajos",
+              ].map((f) => (
+                <li key={f} className="flex gap-2">
+                  <span className="text-gold">✓</span>
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="mt-8 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2.5 4.2 A5 5 0 0 1 11.5 4.2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+              <path d="M9.3 2.3 L11.6 4.3 L12.7 1.7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M11.5 9.8 A5 5 0 0 1 2.5 9.8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+              <path d="M4.7 11.7 L2.4 9.7 L1.3 12.3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Clic para ver más
+          </div>
+        </div>
+
+        {/* Back */}
+        <div
+          className="absolute inset-0 flex min-h-[280px] flex-col justify-center bg-paper p-10"
+          style={{
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+            transform: "rotateY(180deg)",
+          }}
+          aria-hidden={!flipped}
+        >
+          <span className="font-display text-3xl text-gold">01</span>
+          <p className="mt-6 font-display text-xl leading-snug text-ink">
+            Aprobar tu trabajo nunca fue tan <span className="italic">fácil</span>.
+          </p>
+          <ol className="mt-6 space-y-3">
+            {[
+              "Subís tu archivo",
+              "Lo revisás y aprobás online, sin instalar nada",
+              "Lo llevamos a producción",
+            ].map((step, i) => (
+              <li key={step} className="flex items-start gap-3 text-sm text-ink">
+                <span className="mt-0.5 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center border border-gold text-[11px] font-semibold text-gold">
+                  {i + 1}
+                </span>
+                <span>{step}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-sm text-muted-foreground">
+            Sin mails perdidos, sin esperas, todo en un solo lugar.
+          </p>
+          <div className="mt-6 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
+            <span className="h-px w-6 bg-gold" />
+            ← Volver
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export function Servicios() {
   return (
     <section id="servicios" className="bg-paper py-32 md:py-44">
@@ -51,7 +160,8 @@ export function Servicios() {
           </h2>
         </header>
 
-        <div className="grid grid-cols-1 gap-px bg-border sm:grid-cols-2 lg:grid-cols-3 border border-border">
+        <div className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          <WebApprovalCard />
           {services.map((s) => (
             <article
               key={s.n}
