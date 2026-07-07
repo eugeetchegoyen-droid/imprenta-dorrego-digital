@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import logoAsset from "@/assets/dorrego-logo.png.asset.json";
 
 const links = [
-  { href: "#laboratorio", label: "Laboratorio" },
-  { href: "#editorial", label: "Editorial / POD" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#cotizar", label: "Cotizar" },
+  { href: "#laboratorio", label: "Tecnología de punta" },
+  { href: "#portfolio", label: "Nuestros trabajos" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#cotizar", label: "Cotizador" },
   { href: "#unite", label: "Unite al equipo" },
 ];
 
