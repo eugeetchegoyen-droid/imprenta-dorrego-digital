@@ -383,6 +383,7 @@ export function Servicios() {
         <div className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           <WebApprovalCard />
           <Produccion24Card />
+          <DatosVariablesCard />
           {services.map((s) => (
             <article
               key={s.n}
