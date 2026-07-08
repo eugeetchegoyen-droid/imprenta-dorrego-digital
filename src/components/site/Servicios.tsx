@@ -1,20 +1,9 @@
 import { useState } from "react";
 import webApprovalHero from "@/assets/webapproval-hero.jpg.asset.json";
 import prod24Hero from "@/assets/prod24-hero.jpg.asset.json";
+import datosVariablesHero from "@/assets/datosvariables-hero.jpg.asset.json";
 
 const services = [
-  {
-    n: "03",
-    title: "Datos variables",
-    body: "Personalizá cualquier impresión combinando imágenes, textos o códigos de barras según la necesidad de cada cliente.",
-    tag: "Personalización",
-  },
-  {
-    n: "03",
-    title: "Datos variables",
-    body: "Personalizá cualquier impresión combinando imágenes, textos o códigos de barras según la necesidad de cada cliente.",
-    tag: "Personalización",
-  },
   {
     n: "04",
     title: "Impresión por demanda",
