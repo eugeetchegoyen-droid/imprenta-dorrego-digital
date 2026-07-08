@@ -38,16 +38,23 @@ function WebApprovalCard() {
   const [flipped, setFlipped] = useState(false);
   const toggle = () => setFlipped((v) => !v);
 
+  const benefits = [
+    { title: "Carga simple", body: "Subís el PDF validado en fuentes y color." },
+    { title: "Revisión online", body: "Marcás cambios al instante, sin instalar nada." },
+    { title: "Aprobación inmediata", body: "Un clic y entra directo a producción." },
+    { title: "Todo en un lugar", body: "Sin mails perdidos ni idas y vueltas." },
+  ];
+
   return (
     <article
-      className="group relative min-h-[280px] bg-paper transition-colors"
+      className="group relative min-h-[280px] bg-paper"
       style={{ perspective: "1400px" }}
     >
       <div
         role="button"
         tabIndex={0}
         aria-pressed={flipped}
-        aria-label="Ver los pasos para aprobar tu trabajo"
+        aria-label="Web Approval — clic para ver los beneficios"
         onClick={toggle}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
@@ -63,60 +70,48 @@ function WebApprovalCard() {
           minHeight: "inherit",
         }}
       >
-        {/* Front */}
+        {/* Front — horizontal split: text | image */}
         <div
-          className="absolute inset-0 flex min-h-[280px] flex-col justify-between bg-onyx p-10 text-paper"
+          className="absolute inset-0 flex min-h-[280px] flex-row bg-onyx text-paper"
           style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
         >
-          <div>
+          <div className="flex flex-1 flex-col justify-center p-10">
             <span className="font-display text-3xl text-gold">01</span>
-            <div className="relative mt-6 mx-auto max-w-[75%] overflow-hidden">
-              <img
-                src={webApprovalHero.url}
-                alt="Vista previa de Web Approval"
-                className="block h-auto w-full"
-                style={{ aspectRatio: "16 / 10", objectFit: "cover" }}
-              />
-              <div
-                className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3"
-                style={{
-                  background:
-                    "linear-gradient(to bottom, rgba(15,15,20,0) 0%, rgba(15,15,20,0.55) 55%, var(--color-onyx, #0f0f14) 100%)",
-                }}
-                aria-hidden="true"
-              />
+            <h3 className="mt-4 font-display text-2xl leading-[1.1] tracking-tight">
+              Web <span className="italic text-gold/90">Approval</span>
+            </h3>
+            <p className="mt-3 max-w-[28ch] text-sm leading-relaxed text-paper/65">
+              Revisá, corregí y aprobá tus archivos sin instalar nada.
+            </p>
+            <div className="mt-8 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
+              Ver beneficios
+              <svg width="16" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+                <path d="M0.5 4.5H13" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+                <path d="M9.2 0.7L13 4.5L9.2 8.3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </div>
-            <h3 className="mt-4 text-center font-display text-2xl tracking-tight">Web Approval</h3>
-            <ul className="mt-4 mx-auto max-w-[80%] space-y-1.5 text-sm text-paper/75">
-              {[
-                "Revisión en línea",
-                "Transferencia de archivos",
-                "Reemplazo de páginas",
-                "Envío de notificaciones",
-                "Aprobación de trabajos",
-              ].map((f) => (
-                <li key={f} className="flex gap-2">
-                  <span className="text-gold">✓</span>
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
           </div>
-
-          <div className="mt-8 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M2.5 4.2 A5 5 0 0 1 11.5 4.2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-              <path d="M9.3 2.3 L11.6 4.3 L12.7 1.7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M11.5 9.8 A5 5 0 0 1 2.5 9.8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-              <path d="M4.7 11.7 L2.4 9.7 L1.3 12.3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            Clic para ver más
+          <div className="relative w-2/5 flex-shrink-0 overflow-hidden">
+            <img
+              src={webApprovalHero.url}
+              alt="Vista previa de Web Approval"
+              className="h-full w-full object-cover"
+              style={{ objectPosition: "center 30%" }}
+            />
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(90deg, var(--color-onyx, #0f0f14) 0%, rgba(15,15,20,0.55) 30%, rgba(15,15,20,0) 100%)",
+              }}
+              aria-hidden="true"
+            />
           </div>
         </div>
 
-        {/* Back */}
+        {/* Back — 2x2 benefits grid */}
         <div
-          className="absolute inset-0 flex min-h-[280px] flex-col justify-center bg-paper p-10"
+          className="absolute inset-0 flex min-h-[280px] flex-col bg-bone p-8"
           style={{
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
@@ -124,27 +119,25 @@ function WebApprovalCard() {
           }}
           aria-hidden={!flipped}
         >
-          <span className="font-display text-3xl text-gold">01</span>
-          <p className="mt-6 font-display text-xl leading-snug text-ink">
-            Aprobar tu trabajo nunca fue tan <span className="italic">fácil</span>.
-          </p>
-          <ol className="mt-6 space-y-3">
-            {[
-              "Subís tu archivo",
-              "Lo revisás y aprobás online, sin instalar nada",
-              "Lo llevamos a producción",
-            ].map((step, i) => (
-              <li key={step} className="flex items-start gap-3 text-sm text-ink">
-                <span className="mt-0.5 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center border border-gold text-[11px] font-semibold text-gold">
-                  {i + 1}
-                </span>
-                <span>{step}</span>
-              </li>
+          <div className="mb-5 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
+            <span className="h-px w-6 bg-gold" />
+            Por qué importa
+          </div>
+          <div className="grid flex-1 grid-cols-2 grid-rows-2 gap-x-6 gap-y-4">
+            {benefits.map((b) => (
+              <div key={b.title} className="flex items-start gap-2">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="mt-0.5 flex-shrink-0">
+                  <path d="M2.5 7.2L5.8 10.3L11.5 4.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-gold" style={{ stroke: "currentColor" }} />
+                </svg>
+                <div className="min-w-0">
+                  <strong className="block font-display text-sm font-semibold text-ink">
+                    {b.title}
+                  </strong>
+                  <p className="mt-0.5 text-xs leading-snug text-muted-foreground">{b.body}</p>
+                </div>
+              </div>
             ))}
-          </ol>
-          <p className="mt-6 text-sm text-muted-foreground">
-            Sin mails perdidos, sin esperas, todo en un solo lugar.
-          </p>
+          </div>
           <div className="mt-6 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
             <span className="h-px w-6 bg-gold" />
             ← Volver
