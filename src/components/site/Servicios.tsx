@@ -616,6 +616,7 @@ export function Servicios() {
           <Produccion24Card />
           <DatosVariablesCard />
           <ImpresionDemandaCard />
+          <EncuadernacionPurCard />
           {services.map((s) => (
             <article
               key={s.n}
