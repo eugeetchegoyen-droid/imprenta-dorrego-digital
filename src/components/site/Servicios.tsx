@@ -2,14 +2,10 @@ import { useEffect, useState } from "react";
 import webApprovalHero from "@/assets/webapproval-hero.jpg.asset.json";
 import prod24Hero from "@/assets/prod24-hero.jpg.asset.json";
 import datosVariablesHero from "@/assets/datosvariables-hero.jpg.asset.json";
+import purHero from "@/assets/pur-hero.jpg.asset.json";
 
 const services = [
   {
-    n: "05",
-    title: "Encuadernación PUR",
-    body: "Adhesivo de poliuretano reactivo que aporta mayor durabilidad y flexibilidad al libro, a un menor costo.",
-    tag: "Acabado premium",
-  },
   {
     n: "06",
     title: "Xerox Premier Partner",
