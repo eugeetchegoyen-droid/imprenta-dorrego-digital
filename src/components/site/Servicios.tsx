@@ -1,15 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import webApprovalHero from "@/assets/webapproval-hero.jpg.asset.json";
 import prod24Hero from "@/assets/prod24-hero.jpg.asset.json";
 import datosVariablesHero from "@/assets/datosvariables-hero.jpg.asset.json";
 
 const services = [
-  {
-    n: "04",
-    title: "Impresión por demanda",
-    body: "Imprimí lo que necesites, cuando lo necesites. 10, 100 o 1.000 ejemplares con un costo unitario similar y sin stock inmovilizado.",
-    tag: "Stock cero",
-  },
   {
     n: "05",
     title: "Encuadernación PUR",
