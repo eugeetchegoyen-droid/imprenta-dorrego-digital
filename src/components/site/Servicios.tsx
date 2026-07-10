@@ -6,7 +6,6 @@ import purHero from "@/assets/pur-hero.jpg.asset.json";
 
 const services = [
   {
-  {
     n: "06",
     title: "Xerox Premier Partner",
     body: "Contamos con el respaldo de Xerox, líder mundial en tecnología de impresión, lo que nos permite mejorar el servicio continuamente.",
