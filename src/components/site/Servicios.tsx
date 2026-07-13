@@ -348,7 +348,7 @@ function DatosVariablesCard() {
               aria-hidden="true"
             />
           </div>
-        </div>
+        </CardFront>
 
         {/* Back */}
         <div
