@@ -312,7 +312,7 @@ function DatosVariablesCard() {
         }}
       >
         {/* Front */}
-        <div
+        <CardFront
           className="absolute inset-0 flex min-h-[280px] flex-row bg-onyx text-paper"
           style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
         >
