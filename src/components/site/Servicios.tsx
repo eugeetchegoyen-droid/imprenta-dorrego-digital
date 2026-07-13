@@ -120,7 +120,7 @@ function WebApprovalCard() {
               aria-hidden="true"
             />
           </div>
-        </div>
+        </CardFront>
 
         {/* Back — 2x2 benefits grid */}
         <div
