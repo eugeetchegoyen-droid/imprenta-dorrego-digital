@@ -719,22 +719,7 @@ export function Servicios() {
           <DatosVariablesCard />
           <ImpresionDemandaCard />
           <EncuadernacionPurCard />
-          {services.map((s) => (
-            <article
-              key={s.n}
-              className="group flex min-h-[280px] flex-col justify-between bg-paper p-10 transition-colors hover:bg-bone"
-            >
-              <div>
-                <span className="font-display text-3xl text-gold">{s.n}</span>
-                <h3 className="mt-6 font-display text-2xl tracking-tight">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-              </div>
-              <div className="mt-8 flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
-                <span className="h-px w-6 bg-gold transition-all group-hover:w-12" />
-                {s.tag}
-              </div>
-            </article>
-          ))}
+          <XeroxIridesseCard />
         </div>
       </div>
     </section>
