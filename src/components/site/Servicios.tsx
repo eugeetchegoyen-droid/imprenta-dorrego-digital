@@ -5,6 +5,48 @@ import datosVariablesHero from "@/assets/datosvariables-hero.jpg.asset.json";
 import purHero from "@/assets/pur-hero.jpg.asset.json";
 import iridesseHero from "@/assets/iridesse-hero.jpg.asset.json";
 
+function CardFront({
+  children,
+  className,
+  style,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
+  const [hover, setHover] = useState(false);
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  return (
+    <div
+      className={className}
+      style={style}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      {children}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          opacity: hover ? 1 : 0,
+          clipPath: `circle(70px at ${pos.x}px ${pos.y}px)`,
+          transform: "scale(1.5)",
+          transformOrigin: `${pos.x}px ${pos.y}px`,
+          transition: "opacity 0.2s ease",
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
 function WebApprovalCard() {
   const [flipped, setFlipped] = useState(false);
   const toggle = () => setFlipped((v) => !v);
@@ -42,7 +84,7 @@ function WebApprovalCard() {
         }}
       >
         {/* Front — horizontal split: text | image */}
-        <div
+        <CardFront
           className="absolute inset-0 flex min-h-[280px] flex-row bg-onyx text-paper"
           style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
         >
@@ -78,7 +120,7 @@ function WebApprovalCard() {
               aria-hidden="true"
             />
           </div>
-        </div>
+        </CardFront>
 
         {/* Back — 2x2 benefits grid */}
         <div
@@ -156,7 +198,7 @@ function Produccion24Card() {
         }}
       >
         {/* Front */}
-        <div
+        <CardFront
           className="absolute inset-0 flex min-h-[280px] flex-row bg-onyx text-paper"
           style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
         >
@@ -192,7 +234,7 @@ function Produccion24Card() {
               aria-hidden="true"
             />
           </div>
-        </div>
+        </CardFront>
 
         {/* Back */}
         <div
@@ -270,7 +312,7 @@ function DatosVariablesCard() {
         }}
       >
         {/* Front */}
-        <div
+        <CardFront
           className="absolute inset-0 flex min-h-[280px] flex-row bg-onyx text-paper"
           style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
         >
@@ -306,7 +348,7 @@ function DatosVariablesCard() {
               aria-hidden="true"
             />
           </div>
-        </div>
+        </CardFront>
 
         {/* Back */}
         <div
@@ -394,7 +436,7 @@ function ImpresionDemandaCard() {
         }}
       >
         {/* Front */}
-        <div
+        <CardFront
           className="absolute inset-0 flex min-h-[280px] flex-row bg-onyx text-paper"
           style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
         >
@@ -430,7 +472,7 @@ function ImpresionDemandaCard() {
               <div className="text-paper/20">{pad(at(2))}</div>
             </div>
           </div>
-        </div>
+        </CardFront>
 
         {/* Back */}
         <div
@@ -508,7 +550,7 @@ function EncuadernacionPurCard() {
         }}
       >
         {/* Front */}
-        <div
+        <CardFront
           className="absolute inset-0 flex min-h-[280px] flex-row bg-onyx text-paper"
           style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
         >
@@ -544,7 +586,7 @@ function EncuadernacionPurCard() {
               aria-hidden="true"
             />
           </div>
-        </div>
+        </CardFront>
 
         {/* Back */}
         <div
@@ -622,7 +664,7 @@ function XeroxIridesseCard() {
         }}
       >
         {/* Front */}
-        <div
+        <CardFront
           className="absolute inset-0 flex min-h-[280px] flex-row bg-onyx text-paper"
           style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
         >
@@ -658,7 +700,7 @@ function XeroxIridesseCard() {
               aria-hidden="true"
             />
           </div>
-        </div>
+        </CardFront>
 
         {/* Back */}
         <div
