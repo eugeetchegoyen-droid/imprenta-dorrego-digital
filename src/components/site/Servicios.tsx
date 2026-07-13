@@ -234,7 +234,7 @@ function Produccion24Card() {
               aria-hidden="true"
             />
           </div>
-        </div>
+        </CardFront>
 
         {/* Back */}
         <div
