@@ -5,6 +5,48 @@ import datosVariablesHero from "@/assets/datosvariables-hero.jpg.asset.json";
 import purHero from "@/assets/pur-hero.jpg.asset.json";
 import iridesseHero from "@/assets/iridesse-hero.jpg.asset.json";
 
+function CardFront({
+  children,
+  className,
+  style,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
+  const [hover, setHover] = useState(false);
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  return (
+    <div
+      className={className}
+      style={style}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      {children}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          opacity: hover ? 1 : 0,
+          clipPath: `circle(70px at ${pos.x}px ${pos.y}px)`,
+          transform: "scale(1.5)",
+          transformOrigin: `${pos.x}px ${pos.y}px`,
+          transition: "opacity 0.2s ease",
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
 function WebApprovalCard() {
   const [flipped, setFlipped] = useState(false);
   const toggle = () => setFlipped((v) => !v);
