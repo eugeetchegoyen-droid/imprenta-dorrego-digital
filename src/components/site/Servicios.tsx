@@ -3,15 +3,7 @@ import webApprovalHero from "@/assets/webapproval-hero.jpg.asset.json";
 import prod24Hero from "@/assets/prod24-hero.jpg.asset.json";
 import datosVariablesHero from "@/assets/datosvariables-hero.jpg.asset.json";
 import purHero from "@/assets/pur-hero.jpg.asset.json";
-
-const services = [
-  {
-    n: "06",
-    title: "Xerox Premier Partner",
-    body: "Contamos con el respaldo de Xerox, líder mundial en tecnología de impresión, lo que nos permite mejorar el servicio continuamente.",
-    tag: "Certificación global",
-  },
-];
+import iridesseHero from "@/assets/iridesse-hero.jpg.asset.json";
 
 function WebApprovalCard() {
   const [flipped, setFlipped] = useState(false);
