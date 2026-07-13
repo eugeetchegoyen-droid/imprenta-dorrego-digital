@@ -700,7 +700,7 @@ function XeroxIridesseCard() {
               aria-hidden="true"
             />
           </div>
-        </div>
+        </CardFront>
 
         {/* Back */}
         <div
