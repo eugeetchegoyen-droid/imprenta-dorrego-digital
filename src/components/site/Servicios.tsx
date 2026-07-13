@@ -586,7 +586,7 @@ function EncuadernacionPurCard() {
               aria-hidden="true"
             />
           </div>
-        </div>
+        </CardFront>
 
         {/* Back */}
         <div
