@@ -472,7 +472,7 @@ function ImpresionDemandaCard() {
               <div className="text-paper/20">{pad(at(2))}</div>
             </div>
           </div>
-        </div>
+        </CardFront>
 
         {/* Back */}
         <div
