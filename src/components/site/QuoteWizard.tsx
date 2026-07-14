@@ -32,10 +32,10 @@ export function QuoteWizard() {
             <span className="h-px w-10 bg-gold" />
           </div>
           <h2 className="mx-auto mt-6 max-w-3xl font-display text-[clamp(2.2rem,5vw,4.6rem)] font-light leading-[1] tracking-[-0.02em]">
-            ¿Qué vamos a imprimir <span className="italic">hoy</span>?
+            Contanos tu proyecto
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-paper/70">
-            Tres pasos. Sin formularios eternos. Te respondemos en menos de 24 horas hábiles.
+            Tres pasos. Sin formularios eternos. Te respondemos en 24 horas hábiles.
           </p>
         </div>
 
