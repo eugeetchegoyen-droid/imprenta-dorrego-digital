@@ -14,36 +14,36 @@ function CardFront({
   className?: string;
   style?: React.CSSProperties;
 }) {
-  const [hover, setHover] = useState(false);
-  const [pos, setPos] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
-
   return (
-    <div
-      className={className}
-      style={style}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+    <div className={className} style={style}>
+      {children}
+    </div>
+  );
+}
+
+function CardWrapper({
+  children,
+  className,
+  style,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <article
+      className={[
+        "group relative min-h-[280px] bg-paper transition-transform duration-300 ease-out",
+        hovered ? "z-30 scale-[1.05]" : "z-0 scale-100",
+        className || "",
+      ].join(" ")}
+      style={{ perspective: "1400px", ...style }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       {children}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          opacity: hover ? 1 : 0,
-          clipPath: `circle(70px at ${pos.x}px ${pos.y}px)`,
-          transform: "scale(1.5)",
-          transformOrigin: `${pos.x}px ${pos.y}px`,
-          transition: "opacity 0.2s ease",
-        }}
-      >
-        {children}
-      </div>
-    </div>
+    </CardWrapper>
   );
 }
 
@@ -59,10 +59,7 @@ function WebApprovalCard() {
   ];
 
   return (
-    <article
-      className="group relative min-h-[280px] bg-paper"
-      style={{ perspective: "1400px" }}
-    >
+    <CardWrapper>
       <div
         role="button"
         tabIndex={0}
@@ -157,7 +154,7 @@ function WebApprovalCard() {
           </div>
         </div>
       </div>
-    </article>
+    </CardWrapper>
   );
 }
 
@@ -173,10 +170,7 @@ function Produccion24Card() {
   ];
 
   return (
-    <article
-      className="group relative min-h-[280px] bg-paper"
-      style={{ perspective: "1400px" }}
-    >
+    <CardWrapper>
       <div
         role="button"
         tabIndex={0}
@@ -271,7 +265,7 @@ function Produccion24Card() {
           </div>
         </div>
       </div>
-    </article>
+    </CardWrapper>
   );
 }
 
@@ -287,10 +281,7 @@ function DatosVariablesCard() {
   ];
 
   return (
-    <article
-      className="group relative min-h-[280px] bg-paper"
-      style={{ perspective: "1400px" }}
-    >
+    <CardWrapper>
       <div
         role="button"
         tabIndex={0}
@@ -385,7 +376,7 @@ function DatosVariablesCard() {
           </div>
         </div>
       </div>
-    </article>
+    </CardWrapper>
   );
 }
 
@@ -411,10 +402,7 @@ function ImpresionDemandaCard() {
   ];
 
   return (
-    <article
-      className="group relative min-h-[280px] bg-paper"
-      style={{ perspective: "1400px" }}
-    >
+    <CardWrapper>
       <div
         role="button"
         tabIndex={0}
@@ -509,7 +497,7 @@ function ImpresionDemandaCard() {
           </div>
         </div>
       </div>
-    </article>
+    </CardWrapper>
   );
 }
 
@@ -525,10 +513,7 @@ function EncuadernacionPurCard() {
   ];
 
   return (
-    <article
-      className="group relative min-h-[280px] bg-paper"
-      style={{ perspective: "1400px" }}
-    >
+    <CardWrapper>
       <div
         role="button"
         tabIndex={0}
@@ -623,7 +608,7 @@ function EncuadernacionPurCard() {
           </div>
         </div>
       </div>
-    </article>
+    </CardWrapper>
   );
 }
 
@@ -639,10 +624,7 @@ function XeroxIridesseCard() {
   ];
 
   return (
-    <article
-      className="group relative min-h-[280px] bg-paper"
-      style={{ perspective: "1400px" }}
-    >
+    <CardWrapper>
       <div
         role="button"
         tabIndex={0}
@@ -737,7 +719,7 @@ function XeroxIridesseCard() {
           </div>
         </div>
       </div>
-    </article>
+    </CardWrapper>
   );
 }
 
