@@ -536,14 +536,13 @@ function EncuadernacionPurCard() {
           style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
         >
           <div className="flex flex-1 flex-col justify-center p-10">
-            <span className="font-display text-3xl text-gold">05</span>
-            <h3 className="mt-4 font-display text-2xl leading-[1.1] tracking-tight">
+            <h3 className="font-display text-2xl leading-[1.1] tracking-tight">
               Encuadernación <span className="italic text-gold/90">PUR</span>
             </h3>
-            <p className="mt-3 max-w-[28ch] text-sm leading-relaxed text-paper/65">
+            <p className="mt-5 max-w-[28ch] text-sm leading-relaxed text-paper/65">
               El lomo más resistente para sus publicaciones.
             </p>
-            <div className="mt-8 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
+            <div className="mt-10 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
               Ver beneficios
               <svg width="16" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
                 <path d="M0.5 4.5H13" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
@@ -647,14 +646,13 @@ function XeroxIridesseCard() {
           style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
         >
           <div className="flex flex-1 flex-col justify-center p-10">
-            <span className="font-display text-3xl text-gold">06</span>
-            <h3 className="mt-4 font-display text-2xl leading-[1.1] tracking-tight">
+            <h3 className="font-display text-2xl leading-[1.1] tracking-tight">
               Xerox <span className="italic text-gold/90">Iridesse</span>
             </h3>
-            <p className="mt-3 max-w-[28ch] text-sm leading-relaxed text-paper/65">
+            <p className="mt-5 max-w-[28ch] text-sm leading-relaxed text-paper/65">
               Impresión digital con efectos metálicos e iridiscentes.
             </p>
-            <div className="mt-8 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
+            <div className="mt-10 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
               Ver beneficios
               <svg width="16" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
                 <path d="M0.5 4.5H13" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
