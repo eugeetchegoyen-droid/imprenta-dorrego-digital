@@ -43,7 +43,7 @@ function CardWrapper({
       onMouseLeave={() => setHovered(false)}
     >
       {children}
-    </CardWrapper>
+    </article>
   );
 }
 
