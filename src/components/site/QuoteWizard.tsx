@@ -35,7 +35,7 @@ export function QuoteWizard() {
             Contanos tu proyecto
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-paper/70">
-            Tres pasos. Sin formularios eternos. Te respondemos en menos de 24 horas hábiles.
+            Tres pasos. Sin formularios eternos. Te respondemos en 24 horas hábiles.
           </p>
         </div>
 
