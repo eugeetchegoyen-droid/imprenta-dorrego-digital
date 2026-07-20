@@ -41,7 +41,7 @@ export function UniteEquipo() {
           <div data-reveal>
             <div className="text-[10px] uppercase tracking-[0.3em] text-gold">
               <span className="mr-2 inline-block h-px w-8 align-middle bg-gold" />
-              Carreras
+              ¿Querés trabajar con nosotros?
             </div>
             <h2 className="mt-6 font-display text-4xl leading-[1.05] md:text-5xl">
               Unite al equipo<span className="text-gold">.</span>
