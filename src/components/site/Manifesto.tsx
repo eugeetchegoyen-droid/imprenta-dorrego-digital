@@ -28,7 +28,7 @@ export function Manifesto() {
               {[
                 ["01", "Escala real", "Un ejemplar o mil, misma calidad, mismo compromiso."],
                 ["02", "Respuesta rápida", "De la aprobación al lomo, sin fricciones."],
-                ["03", "Sin compromisos", "Calidad editorial certificada."],
+                ["03", "Compromiso", "Calidad editorial certificada."],
               ].map(([n, t, d]) => (
                 <div key={n} className="bg-paper p-6">
                   <div className="font-display text-3xl text-gold">{n}</div>
