@@ -94,12 +94,32 @@ export function Testimonios() {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
+  const autoTimerRef = useRef<number | null>(null);
 
   const updateArrows = () => {
     const el = scrollerRef.current;
     if (!el) return;
     setCanPrev(el.scrollLeft > 4);
     setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+  };
+
+  const scrollBy = (dir: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>("[data-card]");
+    const step = card ? card.offsetWidth + 16 : el.clientWidth * 0.85;
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
+  };
+
+  const advanceAuto = () => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 8) {
+      el.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      scrollBy(1);
+    }
   };
 
   useEffect(() => {
@@ -114,13 +134,18 @@ export function Testimonios() {
     };
   }, []);
 
-  const scrollBy = (dir: 1 | -1) => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const card = el.querySelector<HTMLElement>("[data-card]");
-    const step = card ? card.offsetWidth + 16 : el.clientWidth * 0.85;
-    el.scrollBy({ left: dir * step, behavior: "smooth" });
-  };
+  useEffect(() => {
+    if (isPaused) {
+      if (autoTimerRef.current) window.clearInterval(autoTimerRef.current);
+      autoTimerRef.current = null;
+      return;
+    }
+    autoTimerRef.current = window.setInterval(advanceAuto, 6500);
+    return () => {
+      if (autoTimerRef.current) window.clearInterval(autoTimerRef.current);
+    };
+  }, [isPaused]);
+
 
   return (
     <section id="testimonios" className="bg-paper py-32 md:py-44">
