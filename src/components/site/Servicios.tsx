@@ -171,7 +171,13 @@ function ServiceCard({
   );
 }
 
-function ImpresionDemandaCard() {
+function ImpresionDemandaCard({
+  flipped,
+  onToggle,
+}: {
+  flipped: boolean;
+  onToggle: () => void;
+}) {
   const values = [10, 50, 100, 250, 500, 1000];
   const [idx, setIdx] = useState(0);
   useEffect(() => {
@@ -184,6 +190,8 @@ function ImpresionDemandaCard() {
 
   return (
     <ServiceCard
+      flipped={flipped}
+      onToggle={onToggle}
       ariaLabel="Impresión por Demanda — clic para ver los beneficios"
       titleLead="Impresión"
       titleAccent="por Demanda"
