@@ -133,7 +133,6 @@ export function Testimonios() {
     if (!isPaused) autoTimerRef.current = window.setInterval(advanceAuto, 6500);
   };
 
-
   useEffect(() => {
     updateArrows();
     const el = scrollerRef.current;
@@ -157,7 +156,6 @@ export function Testimonios() {
       if (autoTimerRef.current) window.clearInterval(autoTimerRef.current);
     };
   }, [isPaused]);
-
 
   return (
     <section id="testimonios" className="bg-paper py-32 md:py-44">
