@@ -3,11 +3,11 @@ import { Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/dorrego-logo.png.asset.json";
 
 const links = [
-  { href: "#laboratorio", label: "Nuestra tecnología" },
-  { href: "#portfolio", label: "Nuestros trabajos" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#cotizar", label: "Cotizador" },
-  { href: "/unite", label: "Unite al equipo" },
+  { to: "/", hash: "laboratorio", label: "Nuestra tecnología" },
+  { to: "/", hash: "portfolio", label: "Nuestros trabajos" },
+  { to: "/", hash: "servicios", label: "Servicios" },
+  { to: "/", hash: "cotizar", label: "Cotizador" },
+  { to: "/unite", label: "Unite al equipo" },
 ];
 
 export function Nav() {
@@ -30,7 +30,7 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 lg:px-10">
-        <a href="#top" className="group flex items-center gap-3">
+        <Link to="/" className="group flex items-center gap-3">
           <img
             src={logoAsset.url}
             alt="Imprenta Dorrego"
@@ -40,37 +40,28 @@ export function Nav() {
             <div className="font-display text-base tracking-tight text-ink">Imprenta Dorrego</div>
             <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Editorial · Digital · POD</div>
           </div>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {links.map((l) =>
-            l.href.startsWith("/") ? (
-              <Link
-                key={l.href}
-                to={l.href}
-                className="group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink"
-              >
-                {l.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-              </Link>
-            ) : (
-              <a
-                key={l.href}
-                href={l.href}
-                className="group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink"
-              >
-                {l.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-              </a>
-            )
-          )}
-          <a
-            href="#approval"
+          {links.map((l) => (
+            <Link
+              key={`${l.to}${l.hash ?? ""}`}
+              to={l.to}
+              hash={l.hash}
+              className="group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink"
+            >
+              {l.label}
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+            </Link>
+          ))}
+          <Link
+            to="/"
+            hash="approval"
             className="inline-flex items-center gap-2 border border-ink px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-ink transition-all hover:bg-ink hover:text-paper"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
             Web Approval
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -87,34 +78,25 @@ export function Nav() {
       {open && (
         <div className="md:hidden border-t border-border bg-paper">
           <div className="flex flex-col px-6 py-6">
-            {links.map((l) =>
-              l.href.startsWith("/") ? (
-                <Link
-                  key={l.href}
-                  to={l.href}
-                  onClick={() => setOpen(false)}
-                  className="border-b border-border/60 py-3 font-display text-2xl"
-                >
-                  {l.label}
-                </Link>
-              ) : (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="border-b border-border/60 py-3 font-display text-2xl"
-                >
-                  {l.label}
-                </a>
-              )
-            )}
-            <a
-              href="#approval"
+            {links.map((l) => (
+              <Link
+                key={`${l.to}${l.hash ?? ""}`}
+                to={l.to}
+                hash={l.hash}
+                onClick={() => setOpen(false)}
+                className="border-b border-border/60 py-3 font-display text-2xl"
+              >
+                {l.label}
+              </Link>
+            ))}
+            <Link
+              to="/"
+              hash="approval"
               onClick={() => setOpen(false)}
               className="mt-6 inline-flex items-center justify-between border border-ink px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em]"
             >
               Web Approval <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            </a>
+            </Link>
           </div>
         </div>
       )}
