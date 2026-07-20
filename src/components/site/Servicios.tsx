@@ -93,7 +93,7 @@ function ServiceCard({
           </div>
 
           <div className="flex flex-1 flex-col justify-center">
-            <h3 className="font-display text-3xl font-light leading-[1.05] tracking-tight text-ink">
+            <h3 className="font-display text-3xl font-semibold leading-[1.05] tracking-tight text-ink">
               {titleLead} <span className="italic text-gold">{titleAccent}</span>
             </h3>
             <p className="mt-5 max-w-[32ch] text-sm leading-relaxed text-muted-foreground">
@@ -234,7 +234,7 @@ export function Servicios() {
             <span className="h-px w-10 bg-ink" />
             Un servicio para cada etapa de tu proyecto
           </div>
-          <h2 className="mt-6 font-display text-[clamp(2rem,4.8vw,4.4rem)] font-light leading-[1.02] tracking-[-0.02em] text-balance">
+          <h2 className="mt-6 font-display text-[clamp(2rem,4.8vw,4.4rem)] font-semibold leading-[1.02] tracking-[-0.02em] text-balance">
             Soluciones adecuadas para <span className="italic">todo tipo</span> de necesidades.
           </h2>
         </header>

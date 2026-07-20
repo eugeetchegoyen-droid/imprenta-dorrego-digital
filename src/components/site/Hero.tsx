@@ -52,7 +52,7 @@ export function Hero() {
 
         {/* Headline */}
         <div className="mt-8 max-w-[1100px]">
-          <h1 className="font-display text-[clamp(3rem,9vw,9.5rem)] font-light leading-[0.92] tracking-[-0.02em] text-balance">
+          <h1 className="font-display text-[clamp(3rem,9vw,9.5rem)] font-medium leading-[0.92] tracking-[-0.02em] text-balance">
             Precisión <span className="italic font-normal">editorial</span>,
             <br />
             flexibilidad <span className="gold-text italic">digital</span>.
