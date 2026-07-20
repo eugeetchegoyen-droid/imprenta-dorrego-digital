@@ -199,7 +199,7 @@ export function Testimonios() {
 
   const resetAuto = () => {
     if (autoTimerRef.current) window.clearInterval(autoTimerRef.current);
-    if (!isPaused) autoTimerRef.current = window.setInterval(advanceAuto, 5000);
+    if (!isPaused) autoTimerRef.current = window.setInterval(advanceAuto, 4000);
   };
 
   useEffect(() => {
