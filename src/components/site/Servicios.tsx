@@ -138,10 +138,6 @@ function ServiceCard({
                 </div>
               ))}
             </div>
-            <div className="mt-6 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
-              <span className="h-px w-6 bg-gold" />
-              ← Volver
-            </div>
           </div>
 
 
