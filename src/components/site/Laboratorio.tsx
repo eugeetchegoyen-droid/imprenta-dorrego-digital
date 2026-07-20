@@ -20,7 +20,7 @@ export function Laboratorio() {
             <span className="h-px w-10 bg-gold" />
             Nuestra tecnología
           </div>
-          <h2 className="max-w-3xl font-display text-[clamp(2.2rem,5.5vw,5rem)] font-light leading-[1] tracking-[-0.02em] text-balance">
+          <h2 className="max-w-3xl font-display text-[clamp(2.2rem,5.5vw,5rem)] font-semibold leading-[1] tracking-[-0.02em] text-balance">
             La precisión del <span className="italic">oficio</span> en la era <span className="gold-text italic">digital</span>.
           </h2>
           <p className="max-w-2xl text-paper/70 md:text-lg">
@@ -34,7 +34,7 @@ export function Laboratorio() {
         <div className="mt-20 grid gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
             <div className="text-[11px] uppercase tracking-[0.3em] text-gold">Pieza 01</div>
-            <h3 className="mt-4 font-display text-4xl md:text-5xl">Xerox Iridesse</h3>
+            <h3 className="mt-4 font-display text-4xl font-semibold md:text-5xl">Xerox Iridesse</h3>
             <p className="mt-4 text-paper/70">
               Hasta 6 estaciones de impresión simultáneas. Tintas
               especiales <strong className="text-paper">rosa iridiscente</strong>, <strong className="text-paper">plata</strong>, <strong className="text-paper">blanco opaco</strong> y <strong className="text-paper">laca brillante</strong> sobre cualquier sustrato — incluso papeles oscuros, metalizados y traslúcidos.
@@ -65,7 +65,7 @@ export function Laboratorio() {
         <div id="approval" className="mt-32 grid gap-12 md:grid-cols-12 md:gap-16 reveal">
           <div className="md:col-span-5">
             <div className="text-[11px] uppercase tracking-[0.3em] text-gold">Pieza 02</div>
-            <h3 className="mt-4 font-display text-4xl md:text-5xl">Web Approval</h3>
+            <h3 className="mt-4 font-display text-4xl font-semibold md:text-5xl">Web Approval</h3>
             <p className="mt-4 text-paper/70">
               Tu propia herramienta de trabajo. Transparencia, velocidad y
               control absoluto de la producción desde el escritorio.
@@ -111,7 +111,7 @@ export function Laboratorio() {
           ].map((x) => (
             <div key={x.t} className="group border border-paper/10 p-8 transition-colors hover:border-gold/50">
               <div className="mb-6 h-px w-8 bg-gold transition-all group-hover:w-16" />
-              <h4 className="font-display text-2xl">{x.t}</h4>
+              <h4 className="font-display text-2xl font-semibold">{x.t}</h4>
               <p className="mt-3 text-sm text-paper/65">{x.d}</p>
             </div>
           ))}

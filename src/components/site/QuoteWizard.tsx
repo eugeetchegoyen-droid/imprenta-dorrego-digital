@@ -31,7 +31,7 @@ export function QuoteWizard() {
             Cotización inteligente
             <span className="h-px w-10 bg-gold" />
           </div>
-          <h2 className="mx-auto mt-6 max-w-3xl font-display text-[clamp(2.2rem,5vw,4.6rem)] font-light leading-[1] tracking-[-0.02em]">
+          <h2 className="mx-auto mt-6 max-w-3xl font-display text-[clamp(2.2rem,5vw,4.6rem)] font-semibold leading-[1] tracking-[-0.02em]">
             Contanos tu proyecto
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-paper/70">
@@ -60,7 +60,7 @@ export function QuoteWizard() {
           <div className="min-h-[380px] p-8 md:p-12">
             {step === 0 && (
               <div>
-                <h3 className="font-display text-3xl">¿Qué vas a imprimir?</h3>
+                <h3 className="font-display text-3xl font-semibold">¿Qué vas a imprimir?</h3>
                 <div className="mt-8 grid gap-4 md:grid-cols-2">
                   {products.map((p) => (
                     <button
@@ -81,7 +81,7 @@ export function QuoteWizard() {
 
             {step === 1 && (
               <div>
-                <h3 className="font-display text-3xl">¿Cuántos necesitás?</h3>
+                <h3 className="font-display text-3xl font-semibold">¿Cuántos necesitás?</h3>
                 <p className="mt-2 text-paper/65">Sin mínimos. Desde un solo ejemplar.</p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   {ranges.map((r) => (
@@ -99,7 +99,7 @@ export function QuoteWizard() {
 
             {step === 2 && (
               <div>
-                <h3 className="font-display text-3xl">Dejanos tu contacto</h3>
+                <h3 className="font-display text-3xl font-semibold">Dejanos tu contacto</h3>
                 <p className="mt-2 text-paper/65">Te enviamos un enlace al Web Approval para subir los archivos.</p>
                 <div className="mt-8 grid gap-4">
                   <input
@@ -130,7 +130,7 @@ export function QuoteWizard() {
                 <div className="flex h-16 w-16 items-center justify-center rounded-full border border-gold text-gold">
                   <span className="font-display text-2xl">✓</span>
                 </div>
-                <h3 className="mt-6 font-display text-4xl">¡Listo!</h3>
+                <h3 className="mt-6 font-display text-4xl font-semibold">¡Listo!</h3>
                 <p className="mt-3 max-w-md text-paper/70">
                   Recibimos tu pedido para <strong className="text-paper">{products.find((p) => p.k === product)?.t}</strong> · <strong className="text-paper">{qty}</strong> ejemplares.
                   Te respondemos a <strong className="text-paper">{email}</strong> en menos de 24 hs hábiles.
