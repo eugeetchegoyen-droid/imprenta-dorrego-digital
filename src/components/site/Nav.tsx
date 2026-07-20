@@ -87,16 +87,27 @@ export function Nav() {
       {open && (
         <div className="md:hidden border-t border-border bg-paper">
           <div className="flex flex-col px-6 py-6">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="border-b border-border/60 py-3 font-display text-2xl"
-              >
-                {l.label}
-              </a>
-            ))}
+            {links.map((l) =>
+              l.href.startsWith("/") ? (
+                <Link
+                  key={l.href}
+                  to={l.href}
+                  onClick={() => setOpen(false)}
+                  className="border-b border-border/60 py-3 font-display text-2xl"
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="border-b border-border/60 py-3 font-display text-2xl"
+                >
+                  {l.label}
+                </a>
+              )
+            )}
             <a
               href="#approval"
               onClick={() => setOpen(false)}
