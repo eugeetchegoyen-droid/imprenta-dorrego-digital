@@ -90,6 +90,91 @@ function GoogleG() {
   );
 }
 
+function ReviewBody({ r }: { r: Review }) {
+  return (
+    <>
+      <div>
+        <div className="flex items-center justify-between">
+          <Stars n={r.rating} />
+          <GoogleG />
+        </div>
+        <svg width="28" height="20" viewBox="0 0 28 20" className="mt-6 text-gold" fill="currentColor" aria-hidden="true">
+          <path d="M0 20V10C0 4.5 3.5 0.5 9 0v3.5c-2.8.5-4.5 2.5-4.5 5H9V20H0zm19 0V10c0-5.5 3.5-9.5 9-10v3.5c-2.8.5-4.5 2.5-4.5 5H28V20h-9z" />
+        </svg>
+        <p className="mt-4 text-[15px] leading-relaxed text-ink/85">{r.text}</p>
+      </div>
+
+      <div className="mt-8 flex items-center gap-3 border-t border-border/60 pt-5">
+        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-onyx font-display text-sm font-semibold text-gold">
+          {r.initials}
+        </div>
+        <div className="min-w-0">
+          <div className="truncate font-display text-sm font-semibold text-ink">{r.name}</div>
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{r.when}</div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+function ReviewCard({ r }: { r: Review }) {
+  const cardRef = useRef<HTMLElement>(null);
+  const [hover, setHover] = useState(false);
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+
+  const handleMove = (e: React.MouseEvent<HTMLElement>) => {
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    setPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    setHover(true);
+  };
+
+  const lensRadius = 100;
+  const scale = 1.55;
+
+  return (
+    <article
+      ref={cardRef}
+      data-card
+      onMouseEnter={handleMove}
+      onMouseMove={handleMove}
+      onMouseLeave={() => setHover(false)}
+      className="group relative flex w-[85%] flex-shrink-0 snap-start flex-col justify-between bg-bone p-8 shadow-card sm:w-[420px]"
+    >
+      <div className="relative z-10 flex h-full flex-col justify-between">
+        <ReviewBody r={r} />
+      </div>
+
+      {/* Lupa: contenido ampliado recortado en círculo */}
+      <div
+        className={`pointer-events-none absolute inset-0 z-20 bg-bone opacity-0 transition-opacity duration-300 ${hover ? "opacity-100" : ""}`}
+        style={{ clipPath: `circle(${lensRadius}px at ${pos.x}px ${pos.y}px)` }}
+      >
+        <div
+          className="absolute inset-0 flex h-full flex-col justify-between p-8"
+          style={{
+            transformOrigin: `${pos.x}px ${pos.y}px`,
+            transform: `scale(${scale})`,
+          }}
+        >
+          <ReviewBody r={r} />
+        </div>
+      </div>
+
+      {/* Borde dorado del lente */}
+      <div
+        className={`pointer-events-none absolute z-30 rounded-full border border-gold/80 shadow-[0_0_40px_-10px_rgba(0,0,0,0.25)] opacity-0 transition-opacity duration-300 ${hover ? "opacity-100" : ""}`}
+        style={{
+          width: lensRadius * 2,
+          height: lensRadius * 2,
+          left: pos.x - lensRadius,
+          top: pos.y - lensRadius,
+        }}
+      />
+    </article>
+  );
+}
+
 export function Testimonios() {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [canPrev, setCanPrev] = useState(false);
@@ -218,34 +303,8 @@ export function Testimonios() {
             className="scrollbar-hide -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4 lg:-mx-10 lg:px-10"
             style={{ scrollbarWidth: "none" }}
           >
-
             {reviews.map((r) => (
-              <article
-                key={r.name}
-                data-card
-                className="group relative flex w-[85%] flex-shrink-0 snap-start flex-col justify-between bg-bone p-8 shadow-card sm:w-[420px]"
-              >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <Stars n={r.rating} />
-                    <GoogleG />
-                  </div>
-                  <svg width="28" height="20" viewBox="0 0 28 20" className="mt-6 text-gold" fill="currentColor" aria-hidden="true">
-                    <path d="M0 20V10C0 4.5 3.5 0.5 9 0v3.5c-2.8.5-4.5 2.5-4.5 5H9V20H0zm19 0V10c0-5.5 3.5-9.5 9-10v3.5c-2.8.5-4.5 2.5-4.5 5H28V20h-9z" />
-                  </svg>
-                  <p className="mt-4 text-[15px] leading-relaxed text-ink/85">{r.text}</p>
-                </div>
-
-                <div className="mt-8 flex items-center gap-3 border-t border-border/60 pt-5">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-onyx font-display text-sm font-semibold text-gold">
-                    {r.initials}
-                  </div>
-                  <div className="min-w-0">
-                    <div className="truncate font-display text-sm font-semibold text-ink">{r.name}</div>
-                    <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{r.when}</div>
-                  </div>
-                </div>
-              </article>
+              <ReviewCard key={r.name} r={r} />
             ))}
           </div>
 
