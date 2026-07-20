@@ -94,12 +94,43 @@ export function Testimonios() {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
+  const autoTimerRef = useRef<number | null>(null);
 
   const updateArrows = () => {
     const el = scrollerRef.current;
     if (!el) return;
     setCanPrev(el.scrollLeft > 4);
     setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+  };
+
+  const scrollBy = (dir: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>("[data-card]");
+    const step = card ? card.offsetWidth + 16 : el.clientWidth * 0.85;
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
+    resetAuto();
+  };
+
+  const advanceAuto = () => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 8) {
+      el.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      el.scrollBy({ left: stepFor(el), behavior: "smooth" });
+    }
+  };
+
+  const stepFor = (el: HTMLDivElement) => {
+    const card = el.querySelector<HTMLElement>("[data-card]");
+    return card ? card.offsetWidth + 16 : el.clientWidth * 0.85;
+  };
+
+  const resetAuto = () => {
+    if (autoTimerRef.current) window.clearInterval(autoTimerRef.current);
+    if (!isPaused) autoTimerRef.current = window.setInterval(advanceAuto, 6500);
   };
 
   useEffect(() => {
@@ -114,13 +145,17 @@ export function Testimonios() {
     };
   }, []);
 
-  const scrollBy = (dir: 1 | -1) => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const card = el.querySelector<HTMLElement>("[data-card]");
-    const step = card ? card.offsetWidth + 16 : el.clientWidth * 0.85;
-    el.scrollBy({ left: dir * step, behavior: "smooth" });
-  };
+  useEffect(() => {
+    if (isPaused) {
+      if (autoTimerRef.current) window.clearInterval(autoTimerRef.current);
+      autoTimerRef.current = null;
+      return;
+    }
+    autoTimerRef.current = window.setInterval(advanceAuto, 6500);
+    return () => {
+      if (autoTimerRef.current) window.clearInterval(autoTimerRef.current);
+    };
+  }, [isPaused]);
 
   return (
     <section id="testimonios" className="bg-paper py-32 md:py-44">
@@ -178,9 +213,12 @@ export function Testimonios() {
         <div className="relative">
           <div
             ref={scrollerRef}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
             className="scrollbar-hide -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4 lg:-mx-10 lg:px-10"
             style={{ scrollbarWidth: "none" }}
           >
+
             {reviews.map((r) => (
               <article
                 key={r.name}
