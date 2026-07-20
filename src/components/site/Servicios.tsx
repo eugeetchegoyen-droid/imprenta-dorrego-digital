@@ -119,21 +119,21 @@ function ServiceCard({
           aria-hidden={!flipped}
         >
           <div className="flex flex-1 flex-col p-8">
-            <div className="mb-5 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
+            <div className="mb-6 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
               <span className="h-px w-6 bg-gold" />
-              Por qué importa
+              Beneficios
             </div>
-            <div className="grid flex-1 grid-cols-2 grid-rows-2 gap-x-5 gap-y-4">
+            <div className="grid flex-1 grid-cols-2 grid-rows-2 gap-x-5 gap-y-5 content-center">
               {benefits.map((b) => (
                 <div key={b.title} className="flex items-start gap-2">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="mt-0.5 flex-shrink-0 text-gold">
+                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="mt-[3px] flex-shrink-0 text-gold">
                     <path d="M2.5 7.2L5.8 10.3L11.5 4.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   <div className="min-w-0">
-                    <strong className="block font-display text-sm font-semibold text-paper">
+                    <strong className="block font-display text-[13px] font-medium leading-tight text-paper">
                       {b.title}
                     </strong>
-                    <p className="mt-0.5 text-xs leading-snug text-paper/60">{b.body}</p>
+                    <p className="mt-1 text-[11px] leading-[1.45] text-paper/55">{b.body}</p>
                   </div>
                 </div>
               ))}
@@ -143,6 +143,7 @@ function ServiceCard({
               ← Volver
             </div>
           </div>
+
 
           <div className="relative w-2/5 flex-shrink-0 overflow-hidden">
             {frontRight ? (
