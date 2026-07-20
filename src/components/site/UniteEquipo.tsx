@@ -43,7 +43,7 @@ export function UniteEquipo() {
               <span className="mr-2 inline-block h-px w-8 align-middle bg-gold" />
               ¿Querés trabajar con nosotros?
             </div>
-            <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.05] md:text-5xl">
+            <h2 className="mt-6 font-display text-4xl leading-[1.05] md:text-5xl">
               Unite al equipo<span className="text-gold">.</span>
             </h2>
             <p className="mt-6 max-w-md text-paper/70">
@@ -68,7 +68,7 @@ export function UniteEquipo() {
           <div data-reveal>
             {sent ? (
               <div className="border border-gold/40 bg-paper/[0.03] p-10 text-center">
-                <div className="font-display text-3xl font-semibold">¡Gracias!</div>
+                <div className="font-display text-3xl">¡Gracias!</div>
                 <p className="mt-3 text-paper/70">
                   Recibimos tu postulación. Si tu perfil encaja con una búsqueda activa, te vamos a contactar pronto.
                 </p>

@@ -27,7 +27,7 @@ export function Manifesto() {
             </div>
           </div>
           <div className="md:col-span-9 reveal">
-            <p className="font-display text-[clamp(1.6rem,3.6vw,3.4rem)] font-medium leading-[1.1] tracking-[-0.015em] text-balance">
+            <p className="font-display text-[clamp(1.6rem,3.6vw,3.4rem)] font-light leading-[1.1] tracking-[-0.015em] text-balance">
               Más de <span className="gold-text italic">70 años</span> de
               soluciones gráficas. Un oficio que se{" "}
               <span className="italic">reinventa</span> con cada tecnología —
@@ -49,7 +49,7 @@ export function Manifesto() {
               ].map(([n, t, d]) => (
                 <div key={n} className="bg-paper p-6">
                   <div className="font-display text-3xl text-gold">{n}</div>
-                  <div className="mt-3 font-display text-xl font-semibold">{t}</div>
+                  <div className="mt-3 font-display text-xl">{t}</div>
                   <div className="mt-1 text-sm text-muted-foreground">{d}</div>
                 </div>
               ))}

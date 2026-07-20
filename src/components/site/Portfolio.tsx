@@ -32,7 +32,7 @@ export function Portfolio() {
               <span className="h-px w-10 bg-ink" />
               Showroom digital
             </div>
-            <h2 className="mt-6 font-display text-[clamp(2.2rem,5vw,4.6rem)] font-semibold leading-[1.02] tracking-[-0.02em]">
+            <h2 className="mt-6 font-display text-[clamp(2.2rem,5vw,4.6rem)] font-light leading-[1.02] tracking-[-0.02em]">
               Nuestros trabajos.
             </h2>
           </div>
@@ -69,7 +69,7 @@ export function Portfolio() {
               <div className="absolute inset-0 bg-gradient-to-t from-onyx/85 via-onyx/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <figcaption className="absolute inset-x-0 bottom-0 translate-y-4 p-6 text-paper opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                 <div className="text-[10px] uppercase tracking-[0.3em] text-gold">{it.cat}</div>
-                <div className="mt-1 font-display text-xl font-semibold">{it.title}</div>
+                <div className="mt-1 font-display text-xl">{it.title}</div>
                 <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-paper/70">
                   {it.specs.map((s) => (
                     <li key={s} className="border-l border-paper/30 pl-2 first:border-0 first:pl-0">{s}</li>

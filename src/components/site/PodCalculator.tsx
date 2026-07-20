@@ -8,7 +8,7 @@ export function PodCalculator() {
               <span className="h-px w-10 bg-ink" />
               Impresión por demanda
             </div>
-            <h2 className="mt-6 font-display text-[clamp(2rem,4.8vw,4.4rem)] font-semibold leading-[1.02] tracking-[-0.02em] text-balance">
+            <h2 className="mt-6 font-display text-[clamp(2rem,4.8vw,4.4rem)] font-light leading-[1.02] tracking-[-0.02em] text-balance">
               Imprimí solo lo que <span className="italic">necesitás</span>, cuando lo necesitás.
             </h2>
             <p className="mt-6 text-muted-foreground md:text-lg">
@@ -45,7 +45,7 @@ export function PodCalculator() {
               ].map((x) => (
                 <div key={x.n} className="bg-paper p-8">
                   <div className="font-display text-3xl text-gold">{x.n}</div>
-                  <div className="mt-4 font-display text-xl font-semibold">{x.t}</div>
+                  <div className="mt-4 font-display text-xl">{x.t}</div>
                   <div className="mt-2 text-sm text-muted-foreground">{x.d}</div>
                 </div>
               ))}
