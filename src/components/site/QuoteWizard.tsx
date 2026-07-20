@@ -60,7 +60,7 @@ export function QuoteWizard() {
           <div className="min-h-[380px] p-8 md:p-12">
             {step === 0 && (
               <div>
-                <h3 className="font-display text-3xl">¿Qué vas a crear?</h3>
+                <h3 className="font-display text-3xl">¿Qué vas a imprimir?</h3>
                 <div className="mt-8 grid gap-4 md:grid-cols-2">
                   {products.map((p) => (
                     <button
