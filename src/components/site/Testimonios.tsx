@@ -279,6 +279,14 @@ export function Testimonios() {
 
         <div className="relative">
           <div
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-paper via-paper/60 to-transparent transition-opacity duration-300 md:w-16"
+            style={{ opacity: canPrev ? 1 : 0 }}
+          />
+          <div
+            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-paper via-paper/60 to-transparent transition-opacity duration-300 md:w-16"
+            style={{ opacity: canNext ? 1 : 0 }}
+          />
+          <div
             ref={scrollerRef}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
