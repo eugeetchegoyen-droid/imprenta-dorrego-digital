@@ -20,7 +20,7 @@ function CardWrapper({
   return (
     <article
       className={[
-        "group relative min-h-[320px] bg-bone transition-transform duration-300 ease-out",
+        "group relative min-h-[320px] bg-bone shadow-card transition-transform duration-300 ease-out",
         hovered ? "z-30 scale-[1.05]" : "z-0 scale-100",
         className || "",
       ].join(" ")}
@@ -239,7 +239,7 @@ export function Servicios() {
           </h2>
         </header>
 
-        <div className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <ServiceCard
             flipped={flipped("web-approval")}
             onToggle={() => toggle("web-approval")}
