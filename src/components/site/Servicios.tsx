@@ -121,10 +121,6 @@ function ServiceCard({
           aria-hidden={!flipped}
         >
           <div className="flex flex-1 flex-col p-8">
-            <div className="mb-6 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
-              <span className="h-px w-6 bg-gold" />
-              Beneficios
-            </div>
             <div className="grid flex-1 grid-cols-2 grid-rows-2 gap-x-5 gap-y-5 content-center">
               {benefits.map((b) => (
                 <div key={b.title} className="flex items-start gap-2">
