@@ -167,8 +167,10 @@ export function Testimonios() {
   const updateArrows = () => {
     const el = scrollerRef.current;
     if (!el) return;
-    setCanPrev(el.scrollLeft > 4);
-    setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+    const paddingLeft = parseFloat(window.getComputedStyle(el).paddingLeft);
+    const paddingRight = parseFloat(window.getComputedStyle(el).paddingRight);
+    setCanPrev(el.scrollLeft > paddingLeft + 4);
+    setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - paddingRight - 4);
   };
 
   const scrollBy = (dir: 1 | -1) => {
