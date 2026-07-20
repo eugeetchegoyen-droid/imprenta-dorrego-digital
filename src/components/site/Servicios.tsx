@@ -20,7 +20,7 @@ function CardWrapper({
   return (
     <article
       className={[
-        "group relative min-h-[320px] bg-paper transition-transform duration-300 ease-out",
+        "group relative min-h-[320px] bg-bone transition-transform duration-300 ease-out",
         hovered ? "z-30 scale-[1.05]" : "z-0 scale-100",
         className || "",
       ].join(" ")}
