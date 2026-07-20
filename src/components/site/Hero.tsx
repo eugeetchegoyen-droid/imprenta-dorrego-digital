@@ -43,7 +43,7 @@ export function Hero() {
         {/* Brand lockup */}
         <div className="mt-10">
           <div className="font-display text-2xl tracking-tight text-paper md:text-[1.7rem]">
-            Imprenta <span className="gold-text italic">Dorrego</span>
+            Imprenta <span className="gold-text">Dorrego</span>
           </div>
           <div className="mt-1 text-[10px] uppercase tracking-[0.32em] text-paper/55 md:text-[11px]">
             Desde 1952 · Editorial · Digital · POD
