@@ -191,11 +191,12 @@ function ImpresionDemandaCard() {
       titleAccent="por Demanda"
       tagline="Imprimí lo que necesitás, cuando lo necesitás."
       benefits={[
-        { title: "Sin mínimos", body: "10, 100 o 1.000 copias al mismo costo unitario." },
+        { title: "Sin mínimos", body: "Desde 10 hasta 1.000 al mismo costo." },
         { title: "Cero stock", body: "Producís solo lo que vas a usar." },
-        { title: "Cambios sin costo", body: "Actualizá precios o textos entre tiradas." },
+        { title: "Cambios libres", body: "Actualizás textos o precios entre tiradas." },
         { title: "Misma calidad", body: "Tecnología digital de punta en cada pedido." },
       ]}
+
       frontRight={
         <div
           className="relative flex h-full w-full items-center justify-center"
