@@ -272,7 +272,7 @@ export function Servicios() {
             benefits={[
               { title: "En tiempo", body: "Producción continua para plazos ajustados." },
               { title: "Sin mínimos", body: "Desde 10 hasta 1.000 ejemplares." },
-              { title: "Ajustes finales", body: "Aceptamos cambios hasta el último momento." },
+              { title: "Ajustes finales", body: "Cambios previos a impresión." },
               { title: "Calidad Xerox", body: "Tecnología de punta en cada tirada." },
             ]}
           />
