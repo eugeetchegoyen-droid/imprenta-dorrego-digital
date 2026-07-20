@@ -1,7 +1,24 @@
+import historiaImg from "@/assets/historia-dorrego.png.asset.json";
+
 export function Manifesto() {
   return (
-    <section className="relative bg-paper py-32 md:py-48">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+    <section className="relative overflow-hidden bg-paper py-32 md:py-48">
+      {/* Historical image — left margin, faded toward the text */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-[80%] md:w-[55%] lg:w-[48%]">
+        <img
+          src={historiaImg.url}
+          alt="Taller histórico de Imprenta Dorrego, 1952"
+          className="h-full w-full object-cover opacity-25"
+          style={{
+            WebkitMaskImage:
+              "linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 70%)",
+            maskImage:
+              "linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 70%)",
+          }}
+        />
+      </div>
+
+      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-3">
             <div className="sticky top-32 flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
