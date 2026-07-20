@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/dorrego-logo.png.asset.json";
 
 const links = [
@@ -6,7 +7,7 @@ const links = [
   { href: "#portfolio", label: "Nuestros trabajos" },
   { href: "#servicios", label: "Servicios" },
   { href: "#cotizar", label: "Cotizador" },
-  { href: "#unite", label: "Unite al equipo" },
+  { href: "/unite", label: "Unite al equipo" },
 ];
 
 export function Nav() {
@@ -42,16 +43,27 @@ export function Nav() {
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink"
-            >
-              {l.label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-            </a>
-          ))}
+          {links.map((l) =>
+            l.href.startsWith("/") ? (
+              <Link
+                key={l.href}
+                to={l.href}
+                className="group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink"
+              >
+                {l.label}
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+              </Link>
+            ) : (
+              <a
+                key={l.href}
+                href={l.href}
+                className="group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink"
+              >
+                {l.label}
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+              </a>
+            )
+          )}
           <a
             href="#approval"
             className="inline-flex items-center gap-2 border border-ink px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-ink transition-all hover:bg-ink hover:text-paper"
@@ -75,16 +87,27 @@ export function Nav() {
       {open && (
         <div className="md:hidden border-t border-border bg-paper">
           <div className="flex flex-col px-6 py-6">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="border-b border-border/60 py-3 font-display text-2xl"
-              >
-                {l.label}
-              </a>
-            ))}
+            {links.map((l) =>
+              l.href.startsWith("/") ? (
+                <Link
+                  key={l.href}
+                  to={l.href}
+                  onClick={() => setOpen(false)}
+                  className="border-b border-border/60 py-3 font-display text-2xl"
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="border-b border-border/60 py-3 font-display text-2xl"
+                >
+                  {l.label}
+                </a>
+              )
+            )}
             <a
               href="#approval"
               onClick={() => setOpen(false)}
