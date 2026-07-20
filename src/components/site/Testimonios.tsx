@@ -118,12 +118,39 @@ function ReviewBody({ r }: { r: Review }) {
 }
 
 function ReviewCard({ r }: { r: Review }) {
+  const cardRef = useRef<HTMLElement>(null);
+  const [hover, setHover] = useState(false);
+  const [rotate, setRotate] = useState({ x: 0, y: 0 });
+
+  const handleMove = (e: React.MouseEvent<HTMLElement>) => {
+    const el = cardRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+    const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+    setRotate({ x: -y * 5, y: x * 5 });
+  };
+
+  const handleLeave = () => {
+    setHover(false);
+    setRotate({ x: 0, y: 0 });
+  };
+
   return (
     <article
+      ref={cardRef}
       data-card
-      className="group relative flex w-[85%] flex-shrink-0 snap-start flex-col justify-between overflow-hidden bg-bone p-8 shadow-card transition-all duration-500 ease-out hover:scale-[1.05] hover:shadow-2xl sm:w-[420px]"
+      onMouseMove={handleMove}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={handleLeave}
+      className="group relative flex w-[85%] flex-shrink-0 snap-start flex-col justify-between overflow-hidden bg-bone p-8 shadow-card transition-shadow duration-500 ease-out will-change-transform hover:shadow-gold sm:w-[420px]"
+      style={{
+        transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) scale(${hover ? 1.05 : 1})`,
+        transformStyle: "preserve-3d",
+      }}
     >
-      <div className="relative z-10 flex h-full flex-col justify-between transition-transform duration-500 ease-out group-hover:scale-[1.04]">
+      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100" />
+      <div className="relative z-10 flex h-full flex-col justify-between">
         <ReviewBody r={r} />
       </div>
     </article>
