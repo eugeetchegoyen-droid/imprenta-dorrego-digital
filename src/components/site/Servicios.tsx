@@ -93,7 +93,7 @@ function WebApprovalCard() {
               Revisá, corregí y aprobá tus archivos sin instalar nada.
             </p>
             <div className="mt-10 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
-              Ver beneficios
+              Ver más
               <svg width="16" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
                 <path d="M0.5 4.5H13" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
                 <path d="M9.2 0.7L13 4.5L9.2 8.3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
@@ -203,7 +203,7 @@ function Produccion24Card() {
               Siempre activos para tus necesidades.
             </p>
             <div className="mt-10 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
-              Ver beneficios
+              Ver más
               <svg width="16" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
                 <path d="M0.5 4.5H13" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
                 <path d="M9.2 0.7L13 4.5L9.2 8.3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
@@ -313,7 +313,7 @@ function DatosVariablesCard() {
               Cada pieza, única. Una tirada, mil versiones.
             </p>
             <div className="mt-10 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
-              Ver beneficios
+              Ver más
               <svg width="16" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
                 <path d="M0.5 4.5H13" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
                 <path d="M9.2 0.7L13 4.5L9.2 8.3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
@@ -433,7 +433,7 @@ function ImpresionDemandaCard() {
               Imprimí lo que necesitás, cuando lo necesitás.
             </p>
             <div className="mt-10 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
-              Ver beneficios
+              Ver más
               <svg width="16" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
                 <path d="M0.5 4.5H13" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
                 <path d="M9.2 0.7L13 4.5L9.2 8.3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
@@ -543,7 +543,7 @@ function EncuadernacionPurCard() {
               El lomo más resistente para sus publicaciones.
             </p>
             <div className="mt-10 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
-              Ver beneficios
+              Ver más
               <svg width="16" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
                 <path d="M0.5 4.5H13" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
                 <path d="M9.2 0.7L13 4.5L9.2 8.3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
@@ -653,7 +653,7 @@ function XeroxIridesseCard() {
               Impresión digital con efectos metálicos e iridiscentes.
             </p>
             <div className="mt-10 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
-              Ver beneficios
+              Ver más
               <svg width="16" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
                 <path d="M0.5 4.5H13" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
                 <path d="M9.2 0.7L13 4.5L9.2 8.3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
