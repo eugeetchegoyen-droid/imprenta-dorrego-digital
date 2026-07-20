@@ -215,9 +215,12 @@ export function Testimonios() {
         <div className="relative">
           <div
             ref={scrollerRef}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
             className="scrollbar-hide -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4 lg:-mx-10 lg:px-10"
             style={{ scrollbarWidth: "none" }}
           >
+
             {reviews.map((r) => (
               <article
                 key={r.name}
