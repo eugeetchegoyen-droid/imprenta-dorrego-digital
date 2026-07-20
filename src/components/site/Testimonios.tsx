@@ -118,59 +118,14 @@ function ReviewBody({ r }: { r: Review }) {
 }
 
 function ReviewCard({ r }: { r: Review }) {
-  const cardRef = useRef<HTMLElement>(null);
-  const [hover, setHover] = useState(false);
-  const [pos, setPos] = useState({ x: 0, y: 0 });
-
-  const handleMove = (e: React.MouseEvent<HTMLElement>) => {
-    const rect = cardRef.current?.getBoundingClientRect();
-    if (!rect) return;
-    setPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-    setHover(true);
-  };
-
-  const lensRadius = 100;
-  const scale = 1.55;
-
   return (
     <article
-      ref={cardRef}
       data-card
-      onMouseEnter={handleMove}
-      onMouseMove={handleMove}
-      onMouseLeave={() => setHover(false)}
-      className="group relative flex w-[85%] flex-shrink-0 snap-start flex-col justify-between bg-bone p-8 shadow-card sm:w-[420px]"
+      className="group relative flex w-[85%] flex-shrink-0 snap-start flex-col justify-between overflow-hidden bg-bone p-8 shadow-card transition-all duration-500 ease-out hover:scale-[1.05] hover:shadow-2xl sm:w-[420px]"
     >
-      <div className="relative z-10 flex h-full flex-col justify-between">
+      <div className="relative z-10 flex h-full flex-col justify-between transition-transform duration-500 ease-out group-hover:scale-[1.04]">
         <ReviewBody r={r} />
       </div>
-
-      {/* Lupa: contenido ampliado recortado en círculo */}
-      <div
-        className={`pointer-events-none absolute inset-0 z-20 bg-bone opacity-0 transition-opacity duration-300 ${hover ? "opacity-100" : ""}`}
-        style={{ clipPath: `circle(${lensRadius}px at ${pos.x}px ${pos.y}px)` }}
-      >
-        <div
-          className="absolute inset-0 flex h-full flex-col justify-between p-8"
-          style={{
-            transformOrigin: `${pos.x}px ${pos.y}px`,
-            transform: `scale(${scale})`,
-          }}
-        >
-          <ReviewBody r={r} />
-        </div>
-      </div>
-
-      {/* Borde dorado del lente */}
-      <div
-        className={`pointer-events-none absolute z-30 rounded-full border border-gold/80 shadow-[0_0_40px_-10px_rgba(0,0,0,0.25)] opacity-0 transition-opacity duration-300 ${hover ? "opacity-100" : ""}`}
-        style={{
-          width: lensRadius * 2,
-          height: lensRadius * 2,
-          left: pos.x - lensRadius,
-          top: pos.y - lensRadius,
-        }}
-      />
     </article>
   );
 }
