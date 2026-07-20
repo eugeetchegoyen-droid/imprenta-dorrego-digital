@@ -220,7 +220,7 @@ export function Testimonios() {
       autoTimerRef.current = null;
       return;
     }
-    autoTimerRef.current = window.setInterval(advanceAuto, 5000);
+    autoTimerRef.current = window.setInterval(advanceAuto, 4000);
     return () => {
       if (autoTimerRef.current) window.clearInterval(autoTimerRef.current);
     };
