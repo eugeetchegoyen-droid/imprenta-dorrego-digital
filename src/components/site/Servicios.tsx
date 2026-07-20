@@ -119,21 +119,21 @@ function ServiceCard({
           aria-hidden={!flipped}
         >
           <div className="flex flex-1 flex-col p-8">
-            <div className="mb-5 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
+            <div className="mb-6 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
               <span className="h-px w-6 bg-gold" />
-              Por qué importa
+              Beneficios
             </div>
-            <div className="grid flex-1 grid-cols-2 grid-rows-2 gap-x-5 gap-y-4">
+            <div className="grid flex-1 grid-cols-2 grid-rows-2 gap-x-5 gap-y-5 content-center">
               {benefits.map((b) => (
                 <div key={b.title} className="flex items-start gap-2">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="mt-0.5 flex-shrink-0 text-gold">
+                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="mt-[3px] flex-shrink-0 text-gold">
                     <path d="M2.5 7.2L5.8 10.3L11.5 4.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   <div className="min-w-0">
-                    <strong className="block font-display text-sm font-semibold text-paper">
+                    <strong className="block font-display text-[13px] font-medium leading-tight text-paper">
                       {b.title}
                     </strong>
-                    <p className="mt-0.5 text-xs leading-snug text-paper/60">{b.body}</p>
+                    <p className="mt-1 text-[11px] leading-[1.45] text-paper/55">{b.body}</p>
                   </div>
                 </div>
               ))}
@@ -143,6 +143,7 @@ function ServiceCard({
               ← Volver
             </div>
           </div>
+
 
           <div className="relative w-2/5 flex-shrink-0 overflow-hidden">
             {frontRight ? (
@@ -190,11 +191,12 @@ function ImpresionDemandaCard() {
       titleAccent="por Demanda"
       tagline="Imprimí lo que necesitás, cuando lo necesitás."
       benefits={[
-        { title: "Sin mínimos", body: "10, 100 o 1.000 copias al mismo costo unitario." },
+        { title: "Sin mínimos", body: "Desde 10 hasta 1.000 al mismo costo." },
         { title: "Cero stock", body: "Producís solo lo que vas a usar." },
-        { title: "Cambios sin costo", body: "Actualizá precios o textos entre tiradas." },
+        { title: "Cambios libres", body: "Actualizás textos o precios entre tiradas." },
         { title: "Misma calidad", body: "Tecnología digital de punta en cada pedido." },
       ]}
+
       frontRight={
         <div
           className="relative flex h-full w-full items-center justify-center"
@@ -240,9 +242,9 @@ export function Servicios() {
             image={webApprovalHero.url}
             imageAlt="Vista previa de Web Approval"
             benefits={[
-              { title: "Carga simple", body: "Subís el PDF validado en fuentes y color." },
+              { title: "Carga simple", body: "Subís tu PDF validado en fuentes y color." },
               { title: "Revisión online", body: "Marcás cambios al instante, sin instalar nada." },
-              { title: "Aprobación inmediata", body: "Un clic y entra directo a producción." },
+              { title: "Aprobación 1 clic", body: "Un clic y entra directo a producción." },
               { title: "Todo en un lugar", body: "Sin mails perdidos ni idas y vueltas." },
             ]}
           />
@@ -254,9 +256,9 @@ export function Servicios() {
             image={prod24Hero.url}
             imageAlt="Producción 24 horas"
             benefits={[
-              { title: "Entrega a tiempo", body: "Producción ininterrumpida para plazos ajustados." },
+              { title: "En tiempo", body: "Producción continua para plazos ajustados." },
               { title: "Sin mínimos", body: "Desde 10 hasta 1.000 ejemplares." },
-              { title: "Cambios de último momento", body: "Aceptamos ajustes hasta antes de producir." },
+              { title: "Ajustes finales", body: "Aceptamos cambios hasta el último momento." },
               { title: "Calidad Xerox", body: "Tecnología de punta en cada tirada." },
             ]}
           />
@@ -268,9 +270,9 @@ export function Servicios() {
             image={datosVariablesHero.url}
             imageAlt="Datos Variables"
             benefits={[
-              { title: "Cada pieza, única", body: "Nombre, imagen o código distinto por ejemplar." },
-              { title: "Mayor conversión", body: "La personalización multiplica la respuesta." },
-              { title: "Trazabilidad total", body: "QR, código de barras o serial por pieza." },
+              { title: "Pieza única", body: "Nombre, imagen o código por ejemplar." },
+              { title: "Más conversión", body: "La personalización multiplica la respuesta." },
+              { title: "Trazabilidad", body: "QR, código de barras o serial por pieza." },
               { title: "Mil versiones", body: "Los datos cambian sin pausar la producción." },
             ]}
           />
@@ -283,10 +285,10 @@ export function Servicios() {
             image={purHero.url}
             imageAlt="Libro abierto con encuadernación PUR"
             benefits={[
-              { title: "Durabilidad superior", body: "Resiste humedad y uso intensivo." },
+              { title: "Durabilidad", body: "Resiste humedad y uso intensivo." },
               { title: "Apertura plana", body: "Las páginas se abren sin tensión." },
-              { title: "Mayor vida útil", body: "No se desprenden con el uso cotidiano." },
-              { title: "Mayor valor percibido", body: "Un acabado que comunica calidad." },
+              { title: "Vida útil", body: "No se desprenden con el uso cotidiano." },
+              { title: "Valor percibido", body: "Un acabado que comunica calidad." },
             ]}
           />
           <ServiceCard
@@ -298,12 +300,13 @@ export function Servicios() {
             imageAlt="Impresión digital Xerox Iridesse con efectos metálicos"
             imageObjectPosition="center 25%"
             benefits={[
-              { title: "Efectos metálicos", body: "Tonos dorados, plateados y cobrizos sin tintas especiales." },
-              { title: "Colores iridiscentes", body: "Acabados que cambian según la luz y el ángulo." },
-              { title: "Impresión digital", body: "Calidad de alta gama con tiempos de producción reducidos." },
-              { title: "Acabados premium", body: "Ideal para invitaciones, catálogos y piezas de autor." },
+              { title: "Metálicos", body: "Dorados, plateados y cobrizos sin tintas especiales." },
+              { title: "Iridiscentes", body: "Acabados que cambian según la luz." },
+              { title: "Digital", body: "Alta gama con tiempos de producción reducidos." },
+              { title: "Premium", body: "Ideal para invitaciones, catálogos y piezas de autor." },
             ]}
           />
+
         </div>
       </div>
     </section>
