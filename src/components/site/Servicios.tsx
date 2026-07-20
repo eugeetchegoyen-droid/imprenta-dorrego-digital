@@ -67,11 +67,11 @@ function ServiceCard({
         tabIndex={0}
         aria-pressed={flipped}
         aria-label={ariaLabel}
-        onClick={toggle}
+        onClick={onToggle}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            toggle();
+            onToggle();
           }
         }}
         className="relative h-full w-full cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-gold"
