@@ -6,7 +6,7 @@ const links = [
   { href: "#portfolio", label: "Nuestros trabajos" },
   { href: "#servicios", label: "Servicios" },
   { href: "#cotizar", label: "Cotizador" },
-  { href: "#unite", label: "Unite al equipo" },
+  { href: "/unite", label: "Unite al equipo" },
 ];
 
 export function Nav() {
