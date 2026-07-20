@@ -724,7 +724,7 @@ export function Servicios() {
         <header className="mb-16 max-w-3xl reveal">
           <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
             <span className="h-px w-10 bg-ink" />
-            Servicios
+            Un servicio para cada etapa de tu proyecto
           </div>
           <h2 className="mt-6 font-display text-[clamp(2rem,4.8vw,4.4rem)] font-light leading-[1.02] tracking-[-0.02em] text-balance">
             Soluciones adecuadas para <span className="italic">todo tipo</span> de necesidades.
