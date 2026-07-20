@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UniteRouteImport } from './routes/unite'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiApplyRouteImport } from './routes/api/apply'
 
+const UniteRoute = UniteRouteImport.update({
+  id: '/unite',
+  path: '/unite',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -25,32 +31,43 @@ const ApiApplyRoute = ApiApplyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/apply'
+  fullPaths: '/' | '/unite' | '/api/apply'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/apply'
-  id: '__root__' | '/' | '/api/apply'
+  to: '/' | '/unite' | '/api/apply'
+  id: '__root__' | '/' | '/unite' | '/api/apply'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  UniteRoute: typeof UniteRoute
   ApiApplyRoute: typeof ApiApplyRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/unite': {
+      id: '/unite'
+      path: '/unite'
+      fullPath: '/unite'
+      preLoaderRoute: typeof UniteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  UniteRoute: UniteRoute,
   ApiApplyRoute: ApiApplyRoute,
 }
 export const routeTree = rootRouteImport

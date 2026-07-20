@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/dorrego-logo.png.asset.json";
 
 const links = [
@@ -42,16 +43,27 @@ export function Nav() {
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink"
-            >
-              {l.label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-            </a>
-          ))}
+          {links.map((l) =>
+            l.href.startsWith("/") ? (
+              <Link
+                key={l.href}
+                to={l.href}
+                className="group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink"
+              >
+                {l.label}
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+              </Link>
+            ) : (
+              <a
+                key={l.href}
+                href={l.href}
+                className="group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink"
+              >
+                {l.label}
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+              </a>
+            )
+          )}
           <a
             href="#approval"
             className="inline-flex items-center gap-2 border border-ink px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-ink transition-all hover:bg-ink hover:text-paper"
