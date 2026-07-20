@@ -41,6 +41,7 @@
 
   --shadow-elegant: 0 30px 80px -30px oklch(0 0 0 / 0.35);
   --shadow-gold: 0 20px 60px -20px oklch(0.78 0.13 75 / 0.45);
+  --shadow-card: 0 8px 30px -10px oklch(0 0 0 / 0.12);
 }
 
 :root {
