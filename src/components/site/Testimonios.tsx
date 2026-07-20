@@ -110,6 +110,7 @@ export function Testimonios() {
     const card = el.querySelector<HTMLElement>("[data-card]");
     const step = card ? card.offsetWidth + 16 : el.clientWidth * 0.85;
     el.scrollBy({ left: dir * step, behavior: "smooth" });
+    resetAuto();
   };
 
   const advanceAuto = () => {
@@ -118,9 +119,20 @@ export function Testimonios() {
     if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 8) {
       el.scrollTo({ left: 0, behavior: "smooth" });
     } else {
-      scrollBy(1);
+      el.scrollBy({ left: stepFor(el), behavior: "smooth" });
     }
   };
+
+  const stepFor = (el: HTMLDivElement) => {
+    const card = el.querySelector<HTMLElement>("[data-card]");
+    return card ? card.offsetWidth + 16 : el.clientWidth * 0.85;
+  };
+
+  const resetAuto = () => {
+    if (autoTimerRef.current) window.clearInterval(autoTimerRef.current);
+    if (!isPaused) autoTimerRef.current = window.setInterval(advanceAuto, 6500);
+  };
+
 
   useEffect(() => {
     updateArrows();
