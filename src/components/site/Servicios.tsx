@@ -43,6 +43,8 @@ function ServiceCard({
   imageAlt,
   imageObjectPosition = "center 30%",
   frontRight,
+  flipped,
+  onToggle,
 }: {
   ariaLabel: string;
   titleLead: string;
@@ -54,9 +56,9 @@ function ServiceCard({
   imageObjectPosition?: string;
   /** Optional custom node for the front right column instead of image (used by POD counter). */
   frontRight?: React.ReactNode;
+  flipped: boolean;
+  onToggle: () => void;
 }) {
-  const [flipped, setFlipped] = useState(false);
-  const toggle = () => setFlipped((v) => !v);
 
   return (
     <CardWrapper>
@@ -65,11 +67,11 @@ function ServiceCard({
         tabIndex={0}
         aria-pressed={flipped}
         aria-label={ariaLabel}
-        onClick={toggle}
+        onClick={onToggle}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            toggle();
+            onToggle();
           }
         }}
         className="relative h-full w-full cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-gold"
@@ -169,7 +171,13 @@ function ServiceCard({
   );
 }
 
-function ImpresionDemandaCard() {
+function ImpresionDemandaCard({
+  flipped,
+  onToggle,
+}: {
+  flipped: boolean;
+  onToggle: () => void;
+}) {
   const values = [10, 50, 100, 250, 500, 1000];
   const [idx, setIdx] = useState(0);
   useEffect(() => {
@@ -182,6 +190,8 @@ function ImpresionDemandaCard() {
 
   return (
     <ServiceCard
+      flipped={flipped}
+      onToggle={onToggle}
       ariaLabel="Impresión por Demanda — clic para ver los beneficios"
       titleLead="Impresión"
       titleAccent="por Demanda"
@@ -216,6 +226,10 @@ function ImpresionDemandaCard() {
 }
 
 export function Servicios() {
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const flipped = (id: string) => activeId === id;
+  const toggle = (id: string) => setActiveId((current) => (current === id ? null : id));
+
   return (
     <section id="servicios" className="bg-paper py-32 md:py-44">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
@@ -231,6 +245,8 @@ export function Servicios() {
 
         <div className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           <ServiceCard
+            flipped={flipped("web-approval")}
+            onToggle={() => toggle("web-approval")}
             ariaLabel="Web Approval — clic para ver los beneficios"
             titleLead="Web"
             titleAccent="Approval"
@@ -245,6 +261,8 @@ export function Servicios() {
             ]}
           />
           <ServiceCard
+            flipped={flipped("produccion-24")}
+            onToggle={() => toggle("produccion-24")}
             ariaLabel="Producción 24 horas — clic para ver los beneficios"
             titleLead="Producción"
             titleAccent="24 horas"
@@ -259,6 +277,8 @@ export function Servicios() {
             ]}
           />
           <ServiceCard
+            flipped={flipped("datos-variables")}
+            onToggle={() => toggle("datos-variables")}
             ariaLabel="Datos Variables — clic para ver los beneficios"
             titleLead="Datos"
             titleAccent="Variables"
@@ -272,8 +292,13 @@ export function Servicios() {
               { title: "Mil versiones", body: "Los datos cambian sin pausar la producción." },
             ]}
           />
-          <ImpresionDemandaCard />
+          <ImpresionDemandaCard
+            flipped={flipped("impresion-demanda")}
+            onToggle={() => toggle("impresion-demanda")}
+          />
           <ServiceCard
+            flipped={flipped("encuadernacion-pur")}
+            onToggle={() => toggle("encuadernacion-pur")}
             ariaLabel="Encuadernación PUR — clic para ver los beneficios"
             titleLead="Encuadernación"
             titleAccent="PUR"
@@ -288,6 +313,8 @@ export function Servicios() {
             ]}
           />
           <ServiceCard
+            flipped={flipped("xerox-iridesse")}
+            onToggle={() => toggle("xerox-iridesse")}
             ariaLabel="Xerox Iridesse — clic para ver los beneficios"
             titleLead="Xerox"
             titleAccent="Iridesse"
@@ -302,7 +329,6 @@ export function Servicios() {
               { title: "Premium", body: "Ideal para invitaciones, catálogos y piezas de autor." },
             ]}
           />
-
         </div>
       </div>
     </section>
