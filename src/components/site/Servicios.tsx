@@ -93,8 +93,8 @@ function ServiceCard({
           </div>
 
           <div className="flex flex-1 flex-col justify-center">
-            <h3 className="font-display text-3xl font-light leading-[1.05] tracking-tight text-ink">
-              {titleLead} <span className="italic text-gold">{titleAccent}</span>
+            <h3 className="font-display text-3xl font-semibold leading-[1.05] tracking-tight text-ink">
+              {titleLead} <span className="italic font-medium text-gold">{titleAccent}</span>
             </h3>
             <p className="mt-5 max-w-[32ch] text-sm leading-relaxed text-muted-foreground">
               {tagline}
