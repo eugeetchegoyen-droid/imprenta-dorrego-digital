@@ -83,10 +83,10 @@ export function Hero() {
         {/* Bottom metrics */}
         <div className="mt-16 grid grid-cols-2 gap-6 border-t border-paper/15 pt-8 md:grid-cols-4">
           {[
-            ["72 años", "imprimiendo cultura"],
-            ["1 → ∞", "ejemplares por demanda"],
-            ["6 tintas", "Xerox Iridesse · Oro / Plata / Blanco"],
-            ["24h", "del archivo al lomo"],
+          ["72 años", "de trayectoria editorial"],
+          ["1 → ∞", "ejemplares por demanda"],
+          ["6 tintas", "Xerox Iridesse · Oro / Plata / Blanco"],
+          ["24h", "del archivo al lomo"],
           ].map(([n, l]) => (
             <div key={n}>
               <div className="font-display text-2xl md:text-3xl">{n}</div>
