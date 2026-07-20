@@ -24,7 +24,7 @@ export function Laboratorio() {
             La precisión del <span className="italic">oficio</span> en la era <span className="gold-text italic">digital</span>.
           </h2>
           <p className="max-w-2xl text-paper/70 md:text-lg">
-            Hardware y workflow de última generación al servicio del oficio editorial.
+            Equipamiento y flujos de trabajo de última generación al servicio del oficio editorial.
             No solo imprimimos: creamos texturas visuales imposibles para la
             tecnología convencional. Deslizá para ver la diferencia.
           </p>
