@@ -226,6 +226,10 @@ function ImpresionDemandaCard({
 }
 
 export function Servicios() {
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const flipped = (id: string) => activeId === id;
+  const toggle = (id: string) => setActiveId((current) => (current === id ? null : id));
+
   return (
     <section id="servicios" className="bg-paper py-32 md:py-44">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
@@ -241,6 +245,8 @@ export function Servicios() {
 
         <div className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           <ServiceCard
+            flipped={flipped("web-approval")}
+            onToggle={() => toggle("web-approval")}
             ariaLabel="Web Approval — clic para ver los beneficios"
             titleLead="Web"
             titleAccent="Approval"
@@ -255,6 +261,8 @@ export function Servicios() {
             ]}
           />
           <ServiceCard
+            flipped={flipped("produccion-24")}
+            onToggle={() => toggle("produccion-24")}
             ariaLabel="Producción 24 horas — clic para ver los beneficios"
             titleLead="Producción"
             titleAccent="24 horas"
@@ -269,6 +277,8 @@ export function Servicios() {
             ]}
           />
           <ServiceCard
+            flipped={flipped("datos-variables")}
+            onToggle={() => toggle("datos-variables")}
             ariaLabel="Datos Variables — clic para ver los beneficios"
             titleLead="Datos"
             titleAccent="Variables"
@@ -282,8 +292,13 @@ export function Servicios() {
               { title: "Mil versiones", body: "Los datos cambian sin pausar la producción." },
             ]}
           />
-          <ImpresionDemandaCard />
+          <ImpresionDemandaCard
+            flipped={flipped("impresion-demanda")}
+            onToggle={() => toggle("impresion-demanda")}
+          />
           <ServiceCard
+            flipped={flipped("encuadernacion-pur")}
+            onToggle={() => toggle("encuadernacion-pur")}
             ariaLabel="Encuadernación PUR — clic para ver los beneficios"
             titleLead="Encuadernación"
             titleAccent="PUR"
@@ -298,6 +313,8 @@ export function Servicios() {
             ]}
           />
           <ServiceCard
+            flipped={flipped("xerox-iridesse")}
+            onToggle={() => toggle("xerox-iridesse")}
             ariaLabel="Xerox Iridesse — clic para ver los beneficios"
             titleLead="Xerox"
             titleAccent="Iridesse"
@@ -312,7 +329,6 @@ export function Servicios() {
               { title: "Premium", body: "Ideal para invitaciones, catálogos y piezas de autor." },
             ]}
           />
-
         </div>
       </div>
     </section>
