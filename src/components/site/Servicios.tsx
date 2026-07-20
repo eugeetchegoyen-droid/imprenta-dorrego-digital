@@ -43,6 +43,8 @@ function ServiceCard({
   imageAlt,
   imageObjectPosition = "center 30%",
   frontRight,
+  flipped,
+  onToggle,
 }: {
   ariaLabel: string;
   titleLead: string;
@@ -54,9 +56,9 @@ function ServiceCard({
   imageObjectPosition?: string;
   /** Optional custom node for the front right column instead of image (used by POD counter). */
   frontRight?: React.ReactNode;
+  flipped: boolean;
+  onToggle: () => void;
 }) {
-  const [flipped, setFlipped] = useState(false);
-  const toggle = () => setFlipped((v) => !v);
 
   return (
     <CardWrapper>
