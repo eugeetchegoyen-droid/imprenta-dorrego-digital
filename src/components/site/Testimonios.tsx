@@ -130,7 +130,7 @@ export function Testimonios() {
 
   const resetAuto = () => {
     if (autoTimerRef.current) window.clearInterval(autoTimerRef.current);
-    if (!isPaused) autoTimerRef.current = window.setInterval(advanceAuto, 6500);
+    if (!isPaused) autoTimerRef.current = window.setInterval(advanceAuto, 4000);
   };
 
   useEffect(() => {
@@ -151,7 +151,7 @@ export function Testimonios() {
       autoTimerRef.current = null;
       return;
     }
-    autoTimerRef.current = window.setInterval(advanceAuto, 6500);
+    autoTimerRef.current = window.setInterval(advanceAuto, 4000);
     return () => {
       if (autoTimerRef.current) window.clearInterval(autoTimerRef.current);
     };
