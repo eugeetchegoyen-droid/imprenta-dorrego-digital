@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { toast } from "sonner";
+import { Mail, Phone, MessageCircle, Instagram, Linkedin } from "lucide-react";
 
 export function Contacto() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -107,29 +108,36 @@ export function Contacto() {
                 Múltiples canales para responder
               </h2>
 
-              <div className="mt-10 space-y-8">
+              <div className="mt-10 space-y-6">
                 <ContactItem
+                  icon={<Mail size={18} />}
                   label="Mail"
                   value="hola@imprentadorrego.com.ar"
                   href="mailto:hola@imprentadorrego.com.ar"
-                  hint="Respondemos en 24 horas hábiles"
                 />
                 <ContactItem
+                  icon={<Phone size={18} />}
                   label="Teléfono"
                   value="+54 11 4700 0000"
                   href="tel:+541147000000"
-                  hint="Lun – Vie · 9 a 18 hs"
                 />
                 <ContactItem
+                  icon={<MessageCircle size={18} />}
                   label="WhatsApp"
                   value="+54 11 4700 0000"
                   href="https://wa.me/541147000000"
-                  hint="Consultas rápidas y cotizaciones"
                 />
                 <ContactItem
-                  label="Dirección"
-                  value="Av. Dorrego 1234, C1414 CABA · Argentina"
-                  hint="Visitanos con cita previa"
+                  icon={<Instagram size={18} />}
+                  label="Instagram"
+                  value="@imprentadorrego"
+                  href="https://instagram.com/imprentadorrego"
+                />
+                <ContactItem
+                  icon={<Linkedin size={18} />}
+                  label="LinkedIn"
+                  value="Imprenta Dorrego"
+                  href="https://linkedin.com/company/imprenta-dorrego"
                 />
               </div>
 
@@ -138,7 +146,7 @@ export function Contacto() {
                   Horario de atención
                 </div>
                 <p className="mt-3 text-sm text-paper/80">
-                  Lunes a viernes · 9 a 18 hs
+                  Lunes a viernes · 9 a 18 hs · Av. Dorrego 1234, CABA
                 </p>
               </div>
             </div>
@@ -180,30 +188,33 @@ function Field({
 }
 
 function ContactItem({
+  icon,
   label,
   value,
   href,
-  hint,
 }: {
+  icon: React.ReactNode;
   label: string;
   value: string;
   href?: string;
-  hint?: string;
 }) {
-  return (
-    <div>
-      <div className="text-[10px] uppercase tracking-[0.25em] text-paper/40">{label}</div>
-      {href ? (
-        <a
-          href={href}
-          className="mt-2 block font-display text-xl text-paper transition-colors hover:text-gold"
-        >
+  const content = (
+    <div className="flex items-center gap-4">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-paper/20 text-gold transition-colors group-hover:border-gold group-hover:bg-gold group-hover:text-onyx">
+        {icon}
+      </span>
+      <div>
+        <div className="text-[10px] uppercase tracking-[0.25em] text-paper/40">{label}</div>
+        <div className="mt-0.5 font-display text-xl text-paper transition-colors group-hover:text-gold">
           {value}
-        </a>
-      ) : (
-        <div className="mt-2 font-display text-xl text-paper">{value}</div>
-      )}
-      {hint && <p className="mt-1 text-xs text-paper/50">{hint}</p>}
+        </div>
+      </div>
     </div>
+  );
+  if (!href) return <div>{content}</div>;
+  return (
+    <a href={href} className="group block">
+      {content}
+    </a>
   );
 }
