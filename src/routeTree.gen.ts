@@ -10,12 +10,19 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as UniteRouteImport } from './routes/unite'
 import { Route as ApiApplyRouteImport } from './routes/api/apply'
+import { Route as ApiContactoRouteImport } from './routes/api/contacto'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
   getParentRoute: () => rootRouteImport,
 } as any)
 const UniteRoute = UniteRouteImport.update({
@@ -28,35 +35,48 @@ const ApiApplyRoute = ApiApplyRouteImport.update({
   path: '/api/apply',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiContactoRoute = ApiContactoRouteImport.update({
+  id: '/api/contacto',
+  path: '/api/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
   '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
+  '/api/contacto': typeof ApiContactoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
   '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
+  '/api/contacto': typeof ApiContactoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
   '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
+  '/api/contacto': typeof ApiContactoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/unite' | '/api/apply'
+  fullPaths: '/' | '/contacto' | '/unite' | '/api/apply' | '/api/contacto'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/unite' | '/api/apply'
-  id: '__root__' | '/' | '/unite' | '/api/apply'
+  to: '/' | '/contacto' | '/unite' | '/api/apply' | '/api/contacto'
+  id: '__root__' | '/' | '/contacto' | '/unite' | '/api/apply' | '/api/contacto'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactoRoute: typeof ContactoRoute
   UniteRoute: typeof UniteRoute
   ApiApplyRoute: typeof ApiApplyRoute
+  ApiContactoRoute: typeof ApiContactoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -66,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/unite': {
@@ -82,13 +109,22 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiApplyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/contacto': {
+      id: '/api/contacto'
+      path: '/api/contacto'
+      fullPath: '/api/contacto'
+      preLoaderRoute: typeof ApiContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactoRoute: ContactoRoute,
   UniteRoute: UniteRoute,
   ApiApplyRoute: ApiApplyRoute,
+  ApiContactoRoute: ApiContactoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
