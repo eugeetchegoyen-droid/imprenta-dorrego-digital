@@ -108,29 +108,36 @@ export function Contacto() {
                 Múltiples canales para responder
               </h2>
 
-              <div className="mt-10 space-y-8">
+              <div className="mt-10 space-y-6">
                 <ContactItem
+                  icon={<Mail size={18} />}
                   label="Mail"
                   value="hola@imprentadorrego.com.ar"
                   href="mailto:hola@imprentadorrego.com.ar"
-                  hint="Respondemos en 24 horas hábiles"
                 />
                 <ContactItem
+                  icon={<Phone size={18} />}
                   label="Teléfono"
                   value="+54 11 4700 0000"
                   href="tel:+541147000000"
-                  hint="Lun – Vie · 9 a 18 hs"
                 />
                 <ContactItem
+                  icon={<MessageCircle size={18} />}
                   label="WhatsApp"
                   value="+54 11 4700 0000"
                   href="https://wa.me/541147000000"
-                  hint="Consultas rápidas y cotizaciones"
                 />
                 <ContactItem
-                  label="Dirección"
-                  value="Av. Dorrego 1234, C1414 CABA · Argentina"
-                  hint="Visitanos con cita previa"
+                  icon={<Instagram size={18} />}
+                  label="Instagram"
+                  value="@imprentadorrego"
+                  href="https://instagram.com/imprentadorrego"
+                />
+                <ContactItem
+                  icon={<Linkedin size={18} />}
+                  label="LinkedIn"
+                  value="Imprenta Dorrego"
+                  href="https://linkedin.com/company/imprenta-dorrego"
                 />
               </div>
 
@@ -139,7 +146,7 @@ export function Contacto() {
                   Horario de atención
                 </div>
                 <p className="mt-3 text-sm text-paper/80">
-                  Lunes a viernes · 9 a 18 hs
+                  Lunes a viernes · 9 a 18 hs · Av. Dorrego 1234, CABA
                 </p>
               </div>
             </div>
