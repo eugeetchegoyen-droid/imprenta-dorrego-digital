@@ -46,7 +46,7 @@ export function Contacto() {
             <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
               Contanos qué necesitás
             </div>
-            <h2 className="mt-4 font-display text-3xl leading-tight text-ink">
+            <h2 className="mt-4 font-display text-4xl leading-[1.1] text-ink md:text-[2.75rem]">
               Envianos tu consulta
             </h2>
 
