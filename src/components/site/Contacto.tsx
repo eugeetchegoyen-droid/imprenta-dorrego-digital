@@ -43,10 +43,10 @@ export function Contacto() {
           {/* Columna izquierda — formulario */}
           <div className="bg-paper p-8 md:p-12 lg:p-16" data-reveal>
             <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Envanos tu consulta
+              Contanos qué necesitás
             </div>
             <h2 className="mt-4 font-display text-3xl leading-tight text-ink">
-              Contanos qué necesitás
+              Envianos tu consulta
             </h2>
 
             {sent ? (
