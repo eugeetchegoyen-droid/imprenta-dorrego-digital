@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { toast } from "sonner";
 import { Mail, Phone, MessageCircle, Instagram, Linkedin } from "lucide-react";
+import { MapView } from "./MapView";
 
 export function Contacto() {
   const formRef = useRef<HTMLFormElement>(null);
