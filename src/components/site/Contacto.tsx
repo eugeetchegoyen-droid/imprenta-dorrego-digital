@@ -187,18 +187,22 @@ function ContactItem({
 }: {
   label: string;
   value: string;
-  href: string;
+  href?: string;
   hint?: string;
 }) {
   return (
     <div>
       <div className="text-[10px] uppercase tracking-[0.25em] text-paper/40">{label}</div>
-      <a
-        href={href}
-        className="mt-2 block font-display text-xl text-paper transition-colors hover:text-gold"
-      >
-        {value}
-      </a>
+      {href ? (
+        <a
+          href={href}
+          className="mt-2 block font-display text-xl text-paper transition-colors hover:text-gold"
+        >
+          {value}
+        </a>
+      ) : (
+        <div className="mt-2 font-display text-xl text-paper">{value}</div>
+      )}
       {hint && <p className="mt-1 text-xs text-paper/50">{hint}</p>}
     </div>
   );
