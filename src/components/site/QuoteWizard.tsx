@@ -13,12 +13,18 @@ export function QuoteWizard() {
   const [step, setStep] = useState(0);
   const [product, setProduct] = useState<string | null>(null);
   const [qty, setQty] = useState<string | null>(null);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [files, setFiles] = useState<File[]>([]);
   const [done, setDone] = useState(false);
 
   const total = 4;
   const next = () => setStep((s) => Math.min(s + 1, total - 1));
   const back = () => setStep((s) => Math.max(s - 1, 0));
+
+  const emailValid = email.includes("@") && email.includes(".");
+  const formValid = name.trim().length > 1 && emailValid && phone.trim().length > 4;
 
   return (
     <section id="cotizar" className="relative grain overflow-hidden bg-onyx py-32 text-paper md:py-44">
