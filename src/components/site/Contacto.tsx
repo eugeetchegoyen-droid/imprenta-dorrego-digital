@@ -147,8 +147,21 @@ export function Contacto() {
                   Horario de atención
                 </div>
                 <p className="mt-3 text-sm text-paper/80">
-                  Lunes a viernes · 9 a 18 hs · Av. Dorrego 1234, CABA
+                  Lunes a viernes · 9 a 18 hs
                 </p>
+              </div>
+
+              <div className="mt-10">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-gold">
+                  <span className="mr-2 inline-block h-px w-8 align-middle bg-gold" />
+                  ¿Dónde estamos?
+                </div>
+                <p className="mt-3 text-sm text-paper/80">
+                  Av. Dorrego 1102, C1414CKT · Ciudad Autónoma de Buenos Aires
+                </p>
+                <div className="mt-4 h-64 w-full overflow-hidden border border-paper/15">
+                  <MapView lat={-34.5884948} lng={-58.4461036} title="Imprenta Dorrego" />
+                </div>
               </div>
             </div>
           </div>
