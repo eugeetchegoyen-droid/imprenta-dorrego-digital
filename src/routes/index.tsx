@@ -38,6 +38,7 @@ function Index() {
       <Marquee />
       <Laboratorio />
       <PodCalculator />
+      <QuoteCTA />
         <Servicios />
         <Testimonios />
         <Portfolio />
