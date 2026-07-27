@@ -40,13 +40,13 @@ export function Contacto() {
           </h1>
         </div>
 
-        <div className="grid gap-px overflow-hidden border border-border/60 bg-border/60 lg:grid-cols-2">
+        <div className="grid gap-px overflow-hidden border border-border/60 bg-border/60 lg:grid-cols-12">
           {/* Columna izquierda — formulario */}
-          <div className="bg-paper p-8 md:p-12 lg:p-16" data-reveal>
+          <div className="bg-paper p-8 md:p-12 lg:col-span-7 lg:p-16" data-reveal>
             <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
               Contanos qué necesitás
             </div>
-            <h2 className="mt-4 font-display text-3xl leading-tight text-ink">
+            <h2 className="mt-4 font-display text-4xl leading-[1.1] text-ink md:text-[2.75rem]">
               Envianos tu consulta
             </h2>
 
@@ -98,14 +98,14 @@ export function Contacto() {
           </div>
 
           {/* Columna derecha — vías de contacto */}
-          <div className="relative bg-onyx p-8 text-paper md:p-12 lg:p-16" data-reveal>
+          <div className="relative bg-onyx p-8 text-paper md:p-12 lg:col-span-5 lg:p-14" data-reveal>
             <div className="absolute inset-0 opacity-[0.04] [background-image:radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:24px_24px]" />
             <div className="relative">
               <div className="text-[10px] uppercase tracking-[0.3em] text-gold">
                 <span className="mr-2 inline-block h-px w-8 align-middle bg-gold" />
                 Vías de contacto
               </div>
-              <h2 className="mt-4 font-display text-3xl leading-tight">
+              <h2 className="mt-4 font-display text-2xl leading-tight">
                 Múltiples canales para responder
               </h2>
 
