@@ -12,14 +12,20 @@ const schema = z.object({
 
 function escapeHtml(s: string) {
   return s.replace(/[&<>"']/g, (c) => {
-    const map: Record<string, string> = {
-      "&": "&",
-      "<": "<",
-      ">": ">",
-      '"': """,
-      "'": "&#39;",
-    };
-    return map[c]!;
+    switch (c) {
+      case "&":
+        return "&";
+      case "<":
+        return "<";
+      case ">":
+        return ">";
+      case '"':
+        return "&#34;";
+      case "'":
+        return "&#39;";
+      default:
+        return c;
+    }
   });
 }
 
