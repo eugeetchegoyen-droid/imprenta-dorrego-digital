@@ -8,7 +8,6 @@ type NavGroup = { label: string; children: NavLink[] };
 
 const links: (NavLink | NavGroup)[] = [
   { to: "/", hash: "laboratorio", label: "Nuestra tecnología" },
-  { to: "/", hash: "portfolio", label: "Nuestros trabajos" },
   {
     label: "Servicios",
     children: [
@@ -17,6 +16,7 @@ const links: (NavLink | NavGroup)[] = [
       { to: "/", hash: "cotizar", label: "Solicitar cotización" },
     ],
   },
+  { to: "/", hash: "portfolio", label: "Nuestros trabajos" },
   { to: "/unite", label: "Unite al equipo" },
 ];
 
