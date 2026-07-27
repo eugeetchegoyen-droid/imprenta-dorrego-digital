@@ -95,6 +95,32 @@ export function Contacto() {
                 </p>
               </form>
             )}
+
+            {/* CTA reclutamiento */}
+            <div className="mt-auto pt-14">
+              <div className="border-t border-border/60 pt-8">
+                <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-[0.3em] text-gold">
+                      RR. HH.
+                    </div>
+                    <h3 className="mt-3 font-display text-2xl leading-tight text-ink md:text-3xl">
+                      ¿Querés trabajar con nosotros?
+                    </h3>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Sumate al equipo de Imprenta Dorrego y contanos tu experiencia.
+                    </p>
+                  </div>
+                  <a
+                    href="/unite"
+                    className="group inline-flex shrink-0 items-center justify-center gap-3 border border-gold bg-gold px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.22em] text-onyx transition-all hover:bg-transparent hover:text-gold"
+                  >
+                    Unite al equipo
+                    <span className="h-1.5 w-1.5 rounded-full bg-onyx transition-colors group-hover:bg-gold" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Columna derecha — vías de contacto */}
