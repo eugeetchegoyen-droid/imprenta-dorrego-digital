@@ -140,6 +140,17 @@ export function QuoteWizard() {
                     />
                   </div>
 
+                  <div className="md:col-span-2 mt-2 grid gap-1">
+                    <label className="text-[10px] uppercase tracking-[0.25em] text-paper/50">Comentarios</label>
+                    <textarea
+                      placeholder="Contanos detalles del proyecto, formato, tipo de papel, plazos, acabados…"
+                      value={comments}
+                      onChange={(e) => setComments(e.target.value)}
+                      rows={4}
+                      className="w-full border-b border-paper/30 bg-transparent py-3 text-lg outline-none placeholder:text-paper/30 focus:border-gold"
+                    />
+                  </div>
+
                   <div className="md:col-span-2 mt-2">
                     <label className="text-[10px] uppercase tracking-[0.25em] text-paper/50">Archivos del proyecto</label>
                     <label className="mt-2 flex cursor-pointer items-center justify-center gap-3 border border-dashed border-paper/30 px-6 py-8 text-center transition-colors hover:border-gold">
