@@ -106,27 +106,86 @@ export function QuoteWizard() {
             {step === 2 && (
               <div>
                 <h3 className="font-display text-3xl">Dejanos tu contacto</h3>
-                <p className="mt-2 text-paper/65">Te enviamos un enlace al Web Approval para subir los archivos.</p>
-                <div className="mt-8 grid gap-4">
-                  <input
-                    type="email"
-                    placeholder="tu@email.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full border-b border-paper/30 bg-transparent py-4 font-display text-2xl outline-none placeholder:text-paper/30 focus:border-gold"
-                  />
-                  <textarea
-                    rows={3}
-                    placeholder="Contanos brevemente del proyecto (opcional)"
-                    className="w-full border border-paper/15 bg-transparent p-4 text-sm outline-none placeholder:text-paper/30 focus:border-gold"
-                  />
-                  <button
-                    disabled={!email.includes("@")}
-                    onClick={() => { setDone(true); next(); }}
-                    className="mt-2 self-start bg-gold px-8 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-onyx transition-all disabled:cursor-not-allowed disabled:opacity-30 enabled:hover:bg-gold-soft enabled:hover:shadow-gold"
-                  >
-                    Enviar cotización
-                  </button>
+                <p className="mt-2 text-paper/65">Completá tus datos y adjuntá los archivos del proyecto (opcional).</p>
+                <div className="mt-8 grid gap-5 md:grid-cols-2">
+                  <div className="md:col-span-2 grid gap-1">
+                    <label className="text-[10px] uppercase tracking-[0.25em] text-paper/50">Nombre y Apellido</label>
+                    <input
+                      type="text"
+                      placeholder="Juan Pérez"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full border-b border-paper/30 bg-transparent py-3 text-lg outline-none placeholder:text-paper/30 focus:border-gold"
+                    />
+                  </div>
+                  <div className="grid gap-1">
+                    <label className="text-[10px] uppercase tracking-[0.25em] text-paper/50">Email</label>
+                    <input
+                      type="email"
+                      placeholder="tu@email.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full border-b border-paper/30 bg-transparent py-3 text-lg outline-none placeholder:text-paper/30 focus:border-gold"
+                    />
+                  </div>
+                  <div className="grid gap-1">
+                    <label className="text-[10px] uppercase tracking-[0.25em] text-paper/50">Teléfono</label>
+                    <input
+                      type="tel"
+                      placeholder="+54 11 0000 0000"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="w-full border-b border-paper/30 bg-transparent py-3 text-lg outline-none placeholder:text-paper/30 focus:border-gold"
+                    />
+                  </div>
+
+                  <div className="md:col-span-2 mt-2">
+                    <label className="text-[10px] uppercase tracking-[0.25em] text-paper/50">Archivos del proyecto</label>
+                    <label className="mt-2 flex cursor-pointer items-center justify-center gap-3 border border-dashed border-paper/30 px-6 py-8 text-center transition-colors hover:border-gold">
+                      <span className="text-gold">⬆</span>
+                      <span className="text-sm text-paper/70">
+                        {files.length > 0
+                          ? `${files.length} archivo${files.length > 1 ? "s" : ""} seleccionado${files.length > 1 ? "s" : ""}`
+                          : "Examinar y subir archivos (PDF, JPG, PNG…)"}
+                      </span>
+                      <input
+                        type="file"
+                        multiple
+                        className="hidden"
+                        onChange={(e) => {
+                          const picked = e.target.files ? Array.from(e.target.files) : [];
+                          setFiles((prev) => [...prev, ...picked]);
+                          e.target.value = "";
+                        }}
+                      />
+                    </label>
+                    {files.length > 0 && (
+                      <ul className="mt-3 grid gap-2">
+                        {files.map((f, i) => (
+                          <li key={i} className="flex items-center justify-between border border-paper/15 bg-paper/5 px-4 py-2 text-sm">
+                            <span className="truncate text-paper/80">{f.name}</span>
+                            <button
+                              onClick={() => setFiles((prev) => prev.filter((_, idx) => idx !== i))}
+                              className="ml-3 text-paper/40 transition-colors hover:text-gold"
+                              aria-label="Quitar archivo"
+                            >
+                              ✕
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+
+                  <div className="md:col-span-2 mt-2">
+                    <button
+                      disabled={!formValid}
+                      onClick={() => { setDone(true); next(); }}
+                      className="self-start bg-gold px-8 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-onyx transition-all disabled:cursor-not-allowed disabled:opacity-30 enabled:hover:bg-gold-soft enabled:hover:shadow-gold"
+                    >
+                      Siguiente
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
