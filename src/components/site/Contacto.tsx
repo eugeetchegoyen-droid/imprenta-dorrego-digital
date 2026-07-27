@@ -105,7 +105,7 @@ export function Contacto() {
                 <span className="mr-2 inline-block h-px w-8 align-middle bg-gold" />
                 Vías de contacto
               </div>
-              <h2 className="mt-4 font-display text-3xl leading-tight">
+              <h2 className="mt-4 font-display text-2xl leading-tight">
                 Múltiples canales para responder
               </h2>
 
