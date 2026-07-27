@@ -16,6 +16,7 @@ export function QuoteWizard() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [comments, setComments] = useState("");
   const [files, setFiles] = useState<File[]>([]);
   const [done, setDone] = useState(false);
 
