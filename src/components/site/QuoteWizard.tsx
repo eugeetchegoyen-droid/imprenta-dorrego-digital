@@ -28,7 +28,7 @@ export function QuoteWizard() {
         <div className="text-center reveal">
           <div className="flex items-center justify-center gap-3 text-xs uppercase tracking-[0.3em] text-paper/60">
             <span className="h-px w-10 bg-gold" />
-            Cotización inteligente
+            Solicitar cotización
             <span className="h-px w-10 bg-gold" />
           </div>
           <h2 className="mx-auto mt-6 max-w-3xl font-display text-[clamp(2.2rem,5vw,4.6rem)] font-light leading-[1] tracking-[-0.02em]">
