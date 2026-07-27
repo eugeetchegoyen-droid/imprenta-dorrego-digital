@@ -40,7 +40,7 @@ export function Contacto() {
           </h1>
         </div>
 
-        <div className="grid gap-px overflow-hidden border border-border/60 bg-border/60 lg:grid-cols-2">
+        <div className="grid gap-px overflow-hidden border border-border/60 bg-border/60 lg:grid-cols-12">
           {/* Columna izquierda — formulario */}
           <div className="bg-paper p-8 md:p-12 lg:p-16" data-reveal>
             <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
