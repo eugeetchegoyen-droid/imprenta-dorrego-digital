@@ -11,9 +11,16 @@ const schema = z.object({
 });
 
 function escapeHtml(s: string) {
-  return s.replace(/[&<>"']/g, (c) =>
-    ({ "&": "&", "<": "<", ">": ">", '"': """, "'": "&#39;" }[c]!),
-  );
+  return s.replace(/[&<>"']/g, (c) => {
+    const map: Record<string, string> = {
+      "&": "&",
+      "<": "<",
+      ">": ">",
+      '"': """,
+      "'": "&#39;",
+    };
+    return map[c]!;
+  });
 }
 
 export const Route = createFileRoute("/api/contacto")({
