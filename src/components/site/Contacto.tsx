@@ -154,8 +154,11 @@ export function Contacto() {
               <div className="mt-10">
                 <div className="text-[10px] uppercase tracking-[0.3em] text-gold">
                   <span className="mr-2 inline-block h-px w-8 align-middle bg-gold" />
-                  ¿Dónde estamos?
+                  Nuestra ubicación
                 </div>
+                <h3 className="mt-4 font-display text-2xl leading-tight">
+                  ¿Dónde estamos?
+                </h3>
                 <p className="mt-3 text-sm text-paper/80">
                   Av. Dorrego 1102, C1414CKT · Ciudad Autónoma de Buenos Aires
                 </p>
