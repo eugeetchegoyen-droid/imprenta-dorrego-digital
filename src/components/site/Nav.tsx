@@ -13,6 +13,7 @@ const links: (NavLink | NavGroup)[] = [
     label: "Servicios",
     children: [
       { to: "/", hash: "servicios", label: "Servicios" },
+      { to: "/", hash: "editorial", label: "Impresión por demanda" },
       { to: "/", hash: "cotizar", label: "Solicitar cotización" },
     ],
   },
