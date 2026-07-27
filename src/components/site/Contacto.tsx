@@ -188,30 +188,33 @@ function Field({
 }
 
 function ContactItem({
+  icon,
   label,
   value,
   href,
-  hint,
 }: {
+  icon: React.ReactNode;
   label: string;
   value: string;
   href?: string;
-  hint?: string;
 }) {
-  return (
-    <div>
-      <div className="text-[10px] uppercase tracking-[0.25em] text-paper/40">{label}</div>
-      {href ? (
-        <a
-          href={href}
-          className="mt-2 block font-display text-xl text-paper transition-colors hover:text-gold"
-        >
+  const content = (
+    <div className="flex items-center gap-4">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-paper/20 text-gold transition-colors group-hover:border-gold group-hover:bg-gold group-hover:text-onyx">
+        {icon}
+      </span>
+      <div>
+        <div className="text-[10px] uppercase tracking-[0.25em] text-paper/40">{label}</div>
+        <div className="mt-0.5 font-display text-xl text-paper transition-colors group-hover:text-gold">
           {value}
-        </a>
-      ) : (
-        <div className="mt-2 font-display text-xl text-paper">{value}</div>
-      )}
-      {hint && <p className="mt-1 text-xs text-paper/50">{hint}</p>}
+        </div>
+      </div>
     </div>
+  );
+  if (!href) return <div>{content}</div>;
+  return (
+    <a href={href} className="group block">
+      {content}
+    </a>
   );
 }
