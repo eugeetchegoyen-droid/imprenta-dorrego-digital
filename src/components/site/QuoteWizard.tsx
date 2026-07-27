@@ -16,6 +16,7 @@ export function QuoteWizard() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [comments, setComments] = useState("");
   const [files, setFiles] = useState<File[]>([]);
   const [done, setDone] = useState(false);
 
@@ -135,6 +136,17 @@ export function QuoteWizard() {
                       placeholder="+54 11 0000 0000"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
+                      className="w-full border-b border-paper/30 bg-transparent py-3 text-lg outline-none placeholder:text-paper/30 focus:border-gold"
+                    />
+                  </div>
+
+                  <div className="md:col-span-2 mt-2 grid gap-1">
+                    <label className="text-[10px] uppercase tracking-[0.25em] text-paper/50">Comentarios</label>
+                    <textarea
+                      placeholder="Contanos detalles del proyecto, formato, tipo de papel, plazos, acabados…"
+                      value={comments}
+                      onChange={(e) => setComments(e.target.value)}
+                      rows={4}
                       className="w-full border-b border-paper/30 bg-transparent py-3 text-lg outline-none placeholder:text-paper/30 focus:border-gold"
                     />
                   </div>
