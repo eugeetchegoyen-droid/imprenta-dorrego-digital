@@ -110,9 +110,7 @@ export function Nav() {
                 key={`${l.to}${l.hash ?? ""}`}
                 to={l.to}
                 hash={l.hash}
-                className={`group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink${
-                  l.label === "Nuestra tecnología" ? " min-w-[150px] text-center" : ""
-                }`}
+                className="group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink"
               >
                 {l.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
