@@ -65,10 +65,15 @@ export function Laboratorio() {
         <div id="approval" className="mt-32 grid gap-12 md:grid-cols-12 md:gap-16 reveal">
           <div className="md:col-span-5">
             <div className="text-[11px] uppercase tracking-[0.3em] text-gold">Pieza 02</div>
-            <h3 className="mt-4 font-display text-4xl md:text-5xl">Web Approval</h3>
+            <h3 className="mt-4 font-display text-4xl md:text-5xl">
+              Aprobá tu trabajo <span className="italic">online</span>,
+              <br />
+              <span className="gold-text italic">en tiempo real</span>.
+            </h3>
             <p className="mt-4 text-paper/70">
-              Tu propia herramienta de trabajo. Transparencia, velocidad y
-              control absoluto de la producción desde el escritorio.
+              Con <strong className="text-paper">Web Approval</strong>, nuestra plataforma de revisión digital
+              de pruebas con control de versiones y trazabilidad: menos idas y vueltas,
+              cero sorpresas en la máquina y control absoluto de la producción desde tu escritorio.
             </p>
             <a href="#cotizar" className="mt-8 inline-flex items-center gap-3 border border-gold/60 px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-onyx">
               Acceder al portal →
