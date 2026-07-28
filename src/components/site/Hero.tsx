@@ -41,14 +41,14 @@ const SLIDES: Slide[] = [
       <>
         Packaging
         <br />
-        que <span className="gold-text italic">vende</span>.
+        de <span className="gold-text italic">alto impacto</span>.
       </>
     ),
     text:
-      "Cajas, etiquetas y piezas de alto impacto visual con acabados que destacan tu marca en el punto de venta.",
+      "Cajas, etiquetas y piezas que destacan tu marca en el punto de venta, con acabados que captan la mirada al instante.",
     featured: {
       title: "Packaging & etiquetas",
-      sub: "impacto en góndola",
+      sub: "de alto impacto",
       body: "Tiradas cortas de cajas, rótulos y etiquetas en rollo, con foil, texturas y sustratos especiales.",
     },
   },
