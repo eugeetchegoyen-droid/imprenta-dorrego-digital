@@ -194,7 +194,7 @@ export function Hero() {
               href="#laboratorio"
               className="group inline-flex items-center gap-3 border border-paper/30 px-6 py-4 text-sm font-medium uppercase tracking-[0.18em] text-paper transition-all hover:border-paper hover:bg-paper/5"
             >
-              Conocer la tecnología
+              Nuestra tecnología
             </a>
           </div>
         </div>
