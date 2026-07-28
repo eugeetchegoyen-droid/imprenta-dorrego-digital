@@ -261,14 +261,6 @@ export function Testimonios() {
                 <path d="M13.5 7H1M4.8 3.2L1 7l3.8 3.8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
-            <a
-              href="https://www.google.com/search?q=Imprenta+Dorrego+opiniones"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground underline-offset-4 hover:text-ink hover:underline"
-            >
-              Ver todas en Google
-            </a>
             <button
               type="button"
               onClick={() => scrollBy(1)}
@@ -283,19 +275,6 @@ export function Testimonios() {
           </div>
         </div>
 
-        <div className="mt-10 hidden md:block">
-          <a
-            href="https://www.google.com/search?q=Imprenta+Dorrego+opiniones"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-muted-foreground underline-offset-4 hover:text-ink hover:underline"
-          >
-            Ver todas las reseñas en Google
-            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M0.5 7H13M9.2 3.2L13 7l-3.8 3.8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-        </div>
       </div>
     </section>
   );
