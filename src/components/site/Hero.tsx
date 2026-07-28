@@ -77,7 +77,7 @@ const SLIDES: Slide[] = [
     kicker: "Web Approval",
     title: (
       <>
-        Aprobá tu obra <span className="italic font-normal">online</span>,
+        Aprobá tu trabajo <span className="italic font-normal">online</span>,
         <br />
         <span className="gold-text italic">en tiempo real</span>.
       </>
