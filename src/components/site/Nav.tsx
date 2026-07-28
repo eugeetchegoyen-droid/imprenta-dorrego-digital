@@ -46,15 +46,15 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 lg:px-10">
-        <Link to="/" className="group flex items-center gap-3">
+        <Link to="/" className="group flex items-center gap-3.5">
           <img
             src={logoAsset.url}
             alt="Imprenta Dorrego"
-            className="h-10 w-auto md:h-11"
+            className="h-13 w-auto md:h-14 lg:h-[60px]"
           />
           <div className="leading-tight">
-            <div className="font-display text-base tracking-tight text-ink">Imprenta Dorrego</div>
-            <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Editorial · Digital · POD</div>
+            <div className="font-display text-lg tracking-tight text-ink md:text-xl">Imprenta Dorrego</div>
+            <div className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">Editorial · Digital · POD</div>
           </div>
         </Link>
 
