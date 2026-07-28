@@ -64,7 +64,7 @@ export function Laboratorio() {
         {/* Web Approval */}
         <div id="approval" className="mt-32 grid gap-12 md:grid-cols-12 md:gap-16 reveal">
           <div className="md:col-span-5">
-            <div className="text-[11px] uppercase tracking-[0.3em] text-gold">Pieza 02</div>
+            <div className="text-[11px] uppercase tracking-[0.3em] text-gold">WEB APPROVAL</div>
             <h3 className="mt-4 font-display text-4xl md:text-5xl">
               Aprobá tu trabajo <span className="italic">online</span>,
               <br />
