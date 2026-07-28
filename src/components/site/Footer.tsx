@@ -9,7 +9,7 @@ export function Footer() {
               Editorial · Digital · Bajo demanda. Buenos Aires, Argentina.
             </p>
             <a href="#cotizar" className="mt-8 inline-flex items-center gap-3 border border-gold/60 px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-onyx">
-              Empezá un proyecto →
+              Cotiza tu proyecto →
             </a>
           </div>
 
