@@ -52,6 +52,20 @@ export function Laboratorio() {
                 </li>
               ))}
             </ul>
+            <ol className="mt-8 space-y-4 text-sm">
+              {[
+                { n: "01", t: "Impresión CMYK", d: "La base: cuatricromía convencional sobre el sustrato, el punto de partida visible en el lado izquierdo del comparador." },
+                { n: "02", t: "Xerox Iridesse · PINK", d: "La capa adicional: tinta especial rosa iridiscente que suma brillo, profundidad y un acabado metálico imposible para la impresión tradicional." },
+              ].map((x) => (
+                <li key={x.n} className="flex gap-4 border-b border-paper/10 pb-4">
+                  <span className="font-display text-lg leading-none text-gold">{x.n}</span>
+                  <div>
+                    <div className="font-medium text-paper">{x.t}</div>
+                    <p className="mt-1 text-paper/60">{x.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
           <div className="md:col-span-7">
             <IridesseSlider />
