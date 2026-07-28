@@ -59,7 +59,7 @@ export function Nav() {
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {links.map((l) =>
+          {links.map((l, i) =>
             isGroup(l) ? (
               <div
                 key={l.label}
