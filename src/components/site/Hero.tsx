@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import heroImg from "@/assets/hero-press.jpg";
-import iridesseAsset from "@/assets/iridesse-hero.jpg.asset.json";
-import prod24Asset from "@/assets/prod24-hero.jpg.asset.json";
+import prensaAsset from "@/assets/hero-prensa.jpg.asset.json";
+import packagingAsset from "@/assets/hero-packaging.jpg.asset.json";
+import terminacionesAsset from "@/assets/hero-terminaciones.jpg.asset.json";
 import webApprovalAsset from "@/assets/webapproval-hero.jpg.asset.json";
 
 type Slide = {
@@ -15,18 +15,18 @@ type Slide = {
 
 const SLIDES: Slide[] = [
   {
-    img: heroImg,
-    alt: "Prensa digital Xerox imprimiendo con tinta dorada",
+    img: prensaAsset.url,
+    alt: "Prensa digital de producción imprimiendo pliegos a color",
     kicker: "Buenos Aires · desde 1952",
     title: (
       <>
-        Precisión <span className="italic font-normal">editorial</span>,
+        Impresión digital
         <br />
-        flexibilidad <span className="gold-text italic">digital</span>.
+        de <span className="gold-text italic">máxima calidad</span>.
       </>
     ),
     text:
-      "Impresión bajo demanda con calidad de autor. Tecnología Xerox Iridesse, encuadernación PUR y aprobación online en tiempo real — desde un solo ejemplar hasta tirajes editoriales.",
+      "Producción profesional con colores precisos, terminaciones premium y tiempos de entrega ágiles para empresas, agencias y marcas.",
     featured: {
       title: "Impresión digital",
       sub: "de máxima calidad",
@@ -34,41 +34,41 @@ const SLIDES: Slide[] = [
     },
   },
   {
-    img: iridesseAsset.url,
-    alt: "Impresión con tintas metalizadas Xerox Iridesse",
-    kicker: "Xerox Iridesse · 6 estaciones",
+    img: packagingAsset.url,
+    alt: "Packaging premium con etiquetas y detalles en foil dorado",
+    kicker: "Packaging & etiquetas",
     title: (
       <>
-        Tintas que <span className="gold-text italic">brillan</span>,
+        Packaging
         <br />
-        detalles que <span className="italic font-normal">venden</span>.
+        que <span className="gold-text italic">vende</span>.
       </>
     ),
     text:
-      "Oro, plata, blanco y tintas fluorescentes aplicadas en una sola pasada. Acabados metalizados de alto impacto sin costos de estampado tradicional.",
+      "Cajas, etiquetas y piezas de alto impacto visual con acabados que destacan tu marca en el punto de venta.",
     featured: {
-      title: "Tintas especiales",
-      sub: "oro, plata y blanco",
-      body: "Realce metalizado en línea sobre cualquier sustrato: tapas, packaging y piezas promocionales con terminación de lujo.",
+      title: "Packaging & etiquetas",
+      sub: "impacto en góndola",
+      body: "Tiradas cortas de cajas, rótulos y etiquetas en rollo, con foil, texturas y sustratos especiales.",
     },
   },
   {
-    img: prod24Asset.url,
-    alt: "Producción de libros en 24 horas",
-    kicker: "Producción 24 hs",
+    img: terminacionesAsset.url,
+    alt: "Tarjetas negras con relieve, barniz sectorizado y stamping plateado",
+    kicker: "Terminaciones especiales",
     title: (
       <>
-        Del archivo <span className="italic font-normal">al lomo</span>
+        Terminaciones
         <br />
-        en <span className="gold-text italic">24 horas</span>.
+        que hacen la <span className="gold-text italic">diferencia</span>.
       </>
     ),
     text:
-      "Flujos de trabajo automatizados y planta propia. Tiradas cortas resueltas en un día hábil, sin mínimos ni sobrecostos ocultos.",
+      "Laminados, barniz sectorizado, stamping, relieve y efectos especiales para piezas memorables al tacto y a la vista.",
     featured: {
-      title: "Entrega ágil",
-      sub: "en 24 horas hábiles",
-      body: "Planta propia y logística en CABA: producimos, encuadernamos y despachamos sin intermediarios.",
+      title: "Acabados premium",
+      sub: "relieve, foil y barniz UV",
+      body: "Realce metalizado y texturas en línea sobre cualquier sustrato: tapas, packaging y piezas promocionales.",
     },
   },
   {
@@ -91,6 +91,7 @@ const SLIDES: Slide[] = [
     },
   },
 ];
+
 
 const INTERVAL = 6000;
 
