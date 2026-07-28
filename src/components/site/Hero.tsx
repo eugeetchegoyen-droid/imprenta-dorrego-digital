@@ -72,24 +72,23 @@ const SLIDES: Slide[] = [
     },
   },
   {
-    img: webApprovalAsset.url,
-    alt: "Plataforma Web Approval de aprobación online",
-    kicker: "Web Approval",
+    img: encuadernacionAsset.url,
+    alt: "Libros encuadernados con tapa a todo color",
+    kicker: "Encuadernación profesional",
     title: (
       <>
-        Aprobá tu trabajo <span className="italic font-normal">online</span>,
-        <br />
-        <span className="gold-text italic">en tiempo real</span>.
+        Papel, tinta y <span className="gold-text italic">trayectoria</span>.
       </>
     ),
     text:
-      "Revisión digital de pruebas con control de versiones y trazabilidad. Menos idas y vueltas, cero sorpresas en la máquina.",
+      "Más de 70 años de experiencia en impresión en el corazón de Buenos Aires, con encuadernación profesional de punta a punta.",
     featured: {
-      title: "Aprobación online",
-      sub: "control total del proceso",
-      body: "Visualizá, comentá y aprobá cada pliego desde el navegador, con historial completo de cambios.",
+      title: "Encuadernación profesional",
+      sub: "PUR, hotmelt, abrochado y anillado",
+      body: "Libros, catálogos y revistas terminados en casa: lomo cuadrado, tapas laminadas y control de calidad ejemplar por ejemplar.",
     },
   },
+
 ];
 
 
