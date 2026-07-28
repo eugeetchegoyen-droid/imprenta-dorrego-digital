@@ -59,7 +59,7 @@ export function Nav() {
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {links.map((l) =>
+          {links.map((l, i) =>
             isGroup(l) ? (
               <div
                 key={l.label}
@@ -110,7 +110,9 @@ export function Nav() {
                 key={`${l.to}${l.hash ?? ""}`}
                 to={l.to}
                 hash={l.hash}
-                className="group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink"
+                className={`group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink ${
+                  i === 0 ? "md:ml-4" : ""
+                }`}
               >
                 {l.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
