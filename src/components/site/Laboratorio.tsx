@@ -52,32 +52,6 @@ export function Laboratorio() {
                 </li>
               ))}
             </ul>
-            <ol className="mt-10 space-y-4 text-sm">
-              <li className="flex gap-4 border-b border-paper/10 pb-4">
-                <span className="font-display text-lg leading-none text-gold">01</span>
-                <span className="text-paper/80">Rojos y rosados vivos y reales</span>
-              </li>
-              <li className="flex gap-4 border-b border-paper/10 pb-4">
-                <span className="font-display text-lg leading-none text-gold">02</span>
-                <span className="text-paper/80">Mejores tonos piel</span>
-              </li>
-              <li className="flex gap-4 border-b border-paper/10 pb-4">
-                <span className="font-display text-lg leading-none text-gold">03</span>
-                <span className="text-paper/80">Degradés suaves</span>
-              </li>
-              <li className="flex gap-4 border-b border-paper/10 pb-4">
-                <span className="font-display text-lg leading-none text-gold">04</span>
-                <span className="text-paper/80">Colores brillantes</span>
-              </li>
-              <li className="flex gap-4 border-b border-paper/10 pb-4">
-                <span className="font-display text-lg leading-none text-gold">05</span>
-                <span className="text-paper/80">Más saturación</span>
-              </li>
-              <li className="flex gap-4 border-b border-paper/10 pb-4">
-                <span className="font-display text-lg leading-none text-gold">06</span>
-                <span className="text-paper/80">Pink: adicional a la gama, el más amplio espacio de color</span>
-              </li>
-            </ol>
           </div>
           <div className="md:col-span-7">
             <IridesseSlider />
