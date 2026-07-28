@@ -111,7 +111,7 @@ export function Nav() {
                 to={l.to}
                 hash={l.hash}
                 className={`group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink ${
-                  i === 0 ? "md:ml-4" : ""
+                  i === 0 ? "md:ml-8" : ""
                 }`}
               >
                 {l.label}
