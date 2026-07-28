@@ -8,12 +8,12 @@ export function Manifesto() {
         <img
           src={historiaImg.url}
           alt="Taller histórico de Imprenta Dorrego, 1952"
-          className="h-full w-full object-cover opacity-25"
+          className="h-full w-full object-cover opacity-40"
           style={{
             WebkitMaskImage:
-              "linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 70%)",
+              "linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 78%)",
             maskImage:
-              "linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 70%)",
+              "linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 78%)",
           }}
         />
       </div>
