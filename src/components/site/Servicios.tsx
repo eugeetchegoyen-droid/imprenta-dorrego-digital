@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import webApprovalHero from "@/assets/webapproval-hero.jpg.asset.json";
 import prod24Hero from "@/assets/prod24-hero.jpg.asset.json";
 import datosVariablesHero from "@/assets/datosvariables-hero.jpg.asset.json";
-import purHero from "@/assets/pur-hero.jpg.asset.json";
+import purHero from "@/assets/pur-libros.png.asset.json";
 import iridesseHero from "@/assets/iridesse-hero.jpg.asset.json";
 
 type Benefit = { title: string; body: string };
@@ -300,7 +300,8 @@ export function Servicios() {
             titleAccent="PUR"
             tagline="El lomo más resistente para sus publicaciones."
             image={purHero.url}
-            imageAlt="Libro abierto con encuadernación PUR"
+            imageAlt="Libros con encuadernación PUR"
+            imageObjectPosition="center center"
             benefits={[
               { title: "Durabilidad", body: "Resiste humedad y uso intensivo." },
               { title: "Apertura plana", body: "Las páginas se abren sin tensión." },
