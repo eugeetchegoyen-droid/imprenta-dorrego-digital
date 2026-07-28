@@ -187,7 +187,7 @@ export function Hero() {
               href="#cotizar"
               className="group inline-flex items-center gap-3 bg-gold px-6 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-onyx transition-all hover:bg-gold-soft hover:shadow-gold"
             >
-              Comenzar un proyecto
+              Solicitar cotización
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </a>
             <a
