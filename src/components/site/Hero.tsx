@@ -173,17 +173,17 @@ export function Hero() {
 
         {/* Headline — synced caption */}
         <div className="mt-8 max-w-[1100px]">
-          <div
-            key={i}
-            className="hero-soft-fade min-h-[17rem] overflow-visible md:min-h-[clamp(14rem,26vw,22rem)]"
-          >
-            <h1 className="font-display overflow-visible pr-[0.45em] text-[clamp(3rem,9vw,9.5rem)] font-light leading-[0.92] tracking-normal text-balance md:pr-[0.6em]">
-              {slide.title}
-            </h1>
-            <p className="mt-8 max-w-xl text-base text-paper/75 md:text-lg text-pretty">
-              {slide.text}
-            </p>
+          <div className="relative h-[20rem] overflow-visible md:h-[clamp(16rem,26vw,23rem)]">
+            <div key={i} className="hero-soft-fade absolute inset-0 overflow-visible">
+              <h1 className="font-display overflow-visible pr-[0.45em] text-[clamp(3rem,9vw,9.5rem)] font-light leading-[0.92] tracking-normal text-balance md:pr-[0.6em]">
+                {slide.title}
+              </h1>
+              <p className="mt-8 max-w-xl text-base text-paper/75 md:text-lg text-pretty">
+                {slide.text}
+              </p>
+            </div>
           </div>
+
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
@@ -204,19 +204,22 @@ export function Hero() {
 
         {/* Destacado sincronizado + controles del carrousel */}
         <div className="mt-14 grid grid-cols-[minmax(0,1fr)_auto] items-end gap-6">
-          <div
-            key={`f-${i}`}
-            className="hero-soft-fade flex min-h-[21rem] max-w-2xl flex-col justify-center border-l-2 border-gold bg-onyx/55 px-5 py-4 backdrop-blur-sm md:min-h-[10rem] md:px-6 md:py-5"
-          >
-            <div className="font-display text-xl leading-tight md:text-2xl">
-              {slide.featured.title}
-              <br />
-              <span className="gold-text">{slide.featured.sub}</span>
+          <div className="relative h-[15rem] max-w-2xl md:h-[11rem]">
+            <div
+              key={`f-${i}`}
+              className="hero-soft-fade absolute inset-0 flex flex-col justify-center border-l-2 border-gold bg-onyx/55 px-5 py-4 backdrop-blur-sm md:px-6 md:py-5"
+            >
+              <div className="font-display text-xl leading-tight md:text-2xl">
+                {slide.featured.title}
+                <br />
+                <span className="gold-text">{slide.featured.sub}</span>
+              </div>
+              <p className="mt-2 max-w-lg text-xs leading-relaxed text-paper/70 md:text-sm">
+                {slide.featured.body}
+              </p>
             </div>
-            <p className="mt-2 max-w-lg text-xs leading-relaxed text-paper/70 md:text-sm">
-              {slide.featured.body}
-            </p>
           </div>
+
 
           <div className="flex shrink-0 items-center gap-4">
             <div className="flex items-center gap-2">
