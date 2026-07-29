@@ -50,7 +50,7 @@ export function PodCalculator() {
                 </div>
               ))}
             </div>
-            <div className="mt-6 flex items-center gap-8 border-t border-border pt-6">
+            <div className="mt-6 flex flex-col items-start gap-4 border-t border-border pt-6">
               <div className="flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">
                 <span className="h-px w-10 bg-gold" />
                 Del archivo al lomo en 24 horas
