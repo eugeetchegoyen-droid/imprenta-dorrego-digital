@@ -156,7 +156,7 @@ export function Hero() {
         {/* Eyebrow */}
         <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-paper/70">
           <span className="h-px w-12 bg-gold" />
-          <span key={slide.kicker} className="animate-fade-in">{slide.kicker}</span>
+          <span key={slide.kicker} className="hero-soft-fade">{slide.kicker}</span>
           <span className="hidden h-1.5 w-1.5 rounded-full bg-gold/80 md:block" />
           <span className="hidden md:block">Impresión bajo demanda</span>
         </div>
