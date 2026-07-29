@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { toast } from "sonner";
+import { useNavigate } from "@tanstack/react-router";
 import { Mail, Phone, MessageCircle, Instagram, Linkedin, ArrowLeft } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { MapView } from "./MapView";
