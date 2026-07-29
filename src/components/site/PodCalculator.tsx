@@ -54,6 +54,9 @@ export function PodCalculator() {
               <span className="h-px w-10 bg-gold" />
               Del archivo al lomo en 24 horas
             </div>
+            <a href="/contacto" className="mt-8 inline-flex items-center gap-3 border border-gold/60 px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-onyx">
+              Contáctanos →
+            </a>
           </div>
         </div>
       </div>
