@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { toast } from "sonner";
-import { Mail, Phone, MessageCircle, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MessageCircle, Instagram, Linkedin, ArrowLeft } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { MapView } from "./MapView";
 
 export function Contacto() {
@@ -194,6 +195,20 @@ export function Contacto() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Back — volver al inicio */}
+        <div className="mt-12 flex justify-center" data-reveal>
+          <Link
+            to="/"
+            className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-muted-foreground transition-colors hover:text-gold"
+          >
+            <ArrowLeft
+              size={16}
+              className="transition-transform duration-300 group-hover:-translate-x-1"
+            />
+            Volver al inicio
+          </Link>
         </div>
       </div>
     </section>
