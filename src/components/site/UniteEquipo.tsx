@@ -8,6 +8,7 @@ const MAX = 5 * 1024 * 1024;
 
 export function UniteEquipo() {
   const formRef = useRef<HTMLFormElement>(null);
+  const navigate = useNavigate();
   const [fileName, setFileName] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
@@ -29,6 +30,7 @@ export function UniteEquipo() {
       formRef.current?.reset();
       setFileName("");
       toast.success("¡Postulación enviada! Te contactaremos pronto.");
+      navigate({ to: "/" });
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "No se pudo enviar");
     } finally {
