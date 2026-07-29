@@ -21,7 +21,7 @@ export function Laboratorio() {
             Nuestra tecnología
           </div>
           <h2 className="max-w-3xl overflow-visible pr-[0.2em] font-display text-[clamp(2.2rem,5.5vw,5rem)] font-light leading-[1] tracking-normal text-balance">
-            La precisión del <span className="italic">oficio</span> en la era <span className="gold-text italic pr-[0.1em]">digital</span>.
+            La precisión del <span className="italic">oficio</span> en la era <span className="gold-text italic pr-[0.1em]">digital</span>
           </h2>
           <p className="max-w-2xl text-paper/70 md:text-lg">
             Equipamiento y flujos de trabajo de última generación al servicio del oficio editorial.
