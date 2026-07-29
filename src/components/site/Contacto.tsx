@@ -7,6 +7,7 @@ import { MapView } from "./MapView";
 
 export function Contacto() {
   const formRef = useRef<HTMLFormElement>(null);
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
@@ -21,6 +22,7 @@ export function Contacto() {
       setSent(true);
       formRef.current?.reset();
       toast.success("¡Mensaje enviado! Te responderemos a la brevedad.");
+      navigate({ to: "/" });
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "No se pudo enviar");
     } finally {
