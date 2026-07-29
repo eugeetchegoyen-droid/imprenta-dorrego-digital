@@ -68,10 +68,10 @@ export function Laboratorio() {
               <span className="h-px w-10 bg-gold" />
               WEB APPROVAL
             </div>
-            <h3 className="mt-4 font-display text-4xl md:text-5xl">
-              Aprobá tu trabajo <span className="italic">online</span>,
+            <h3 className="mt-4 overflow-visible pr-[0.2em] font-display text-4xl tracking-normal md:pr-[0.28em] md:text-5xl">
+              Aprobá tu trabajo <span className="italic pr-[0.1em]">online</span>,
               <br />
-              <span className="gold-text italic">en tiempo real</span>.
+              <span className="gold-text italic pr-[0.1em]">en tiempo real</span>
             </h3>
             <p className="mt-4 text-paper/70">
               Con <strong className="text-paper">Web Approval</strong>, nuestra plataforma de revisión digital
