@@ -160,7 +160,7 @@ export function Testimonios() {
   return (
     <section id="testimonios" className="bg-paper py-32 md:py-44">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-        <header className="mb-14 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+        <header className="mb-14">
           <div className="reveal max-w-3xl">
             <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
               <span className="h-px w-10 bg-ink" />
@@ -169,44 +169,6 @@ export function Testimonios() {
             <h2 className="mt-6 font-display text-[clamp(2rem,4.8vw,4.4rem)] font-light leading-[1.02] tracking-[-0.02em] text-balance">
               Qué dicen <span className="italic">nuestros clientes</span>.
             </h2>
-          </div>
-
-          <div className="reveal flex items-center gap-5">
-            <div className="flex items-center gap-3">
-              <GoogleG />
-              <div className="leading-tight">
-                <div className="flex items-baseline gap-2">
-                  <span className="font-display text-2xl font-semibold text-ink">4,9</span>
-                  <Stars n={5} />
-                </div>
-                <div className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">Basado en reseñas de Google</div>
-              </div>
-            </div>
-            <div className="hidden h-10 w-px bg-border md:block" />
-            <div className="hidden gap-2 md:flex">
-              <button
-                type="button"
-                onClick={() => scrollBy(-1)}
-                disabled={!canPrev}
-                aria-label="Anterior"
-                className="flex h-11 w-11 items-center justify-center border border-ink/20 text-ink transition disabled:opacity-30 hover:border-ink hover:bg-ink hover:text-paper"
-              >
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M13.5 7H1M4.8 3.2L1 7l3.8 3.8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <button
-                type="button"
-                onClick={() => scrollBy(1)}
-                disabled={!canNext}
-                aria-label="Siguiente"
-                className="flex h-11 w-11 items-center justify-center border border-ink/20 text-ink transition disabled:opacity-30 hover:border-ink hover:bg-ink hover:text-paper"
-              >
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M0.5 7H13M9.2 3.2L13 7l-3.8 3.8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </div>
           </div>
         </header>
 
