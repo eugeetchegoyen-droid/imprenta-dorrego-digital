@@ -206,7 +206,7 @@ export function Hero() {
         <div className="mt-14 grid grid-cols-[minmax(0,1fr)_auto] items-end gap-6">
           <div
             key={`f-${i}`}
-            className="hero-soft-fade flex min-h-[7.5rem] max-w-2xl flex-col justify-center border-l-2 border-gold bg-onyx/55 px-5 py-4 backdrop-blur-sm md:min-h-[9rem] md:px-6 md:py-5"
+            className="hero-soft-fade flex min-h-[21rem] max-w-2xl flex-col justify-center border-l-2 border-gold bg-onyx/55 px-5 py-4 backdrop-blur-sm md:min-h-[10rem] md:px-6 md:py-5"
           >
             <div className="font-display text-xl leading-tight md:text-2xl">
               {slide.featured.title}
