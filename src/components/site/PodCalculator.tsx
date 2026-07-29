@@ -19,7 +19,7 @@ export function PodCalculator() {
                 flexibilidad real.
               </p>
             </div>
-            <div className="mt-10 w-full border-t border-border pt-6 md:mt-auto">
+            <div className="mt-10 w-full border-t border-border pt-8 md:mt-auto">
               <a href="/contacto" className="inline-flex items-center gap-3 border border-gold/60 px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-onyx">
                 Contáctanos →
               </a>
