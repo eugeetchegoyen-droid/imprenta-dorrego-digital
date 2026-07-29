@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import { toast } from "sonner";
+import { ArrowLeft } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const MAX = 5 * 1024 * 1024;
 
@@ -138,6 +140,20 @@ export function UniteEquipo() {
               </form>
             )}
           </div>
+        </div>
+
+        {/* Back — volver al inicio */}
+        <div className="mt-16 flex justify-center" data-reveal>
+          <Link
+            to="/"
+            className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-paper/50 transition-colors hover:text-gold"
+          >
+            <ArrowLeft
+              size={16}
+              className="transition-transform duration-300 group-hover:-translate-x-1"
+            />
+            Volver al inicio
+          </Link>
         </div>
       </div>
     </section>
