@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import { toast } from "sonner";
+import { ArrowLeft } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const MAX = 5 * 1024 * 1024;
 
