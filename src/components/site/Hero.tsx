@@ -125,7 +125,7 @@ export function Hero() {
   const slide = SLIDES[i];
 
   return (
-    <section id="top" className="relative grain min-h-screen overflow-hidden bg-onyx text-paper">
+    <section id="top" className="relative grain min-h-screen bg-onyx text-paper">
       {/* Cinematic backdrop — cross-fading carousel */}
       <div
         className="absolute inset-0 -z-0"
@@ -175,9 +175,9 @@ export function Hero() {
         <div className="mt-8 max-w-[1100px]">
           <div
             key={i}
-            className="hero-soft-fade min-h-[17rem] md:min-h-[clamp(14rem,26vw,22rem)]"
+            className="hero-soft-fade min-h-[17rem] overflow-visible md:min-h-[clamp(14rem,26vw,22rem)]"
           >
-            <h1 className="font-display pr-6 text-[clamp(3rem,9vw,9.5rem)] font-light leading-[0.92] tracking-[-0.02em] text-balance md:pr-10">
+            <h1 className="font-display overflow-visible pr-[0.2em] text-[clamp(3rem,9vw,9.5rem)] font-light leading-[0.92] tracking-[-0.02em] text-balance md:pr-[0.28em]">
               {slide.title}
             </h1>
             <p className="mt-8 max-w-xl text-base text-paper/75 md:text-lg text-pretty">
