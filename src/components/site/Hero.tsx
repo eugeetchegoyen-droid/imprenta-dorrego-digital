@@ -156,7 +156,7 @@ export function Hero() {
         {/* Eyebrow */}
         <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-paper/70">
           <span className="h-px w-12 bg-gold" />
-          <span key={slide.kicker} className="animate-fade-in">{slide.kicker}</span>
+          <span key={slide.kicker} className="hero-soft-fade">{slide.kicker}</span>
           <span className="hidden h-1.5 w-1.5 rounded-full bg-gold/80 md:block" />
           <span className="hidden md:block">Impresión bajo demanda</span>
         </div>
@@ -173,7 +173,10 @@ export function Hero() {
 
         {/* Headline — synced caption */}
         <div className="mt-8 max-w-[1100px]">
-          <div key={i} className="animate-fade-in">
+          <div
+            key={i}
+            className="hero-soft-fade min-h-[17rem] md:min-h-[clamp(14rem,26vw,22rem)]"
+          >
             <h1 className="font-display text-[clamp(3rem,9vw,9.5rem)] font-light leading-[0.92] tracking-[-0.02em] text-balance">
               {slide.title}
             </h1>
@@ -203,7 +206,7 @@ export function Hero() {
         <div className="mt-14 grid grid-cols-[minmax(0,1fr)_auto] items-end gap-6">
           <div
             key={`f-${i}`}
-            className="animate-fade-in max-w-2xl border-l-2 border-gold bg-onyx/55 px-5 py-4 backdrop-blur-sm md:px-6 md:py-5"
+            className="hero-soft-fade flex min-h-[21rem] max-w-2xl flex-col justify-center border-l-2 border-gold bg-onyx/55 px-5 py-4 backdrop-blur-sm md:min-h-[10rem] md:px-6 md:py-5"
           >
             <div className="font-display text-xl leading-tight md:text-2xl">
               {slide.featured.title}
