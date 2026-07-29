@@ -50,12 +50,12 @@ export function PodCalculator() {
                 </div>
               ))}
             </div>
-            <div className="mt-6 border-t border-border pt-6">
+            <div className="mt-6 flex items-center gap-8 border-t border-border pt-6">
               <div className="flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">
                 <span className="h-px w-10 bg-gold" />
                 Del archivo al lomo en 24 horas
               </div>
-              <a href="/contacto" className="mt-6 inline-flex items-center gap-3 border border-gold/60 px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-onyx">
+              <a href="/contacto" className="inline-flex items-center gap-3 border border-gold/60 px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-onyx">
                 Contáctanos →
               </a>
             </div>
