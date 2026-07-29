@@ -3,20 +3,27 @@ export function PodCalculator() {
     <section id="editorial" className="bg-bone py-32 md:py-44">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="grid gap-16 md:grid-cols-12">
-          <div className="md:col-span-5 reveal">
-            <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              <span className="h-px w-10 bg-ink" />
-              Impresión por demanda
+          <div className="md:col-span-5 reveal flex h-full flex-col items-start">
+            <div>
+              <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                <span className="h-px w-10 bg-ink" />
+                Impresión por demanda
+              </div>
+              <h2 className="mt-6 font-display text-[clamp(2rem,4.8vw,4.4rem)] font-light leading-[1.02] tracking-[-0.02em] text-balance">
+                Imprimí solo lo que <span className="italic">necesitás</span>, cuando lo necesitás.
+              </h2>
+              <p className="mt-6 text-muted-foreground md:text-lg">
+                Diez, cien o mil ejemplares con un costo unitario similar. Sin
+                stock inmovilizado, sin desperdicio de depósitos, sin
+                obsolescencia. La impresión digital al servicio de la
+                flexibilidad real.
+              </p>
             </div>
-            <h2 className="mt-6 font-display text-[clamp(2rem,4.8vw,4.4rem)] font-light leading-[1.02] tracking-[-0.02em] text-balance">
-              Imprimí solo lo que <span className="italic">necesitás</span>, cuando lo necesitás.
-            </h2>
-            <p className="mt-6 text-muted-foreground md:text-lg">
-              Diez, cien o mil ejemplares con un costo unitario similar. Sin
-              stock inmovilizado, sin desperdicio de depósitos, sin
-              obsolescencia. La impresión digital al servicio de la
-              flexibilidad real.
-            </p>
+            <div className="mt-10 w-full border-t border-border pt-6 md:mt-auto">
+              <a href="/contacto" className="inline-flex items-center gap-3 border border-gold/60 px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-onyx">
+                Contáctanos →
+              </a>
+            </div>
           </div>
 
           <div className="md:col-span-7 reveal">
@@ -50,14 +57,11 @@ export function PodCalculator() {
                 </div>
               ))}
             </div>
-            <div className="mt-6 flex flex-col items-start gap-4 border-t border-border pt-6">
+            <div className="mt-6 flex items-center border-t border-border pt-6">
               <div className="flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">
                 <span className="h-px w-10 bg-gold" />
                 Del archivo al lomo en 24 horas
               </div>
-              <a href="/contacto" className="inline-flex items-center gap-3 border border-gold/60 px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-onyx">
-                Contáctanos →
-              </a>
             </div>
           </div>
         </div>
