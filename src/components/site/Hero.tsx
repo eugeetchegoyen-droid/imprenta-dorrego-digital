@@ -173,7 +173,10 @@ export function Hero() {
 
         {/* Headline — synced caption */}
         <div className="mt-8 max-w-[1100px]">
-          <div key={i} className="animate-fade-in">
+          <div
+            key={i}
+            className="hero-soft-fade min-h-[clamp(11rem,34vw,16rem)] md:min-h-[clamp(14rem,26vw,22rem)]"
+          >
             <h1 className="font-display text-[clamp(3rem,9vw,9.5rem)] font-light leading-[0.92] tracking-[-0.02em] text-balance">
               {slide.title}
             </h1>
