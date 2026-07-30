@@ -205,8 +205,8 @@ export function Hero() {
         </div>
 
         {/* Destacado sincronizado + controles del carrousel */}
-        <div className="mt-10 grid grid-cols-[minmax(0,1fr)_auto] items-end gap-6">
-          <div className="relative h-[11.5rem] max-w-2xl sm:h-[10.5rem] md:h-[10rem]">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-6">
+          <div className="relative h-[13rem] max-w-2xl sm:h-[11rem] md:h-[10rem]">
             <div
               key={`f-${i}`}
               className="hero-soft-fade absolute inset-0 flex flex-col justify-center border-l-2 border-gold bg-onyx/55 px-5 py-4 backdrop-blur-sm md:px-6 md:py-5"
