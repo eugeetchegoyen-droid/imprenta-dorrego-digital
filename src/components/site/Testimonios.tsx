@@ -190,7 +190,6 @@ export function Testimonios() {
                 <div>
                   <div className="flex items-center justify-between">
                     <Stars n={r.rating} />
-                    <GoogleG />
                   </div>
                   <svg width="28" height="20" viewBox="0 0 28 20" className="mt-6 text-gold" fill="currentColor" aria-hidden="true">
                     <path d="M0 20V10C0 4.5 3.5 0.5 9 0v3.5c-2.8.5-4.5 2.5-4.5 5H9V20H0zm19 0V10c0-5.5 3.5-9.5 9-10v3.5c-2.8.5-4.5 2.5-4.5 5H28V20h-9z" />
