@@ -94,5 +94,12 @@ export function MapView({
     );
   }
 
-  return <div ref={ref} className="h-full w-full" />;
+  return (
+    <div
+      ref={ref}
+      role="application"
+      aria-label={title ?? "Mapa de ubicación de Imprenta Dorrego"}
+      className="h-full w-full"
+    />
+  );
 }

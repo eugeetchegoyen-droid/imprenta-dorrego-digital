@@ -48,9 +48,9 @@ export function UniteEquipo() {
               <span className="mr-2 inline-block h-px w-8 align-middle bg-gold" />
               ¿Querés trabajar con nosotros?
             </div>
-            <h2 className="mt-6 font-display text-4xl leading-[1.05] md:text-5xl">
+            <h1 className="mt-6 font-display text-4xl leading-[1.05] md:text-5xl">
               Unite al equipo<span className="text-gold">.</span>
-            </h2>
+            </h1>
             <p className="mt-6 max-w-md text-paper/70">
               Buscamos personas curiosas, prolijas y apasionadas por la impresión, el diseño y la tecnología.
               Dejanos tus datos y adjuntá tu CV — todas las postulaciones son revisadas por nuestro equipo de RRHH.
