@@ -69,15 +69,21 @@ function ServiceCard({
   flipped: boolean;
   onToggle: () => void;
 }) {
+  const [hovered, setHovered] = useState(false);
+  const reduced = usePrefersReducedMotion();
+  const showBack = flipped || hovered;
+  const easing = "cubic-bezier(0.16, 1, 0.3, 1)";
 
   return (
     <CardWrapper>
       <div
         role="button"
         tabIndex={0}
-        aria-pressed={flipped}
+        aria-pressed={showBack}
         aria-label={ariaLabel}
         onClick={onToggle}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
@@ -87,8 +93,8 @@ function ServiceCard({
         className="relative h-full w-full cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-gold"
         style={{
           transformStyle: "preserve-3d",
-          transition: "transform 0.7s cubic-bezier(0.4, 0.1, 0.2, 1)",
-          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          transition: reduced ? "none" : `transform 0.6s ${easing}`,
+          transform: showBack ? "rotateY(180deg)" : "rotateY(0deg)",
           minHeight: "inherit",
         }}
       >
