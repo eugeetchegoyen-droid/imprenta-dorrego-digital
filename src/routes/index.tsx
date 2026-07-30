@@ -14,6 +14,7 @@ import { QuoteWizard } from "@/components/site/QuoteWizard";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { useReveal } from "@/hooks/use-reveal";
+import prensaAsset from "@/assets/hero-prensa.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,6 +24,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Imprenta Dorrego — Impresión editorial bajo demanda en Buenos Aires" },
       { property: "og:description", content: "Impresión digital de alta calidad: Xerox Iridesse, Web Approval y encuadernación PUR. Libros, catálogos y revistas bajo demanda, sin mínimos de impresión." },
       { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "preload", as: "image", href: prensaAsset.url, fetchpriority: "high" },
     ],
   }),
   component: Index,
