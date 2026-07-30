@@ -102,6 +102,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Imprenta Dorrego",
+          url: "https://imprenta-dorrego-digital.lovable.app",
+          publisher: {
+            "@type": "Organization",
+            name: "Imprenta Dorrego",
+            url: "https://imprenta-dorrego-digital.lovable.app",
+          },
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
