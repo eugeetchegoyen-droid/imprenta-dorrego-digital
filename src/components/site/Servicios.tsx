@@ -123,10 +123,7 @@ function ServiceCard({
           <div className="flex flex-1 flex-col p-8">
             <div className="grid flex-1 grid-cols-2 grid-rows-2 gap-x-5 gap-y-5 content-center">
               {benefits.map((b) => (
-                <div key={b.title} className="flex items-start gap-2">
-                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="mt-[3px] flex-shrink-0 text-gold">
-                    <path d="M2.5 7.2L5.8 10.3L11.5 4.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                <div key={b.title} className="flex items-start">
                   <div className="min-w-0">
                     <strong className="block font-display text-[13px] font-medium leading-tight text-paper">
                       {b.title}
