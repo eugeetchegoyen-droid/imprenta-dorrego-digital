@@ -19,7 +19,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <div className="text-[10px] uppercase tracking-[0.3em] text-paper/40">Visitanos</div>
+            <div className="text-[10px] uppercase tracking-[0.3em] text-paper/70">Visitanos</div>
             <p className="mt-4 text-sm leading-relaxed text-paper/80">
               Av. Dorrego 1234<br />
               C1414 CABA · Argentina<br />
@@ -28,7 +28,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-2">
-            <div className="text-[10px] uppercase tracking-[0.3em] text-paper/40">Contacto</div>
+            <div className="text-[10px] uppercase tracking-[0.3em] text-paper/70">Contacto</div>
             <div className="mt-4 space-y-2 text-sm">
               <a href="mailto:hola@imprentadorrego.com.ar" className="block text-paper/80 hover:text-gold">hola@imprentadorrego.com.ar</a>
               <a href="tel:+541147000000" className="block text-paper/80 hover:text-gold">+54 11 4700 0000</a>
@@ -36,7 +36,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-2">
-            <div className="text-[10px] uppercase tracking-[0.3em] text-paper/40">Síguenos</div>
+            <div className="text-[10px] uppercase tracking-[0.3em] text-paper/70">Síguenos</div>
             <div className="mt-4 flex flex-col gap-2 text-sm">
               <a href="#" className="text-paper/80 hover:text-gold">Instagram</a>
               <a href="#" className="text-paper/80 hover:text-gold">LinkedIn</a>
@@ -45,7 +45,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-paper/15 pt-6 text-[10px] uppercase tracking-[0.25em] text-paper/40 md:flex-row md:items-center">
+        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-paper/25 pt-6 text-[10px] uppercase tracking-[0.25em] text-paper/70 md:flex-row md:items-center">
           <div>© {new Date().getFullYear()} Imprenta Dorrego. Todos los derechos reservados.</div>
           <div className="flex gap-6">
             <a href="#" className="hover:text-paper">Privacidad</a>
