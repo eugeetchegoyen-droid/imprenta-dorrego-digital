@@ -193,10 +193,10 @@ function ImpresionDemandaCard({
       titleAccent="por Demanda"
       tagline="Imprimí lo que necesitás, cuando lo necesitás."
       benefits={[
-        { title: "Sin mínimos", body: "Desde 10 hasta 1.000 al mismo costo." },
-        { title: "Cero stock", body: "Producís solo lo que vas a usar." },
-        { title: "Cambios libres", body: "Actualizás textos o precios entre tiradas." },
-        { title: "Misma calidad", body: "Tecnología digital de punta en cada pedido." },
+        { title: "Sin minimos", body: "Desde 10 hasta 1.000 al mismo costo." },
+        { title: "Cero stock", body: "Producis solo lo que vas a usar." },
+        { title: "Cambios libres", body: "Actualizas textos o precios entre tiradas." },
+        { title: "Misma calidad", body: "Tecnologia digital de punta en cada pedido." },
       ]}
 
       frontRight={
@@ -250,9 +250,9 @@ export function Servicios() {
             image={webApprovalHero.url}
             imageAlt="Vista previa de Web Approval"
             benefits={[
-              { title: "Carga simple", body: "Subís tu PDF validado en fuentes y color." },
-              { title: "Revisión online", body: "Marcás cambios al instante, sin instalar nada." },
-              { title: "Aprobación 1 clic", body: "Un clic y entra directo a producción." },
+              { title: "Carga simple", body: "Subis tu PDF validado en fuentes y color." },
+              { title: "Revision online", body: "Marcas cambios al instante, sin instalar nada." },
+              { title: "Aprobacion 1 clic", body: "Un clic y entra directo a produccion." },
               { title: "Todo en un lugar", body: "Sin mails perdidos ni idas y vueltas." },
             ]}
           />
@@ -266,10 +266,10 @@ export function Servicios() {
             image={prod24Hero.url}
             imageAlt="Producción 24 horas"
             benefits={[
-              { title: "En tiempo", body: "Producción continua para plazos ajustados." },
-              { title: "Sin mínimos", body: "Imprimimos la cantidad exacta que necesitás." },
-              { title: "Ajustes finales", body: "Cambios previos a impresión." },
-              { title: "Calidad Xerox", body: "Tecnología de punta en cada tirada." },
+              { title: "En tiempo", body: "Produccion continua para plazos ajustados." },
+              { title: "Sin minimos", body: "Imprimimos la cantidad exacta que necesitas." },
+              { title: "Ajustes finales", body: "Cambios previos a impresion." },
+              { title: "Calidad Xerox", body: "Tecnologia de punta en cada tirada." },
             ]}
           />
           <ServiceCard
@@ -282,10 +282,10 @@ export function Servicios() {
             image={datosVariablesHero.url}
             imageAlt="Datos Variables"
             benefits={[
-              { title: "Pieza única", body: "Nombre, imagen o código por ejemplar." },
-              { title: "Más conversión", body: "La personalización multiplica la respuesta." },
-              { title: "Trazabilidad", body: "QR, código de barras o serial por pieza." },
-              { title: "Mil versiones", body: "Los datos cambian sin pausar la producción." },
+              { title: "Pieza unica", body: "Nombre, imagen o codigo por ejemplar." },
+              { title: "Mas conversion", body: "La personalizacion multiplica la respuesta." },
+              { title: "Trazabilidad", body: "QR, codigo de barras o serial por pieza." },
+              { title: "Mil versiones", body: "Los datos cambian sin pausar la produccion." },
             ]}
           />
           <ImpresionDemandaCard
@@ -303,8 +303,8 @@ export function Servicios() {
             imageAlt="Libro abierto con encuadernación PUR"
             benefits={[
               { title: "Durabilidad", body: "Resiste humedad y uso intensivo." },
-              { title: "Apertura plana", body: "Las páginas se abren sin tensión." },
-              { title: "Vida útil", body: "No se desprenden con el uso cotidiano." },
+              { title: "Apertura plana", body: "Las paginas se abren sin tension." },
+              { title: "Vida util", body: "No se desprenden con el uso cotidiano." },
               { title: "Valor percibido", body: "Un acabado que comunica calidad." },
             ]}
           />
@@ -319,10 +319,10 @@ export function Servicios() {
             imageAlt="Impresión digital Xerox Iridesse con efectos metálicos"
             imageObjectPosition="center 25%"
             benefits={[
-              { title: "Metálicos", body: "Dorados, plateados y cobrizos sin tintas especiales." },
-              { title: "Iridiscentes", body: "Acabados que cambian según la luz." },
-              { title: "Digital", body: "Alta gama con tiempos de producción reducidos." },
-              { title: "Premium", body: "Ideal para invitaciones, catálogos y piezas de autor." },
+              { title: "Metalicos", body: "Dorados, plateados y cobrizos sin tintas especiales." },
+              { title: "Iridiscentes", body: "Acabados que cambian segun la luz." },
+              { title: "Digital", body: "Alta gama con tiempos de produccion reducidos." },
+              { title: "Premium", body: "Ideal para invitaciones, catalogos y piezas de autor." },
             ]}
           />
         </div>
