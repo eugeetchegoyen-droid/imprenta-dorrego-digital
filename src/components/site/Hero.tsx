@@ -64,7 +64,8 @@ const SLIDES: Slide[] = [
       </>
     ),
     text:
-      "Laminados, barniz sectorizado, stamping, relieve y efectos especiales para piezas memorables al tacto y a la vista.",
+      "Laminados, barniz sectorizado, stamping y relieve para piezas memorables al tacto y a la vista.",
+
     featured: {
       title: "Acabados premium",
       sub: "relieve, foil y barniz UV",
