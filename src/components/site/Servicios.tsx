@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import webApprovalHero from "@/assets/webapproval-hero.jpg.asset.json";
 import prod24Hero from "@/assets/prod24-hero.jpg.asset.json";
 import datosVariablesHero from "@/assets/datosvariables-hero.jpg.asset.json";
@@ -25,10 +25,14 @@ function CardWrapper({
   children,
   className,
   style,
+  onMouseEnter,
+  onMouseLeave,
 }: {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }) {
   return (
     <article
@@ -37,6 +41,8 @@ function CardWrapper({
         className || "",
       ].join(" ")}
       style={{ perspective: "1500px", ...style }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {children}
     </article>
@@ -70,11 +76,36 @@ function ServiceCard({
   onToggle: () => void;
 }) {
   const reduced = usePrefersReducedMotion();
-  const showBack = flipped;
+  const [hovered, setHovered] = useState(false);
+  const enterTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Debounce hover so quick mouse movements don't trigger rapid flip cycles.
+  const HOVER_IN_MS = 180;
+  const HOVER_OUT_MS = 220;
+
+  const clearTimers = () => {
+    if (enterTimer.current) { clearTimeout(enterTimer.current); enterTimer.current = null; }
+    if (leaveTimer.current) { clearTimeout(leaveTimer.current); leaveTimer.current = null; }
+  };
+  useEffect(() => clearTimers, []);
+
+  const onEnter = () => {
+    if (leaveTimer.current) { clearTimeout(leaveTimer.current); leaveTimer.current = null; }
+    if (enterTimer.current) return;
+    enterTimer.current = setTimeout(() => { setHovered(true); enterTimer.current = null; }, HOVER_IN_MS);
+  };
+  const onLeave = () => {
+    if (enterTimer.current) { clearTimeout(enterTimer.current); enterTimer.current = null; }
+    if (leaveTimer.current) return;
+    leaveTimer.current = setTimeout(() => { setHovered(false); leaveTimer.current = null; }, HOVER_OUT_MS);
+  };
+
+  const showBack = flipped || hovered;
   const easing = "cubic-bezier(0.16, 1, 0.3, 1)";
 
   return (
-    <CardWrapper>
+    <CardWrapper onMouseEnter={onEnter} onMouseLeave={onLeave}>
       <div
         role="button"
         tabIndex={0}
