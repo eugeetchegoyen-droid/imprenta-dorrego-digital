@@ -21,9 +21,9 @@ export function GuiaPodAutores() {
             <span className="italic text-gold-soft">Argentina</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-paper/70">
-            Cómo imprimir libros en tiradas chicas —sin cantidades mínimas— con
-            calidad editorial y sin mínimos de impresión, usando la tecnología
-            digital Xerox Iridesse en Buenos Aires.
+            Cómo imprimir libros en tiradas chicas con calidad editorial y sin
+            mínimos de impresión, usando la tecnología digital Xerox Iridesse en
+            Buenos Aires.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-paper/50">
             <span className="flex items-center gap-2">
