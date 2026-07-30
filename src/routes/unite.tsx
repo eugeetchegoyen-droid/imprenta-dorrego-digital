@@ -17,6 +17,7 @@ export const Route = createFileRoute("/unite")({
     links: [
       { rel: "canonical", href: "https://imprenta-dorrego-digital.lovable.app/unite" },
     ],
+  }),
   component: UnitePage,
 });
 
