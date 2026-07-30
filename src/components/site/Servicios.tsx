@@ -69,9 +69,8 @@ function ServiceCard({
   flipped: boolean;
   onToggle: () => void;
 }) {
-  const [hovered, setHovered] = useState(false);
   const reduced = usePrefersReducedMotion();
-  const showBack = flipped || hovered;
+  const showBack = flipped;
   const easing = "cubic-bezier(0.16, 1, 0.3, 1)";
 
   return (
@@ -82,8 +81,6 @@ function ServiceCard({
         aria-pressed={showBack}
         aria-label={ariaLabel}
         onClick={onToggle}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
