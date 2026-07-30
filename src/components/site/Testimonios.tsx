@@ -199,7 +199,6 @@ export function Testimonios() {
                   </div>
                   <div className="min-w-0">
                     <div className="truncate font-display text-sm font-semibold text-ink">{r.name}</div>
-                    <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">{r.when}</div>
                   </div>
                 </div>
               </article>
