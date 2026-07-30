@@ -20,22 +20,46 @@ export const Route = createFileRoute("/contacto")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
+          "@id": "https://imprenta-dorrego-digital.lovable.app/#business",
           name: "Imprenta Dorrego",
           description:
             "Imprenta editorial y digital en Buenos Aires. Impresión bajo demanda, Web Approval, encuadernación PUR y tecnología Xerox Iridesse.",
           url: "https://imprenta-dorrego-digital.lovable.app",
           telephone: "+54 11 4700 0000",
           email: "hola@imprentadorrego.com.ar",
+          image:
+            "https://imprenta-dorrego-digital.lovable.app/__l5e/assets-v1/b590ed25-af65-4072-abcf-5ad13d7122e1/dorrego-logo.png",
+          logo: "https://imprenta-dorrego-digital.lovable.app/__l5e/assets-v1/b590ed25-af65-4072-abcf-5ad13d7122e1/dorrego-logo.png",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Av. Dorrego 1102",
             addressLocality: "CABA",
+            addressRegion: "Ciudad Autónoma de Buenos Aires",
             postalCode: "C1414CKT",
             addressCountry: "AR",
           },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: -34.571,
+            longitude: -58.4385,
+          },
+          hasMap:
+            "https://www.google.com/maps/search/?api=1&query=Imprenta+Dorrego+Av.+Dorrego+1102+CABA",
           openingHours: "Mo-Fr 09:00-18:00",
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              opens: "09:00",
+              closes: "18:00",
+            },
+          ],
           priceRange: "$$",
           areaServed: "Buenos Aires, Argentina",
+          sameAs: [
+            "https://instagram.com/imprentadorrego",
+            "https://linkedin.com/company/imprenta-dorrego",
+          ],
         }),
       },
     ],
