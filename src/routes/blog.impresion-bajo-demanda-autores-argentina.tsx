@@ -28,6 +28,7 @@ export const Route = createFileRoute("/blog/impresion-bajo-demanda-autores-argen
           "Imprimí libros en tiradas chicas con tecnología Xerox Iridesse, sin mínimos de impresión. La guía POD para autores independientes en Buenos Aires.",
       },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://imprenta-dorrego-digital.lovable.app/blog/impresion-bajo-demanda-autores-argentina" },
     ],
     links: [{ rel: "canonical", href: "https://imprenta-dorrego-digital.lovable.app/blog/impresion-bajo-demanda-autores-argentina" }],
   }),

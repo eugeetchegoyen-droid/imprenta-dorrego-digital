@@ -83,6 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Imprenta Dorrego — Impresión Editorial en Buenos Aires" },
       { property: "og:description", content: "Impresión digital de alta calidad: Xerox Iridesse, Web Approval y encuadernación PUR. Libros, catálogos y revistas bajo demanda, sin mínimos de impresión." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://imprenta-dorrego-digital.lovable.app" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Imprenta Dorrego — Impresión Editorial en Buenos Aires" },

@@ -18,6 +18,9 @@ import prensaAsset from "@/assets/hero-prensa.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
+    meta: [
+      { property: "og:url", content: "https://imprenta-dorrego-digital.lovable.app/" },
+    ],
     links: [
       { rel: "canonical", href: "https://imprenta-dorrego-digital.lovable.app/" },
       { rel: "preload", as: "image", href: prensaAsset.url, fetchpriority: "high" },
