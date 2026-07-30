@@ -21,10 +21,10 @@ export function Manifesto() {
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-3">
-            <div className="sticky top-32 flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            <h2 className="sticky top-32 flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
               <span className="h-px w-10 bg-ink" />
               Nuestra historia
-            </div>
+            </h2>
           </div>
           <div className="md:col-span-9 reveal">
             <p className="font-display text-[clamp(1.6rem,3.6vw,3.4rem)] font-light leading-[1.1] tracking-[-0.015em] text-balance">
