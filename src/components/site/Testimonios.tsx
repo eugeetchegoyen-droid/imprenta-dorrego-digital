@@ -164,7 +164,7 @@ export function Testimonios() {
           <div className="reveal max-w-3xl">
             <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
               <span className="h-px w-10 bg-ink" />
-              Reseñas verificadas en Google
+              Experiencias de clientes
             </div>
             <h2 className="mt-6 font-display text-[clamp(2rem,4.8vw,4.4rem)] font-light leading-[1.02] tracking-[-0.02em] text-balance">
               Qué dicen <span className="italic">nuestros clientes</span>.
