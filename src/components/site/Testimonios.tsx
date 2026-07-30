@@ -4,7 +4,6 @@ type Review = {
   name: string;
   initials: string;
   rating: number;
-  when: string;
   text: string;
 };
 
