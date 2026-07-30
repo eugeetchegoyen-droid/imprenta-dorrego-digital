@@ -30,17 +30,13 @@ function CardWrapper({
   className?: string;
   style?: React.CSSProperties;
 }) {
-  const [hovered, setHovered] = useState(false);
   return (
     <article
       className={[
-        "group relative min-h-[320px] bg-bone shadow-card transition-transform duration-300 ease-out",
-        hovered ? "z-30 scale-[1.05]" : "z-0 scale-100",
+        "group relative min-h-[320px] bg-bone shadow-card transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_30px_60px_-22px_rgba(15,15,20,0.4)]",
         className || "",
       ].join(" ")}
-      style={{ perspective: "1400px", ...style }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      style={{ perspective: "1500px", ...style }}
     >
       {children}
     </article>
