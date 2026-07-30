@@ -13,6 +13,7 @@ export const Route = createFileRoute("/unite")({
       { property: "og:title", content: "Unite al equipo — Imprenta Dorrego" },
       { property: "og:description", content: "Postulate para sumarte al equipo de Imprenta Dorrego." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://imprenta-dorrego-digital.lovable.app/unite" },
     ],
     links: [
       { rel: "canonical", href: "https://imprenta-dorrego-digital.lovable.app/unite" },
