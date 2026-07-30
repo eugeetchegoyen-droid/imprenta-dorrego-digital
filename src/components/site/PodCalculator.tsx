@@ -46,7 +46,7 @@ export function PodCalculator() {
                 },
                 {
                   n: "04",
-                  t: "Desde 1 ejemplar",
+                  t: "Sin mínimos de impresión",
                   d: "Ideal para autores independientes, editoriales pequeñas y ediciones de autor.",
                 },
               ].map((x) => (

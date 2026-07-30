@@ -43,7 +43,7 @@ export function Manifesto() {
             </p>
             <div className="mt-12 grid grid-cols-1 gap-px bg-border sm:grid-cols-3">
               {[
-                ["01", "Escala real", "Un ejemplar o mil, misma calidad, mismo compromiso."],
+                ["01", "Escala real", "Tirada chica o grande, misma calidad, mismo compromiso."],
                 ["02", "Respuesta rápida", "De la aprobación al lomo, sin fricciones."],
                 ["03", "Compromiso", "Calidad editorial certificada."],
               ].map(([n, t, d]) => (

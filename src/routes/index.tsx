@@ -19,9 +19,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Imprenta Dorrego — Impresión editorial bajo demanda en Buenos Aires" },
-      { name: "description", content: "Impresión digital de alta calidad: Xerox Iridesse, Web Approval y encuadernación PUR. Libros, catálogos y revistas bajo demanda, desde un ejemplar." },
+      { name: "description", content: "Impresión digital de alta calidad: Xerox Iridesse, Web Approval y encuadernación PUR. Libros, catálogos y revistas bajo demanda, sin mínimos de impresión." },
       { property: "og:title", content: "Imprenta Dorrego — Impresión editorial bajo demanda en Buenos Aires" },
-      { property: "og:description", content: "Impresión digital de alta calidad: Xerox Iridesse, Web Approval y encuadernación PUR. Libros, catálogos y revistas bajo demanda, desde un ejemplar." },
+      { property: "og:description", content: "Impresión digital de alta calidad: Xerox Iridesse, Web Approval y encuadernación PUR. Libros, catálogos y revistas bajo demanda, sin mínimos de impresión." },
       { property: "og:type", content: "website" },
     ],
   }),
