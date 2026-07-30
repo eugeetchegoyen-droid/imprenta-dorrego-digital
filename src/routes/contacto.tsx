@@ -14,6 +14,9 @@ export const Route = createFileRoute("/contacto")({
       { property: "og:description", content: "Envianos tu consulta. Respondemos en 24 horas hábiles." },
       { property: "og:type", content: "website" },
     ],
+    links: [
+      { rel: "canonical", href: "https://imprenta-dorrego-digital.lovable.app/contacto" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
