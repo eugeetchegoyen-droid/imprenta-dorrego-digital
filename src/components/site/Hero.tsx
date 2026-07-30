@@ -251,7 +251,7 @@ export function Hero() {
         <div className="mt-8 grid grid-cols-2 gap-6 border-t border-paper/15 pt-8 md:grid-cols-4">
           {[
           ["72 años", "de trayectoria editorial"],
-          ["1 → ∞", "ejemplares por demanda"],
+          ["Sin mínimos", "de impresión"],
           ["6 tintas", "Xerox Iridesse · Oro / Plata / Blanco"],
           ["24h", "del archivo al lomo"],
           ].map(([n, l]) => (

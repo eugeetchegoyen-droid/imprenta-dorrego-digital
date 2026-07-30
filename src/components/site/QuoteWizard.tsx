@@ -89,7 +89,7 @@ export function QuoteWizard() {
             {step === 1 && (
               <div>
                 <h3 className="font-display text-3xl">¿Cuántos necesitás?</h3>
-                <p className="mt-2 text-paper/65">Sin mínimos. Desde un solo ejemplar.</p>
+                <p className="mt-2 text-paper/65">Sin mínimos. Imprimimos la cantidad exacta que necesitás.</p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   {ranges.map((r) => (
                     <button

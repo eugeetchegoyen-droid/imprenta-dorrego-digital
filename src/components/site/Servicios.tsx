@@ -267,7 +267,7 @@ export function Servicios() {
             imageAlt="Producción 24 horas"
             benefits={[
               { title: "En tiempo", body: "Producción continua para plazos ajustados." },
-              { title: "Sin mínimos", body: "Desde 10 hasta 1.000 ejemplares." },
+              { title: "Sin mínimos", body: "Imprimimos la cantidad exacta que necesitás." },
               { title: "Ajustes finales", body: "Cambios previos a impresión." },
               { title: "Calidad Xerox", body: "Tecnología de punta en cada tirada." },
             ]}
