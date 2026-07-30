@@ -95,10 +95,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap",
-      },
-      {
-        rel: "stylesheet",
         href: appCss,
       },
     ],
@@ -120,6 +116,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             logo: "https://imprenta-dorrego-digital.lovable.app/__l5e/assets-v1/b590ed25-af65-4072-abcf-5ad13d7122e1/dorrego-logo.png",
           },
         }),
+      },
+      {
+        children:
+          "(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap';document.head.appendChild(l);})();",
       },
     ],
   }),

@@ -138,6 +138,7 @@ export function Hero() {
             src={s.img}
             alt={s.alt}
             loading={idx === 0 ? "eager" : "lazy"}
+            fetchPriority={idx === 0 ? "high" : "auto"}
             className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-[1400ms] ease-out ${
               idx === i ? "opacity-70" : "opacity-0"
             }`}
