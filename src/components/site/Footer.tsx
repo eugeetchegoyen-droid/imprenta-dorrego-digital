@@ -8,9 +8,14 @@ export function Footer() {
             <p className="mt-4 max-w-md text-paper/60">
               Editorial · Digital · Bajo demanda. Buenos Aires, Argentina.
             </p>
-            <a href="#cotizar" className="mt-8 inline-flex items-center gap-3 border border-gold/60 px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-onyx">
-              Cotiza tu proyecto →
-            </a>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a href="#cotizar" className="inline-flex items-center gap-3 border border-gold/60 px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-onyx">
+                Cotiza tu proyecto →
+              </a>
+              <a href="/contacto" className="inline-flex items-center gap-3 border border-paper/30 px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-paper/80 transition-all hover:border-paper hover:text-paper">
+                Contáctanos →
+              </a>
+            </div>
           </div>
 
           <div className="md:col-span-3">
