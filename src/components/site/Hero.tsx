@@ -64,7 +64,8 @@ const SLIDES: Slide[] = [
       </>
     ),
     text:
-      "Laminados, barniz sectorizado, stamping, relieve y efectos especiales para piezas memorables al tacto y a la vista.",
+      "Laminados, barniz sectorizado, stamping y relieve para piezas memorables al tacto y a la vista.",
+
     featured: {
       title: "Acabados premium",
       sub: "relieve, foil y barniz UV",
@@ -173,16 +174,17 @@ export function Hero() {
 
         {/* Headline — synced caption */}
         <div className="mt-8 max-w-[1100px]">
-          <div className="relative h-[20rem] overflow-visible md:h-[clamp(16rem,26vw,23rem)]">
-            <div key={i} className="hero-soft-fade absolute inset-0 overflow-visible">
+          <div className="relative h-[24rem] overflow-visible md:h-[clamp(19rem,26vw,23rem)]">
+            <div key={i} className="hero-soft-fade absolute inset-0 flex flex-col overflow-visible">
               <h1 className="font-display overflow-visible pr-[0.45em] text-[clamp(3rem,9vw,9.5rem)] font-light leading-[0.92] tracking-normal text-balance md:pr-[0.6em]">
                 {slide.title}
               </h1>
-              <p className="mt-8 max-w-xl text-base text-paper/75 md:text-lg text-pretty">
+              <p className="mt-6 max-w-xl text-base text-paper/75 md:mt-8 md:text-lg text-pretty">
                 {slide.text}
               </p>
             </div>
           </div>
+
 
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
