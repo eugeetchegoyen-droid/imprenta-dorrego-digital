@@ -134,7 +134,7 @@ function ServiceCard({
             WebkitBackfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
           }}
-          aria-hidden={!flipped}
+          aria-hidden={!showBack}
         >
           <div className="flex flex-1 flex-col p-8">
             <div className="grid flex-1 grid-cols-2 grid-rows-2 gap-x-5 gap-y-5 content-center">
