@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import webApprovalHero from "@/assets/webapproval-hero.jpg.asset.json";
 import prod24Hero from "@/assets/prod24-hero.jpg.asset.json";
 import datosVariablesHero from "@/assets/datosvariables-hero.jpg.asset.json";
@@ -25,10 +25,14 @@ function CardWrapper({
   children,
   className,
   style,
+  onMouseEnter,
+  onMouseLeave,
 }: {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }) {
   return (
     <article
@@ -37,6 +41,8 @@ function CardWrapper({
         className || "",
       ].join(" ")}
       style={{ perspective: "1500px", ...style }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {children}
     </article>
