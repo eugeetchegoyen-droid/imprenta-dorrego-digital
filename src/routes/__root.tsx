@@ -108,12 +108,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
+          "@id": "https://imprenta-dorrego-digital.lovable.app/#website",
           name: "Imprenta Dorrego",
           url: "https://imprenta-dorrego-digital.lovable.app",
+          inLanguage: "es-AR",
           publisher: {
             "@type": "Organization",
+            "@id": "https://imprenta-dorrego-digital.lovable.app/#organization",
             name: "Imprenta Dorrego",
             url: "https://imprenta-dorrego-digital.lovable.app",
+            logo: "https://imprenta-dorrego-digital.lovable.app/__l5e/assets-v1/b590ed25-af65-4072-abcf-5ad13d7122e1/dorrego-logo.png",
           },
         }),
       },
