@@ -7,6 +7,20 @@ import iridesseHero from "@/assets/iridesse-hero.jpg.asset.json";
 
 type Benefit = { title: string; body: string };
 
+/** Respect the user's reduced-motion preference for the flip animation. */
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduced(mq.matches);
+    update();
+    mq.addEventListener?.("change", update);
+    return () => mq.removeEventListener?.("change", update);
+  }, []);
+  return reduced;
+}
+
 function CardWrapper({
   children,
   className,
