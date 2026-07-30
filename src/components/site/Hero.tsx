@@ -153,7 +153,7 @@ export function Hero() {
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[600px] w-[600px] rounded-full bg-gold/20 blur-[160px]" />
       <div className="pointer-events-none absolute -right-32 bottom-0 h-[400px] w-[400px] rounded-full bg-gold/10 blur-[140px]" />
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-between px-6 pb-12 pt-36 lg:px-10 lg:pt-44">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] flex-col justify-between px-6 pb-10 pt-28 lg:px-10 lg:pt-32">
         {/* Eyebrow */}
         <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-paper/70">
           <span className="h-px w-12 bg-gold" />
@@ -163,7 +163,7 @@ export function Hero() {
         </div>
 
         {/* Brand lockup */}
-        <div className="mt-10">
+        <div className="mt-8">
           <div className="font-display text-2xl tracking-tight text-paper md:text-[1.7rem]">
             Imprenta <span className="gold-text">Dorrego</span>
           </div>
@@ -174,12 +174,12 @@ export function Hero() {
 
         {/* Headline — synced caption */}
         <div className="mt-8 max-w-[1100px]">
-          <div className="relative h-[24rem] overflow-visible md:h-[clamp(19rem,26vw,23rem)]">
+          <div className="relative h-[13.5rem] overflow-visible sm:h-[16rem] md:h-[clamp(15rem,20vw,18rem)]">
             <div key={i} className="hero-soft-fade absolute inset-0 flex flex-col overflow-visible">
-              <h1 className="font-display overflow-visible pr-[0.45em] text-[clamp(3rem,9vw,9.5rem)] font-light leading-[0.92] tracking-normal text-balance md:pr-[0.6em]">
+              <h1 className="font-display overflow-visible pr-[0.45em] text-[clamp(2.25rem,6.2vw,6rem)] font-light leading-[1.02] tracking-normal text-balance md:pr-[0.6em]">
                 {slide.title}
               </h1>
-              <p className="mt-6 max-w-xl text-base text-paper/75 md:mt-8 md:text-lg text-pretty">
+              <p className="mt-5 max-w-xl text-sm text-paper/75 md:mt-6 md:text-base text-pretty">
                 {slide.text}
               </p>
             </div>
@@ -187,7 +187,7 @@ export function Hero() {
 
 
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
             <a
               href="#cotizar"
               className="group inline-flex items-center gap-3 bg-gold px-6 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-onyx transition-all hover:bg-gold-soft hover:shadow-gold"
@@ -205,18 +205,18 @@ export function Hero() {
         </div>
 
         {/* Destacado sincronizado + controles del carrousel */}
-        <div className="mt-14 grid grid-cols-[minmax(0,1fr)_auto] items-end gap-6">
-          <div className="relative h-[15rem] max-w-2xl md:h-[11rem]">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-6">
+          <div className="relative h-[7.5rem] max-w-2xl sm:h-[11rem] md:h-[10rem]">
             <div
               key={`f-${i}`}
               className="hero-soft-fade absolute inset-0 flex flex-col justify-center border-l-2 border-gold bg-onyx/55 px-5 py-4 backdrop-blur-sm md:px-6 md:py-5"
             >
-              <div className="font-display text-xl leading-tight md:text-2xl">
+              <div className="font-display text-lg leading-tight sm:text-xl md:text-2xl">
                 {slide.featured.title}
                 <br />
                 <span className="gold-text">{slide.featured.sub}</span>
               </div>
-              <p className="mt-2 max-w-lg text-xs leading-relaxed text-paper/70 md:text-sm">
+              <p className="mt-2 hidden max-w-lg text-xs leading-relaxed text-paper/70 sm:block md:text-sm">
                 {slide.featured.body}
               </p>
             </div>
@@ -248,7 +248,7 @@ export function Hero() {
         </div>
 
         {/* Bottom metrics */}
-        <div className="mt-10 grid grid-cols-2 gap-6 border-t border-paper/15 pt-8 md:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 gap-6 border-t border-paper/15 pt-8 md:grid-cols-4">
           {[
           ["72 años", "de trayectoria editorial"],
           ["1 → ∞", "ejemplares por demanda"],
