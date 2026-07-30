@@ -14,6 +14,9 @@ export const Route = createFileRoute("/unite")({
       { property: "og:description", content: "Postulate para sumarte al equipo de Imprenta Dorrego." },
       { property: "og:type", content: "website" },
     ],
+    links: [
+      { rel: "canonical", href: "https://imprenta-dorrego-digital.lovable.app/unite" },
+    ],
   }),
   component: UnitePage,
 });
