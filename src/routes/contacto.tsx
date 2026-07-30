@@ -14,6 +14,31 @@ export const Route = createFileRoute("/contacto")({
       { property: "og:description", content: "Envianos tu consulta. Respondemos en 24 horas hábiles." },
       { property: "og:type", content: "website" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Imprenta Dorrego",
+          description:
+            "Imprenta editorial y digital en Buenos Aires. Impresión bajo demanda, Web Approval, encuadernación PUR y tecnología Xerox Iridesse.",
+          url: "https://imprenta-dorrego-digital.lovable.app",
+          telephone: "+54 11 4700 0000",
+          email: "hola@imprentadorrego.com.ar",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Av. Dorrego 1102",
+            addressLocality: "CABA",
+            postalCode: "C1414CKT",
+            addressCountry: "AR",
+          },
+          openingHours: "Mo-Fr 09:00-18:00",
+          priceRange: "$$",
+          areaServed: "Buenos Aires, Argentina",
+        }),
+      },
+    ],
   }),
   component: ContactoPage,
 });
