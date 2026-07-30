@@ -13,6 +13,7 @@ const links: (NavLink | NavGroup)[] = [
     children: [
       { to: "/", hash: "servicios", label: "Soluciones" },
       { to: "/", hash: "editorial", label: "Impresión por demanda" },
+      { to: "/blog/impresion-bajo-demanda-autores-argentina", label: "Guía POD para autores" },
       { to: "/", hash: "cotizar", label: "Solicitar cotización" },
     ],
   },
