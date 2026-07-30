@@ -7,6 +7,20 @@ import iridesseHero from "@/assets/iridesse-hero.jpg.asset.json";
 
 type Benefit = { title: string; body: string };
 
+/** Respect the user's reduced-motion preference for the flip animation. */
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduced(mq.matches);
+    update();
+    mq.addEventListener?.("change", update);
+    return () => mq.removeEventListener?.("change", update);
+  }, []);
+  return reduced;
+}
+
 function CardWrapper({
   children,
   className,
@@ -16,17 +30,13 @@ function CardWrapper({
   className?: string;
   style?: React.CSSProperties;
 }) {
-  const [hovered, setHovered] = useState(false);
   return (
     <article
       className={[
-        "group relative min-h-[320px] bg-bone shadow-card transition-transform duration-300 ease-out",
-        hovered ? "z-30 scale-[1.05]" : "z-0 scale-100",
+        "group relative min-h-[320px] bg-bone shadow-card transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_30px_60px_-22px_rgba(15,15,20,0.4)]",
         className || "",
       ].join(" ")}
-      style={{ perspective: "1400px", ...style }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      style={{ perspective: "1500px", ...style }}
     >
       {children}
     </article>
@@ -59,15 +69,21 @@ function ServiceCard({
   flipped: boolean;
   onToggle: () => void;
 }) {
+  const [hovered, setHovered] = useState(false);
+  const reduced = usePrefersReducedMotion();
+  const showBack = flipped || hovered;
+  const easing = "cubic-bezier(0.16, 1, 0.3, 1)";
 
   return (
     <CardWrapper>
       <div
         role="button"
         tabIndex={0}
-        aria-pressed={flipped}
+        aria-pressed={showBack}
         aria-label={ariaLabel}
         onClick={onToggle}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
@@ -77,8 +93,8 @@ function ServiceCard({
         className="relative h-full w-full cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-gold"
         style={{
           transformStyle: "preserve-3d",
-          transition: "transform 0.7s cubic-bezier(0.4, 0.1, 0.2, 1)",
-          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          transition: reduced ? "none" : `transform 0.6s ${easing}`,
+          transform: showBack ? "rotateY(180deg)" : "rotateY(0deg)",
           minHeight: "inherit",
         }}
       >
@@ -118,7 +134,7 @@ function ServiceCard({
             WebkitBackfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
           }}
-          aria-hidden={!flipped}
+          aria-hidden={!showBack}
         >
           <div className="flex flex-1 flex-col p-8">
             <div className="grid flex-1 grid-cols-2 grid-rows-2 gap-x-5 gap-y-5 content-center">
