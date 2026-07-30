@@ -15,6 +15,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as UniteRouteImport } from './routes/unite'
 import { Route as ApiApplyRouteImport } from './routes/api/apply'
 import { Route as ApiContactoRouteImport } from './routes/api/contacto'
+import { Route as BlogImpresionBajoDemandaAutoresArgentinaRouteImport } from './routes/blog.impresion-bajo-demanda-autores-argentina'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,12 @@ const ApiContactoRoute = ApiContactoRouteImport.update({
   path: '/api/contacto',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogImpresionBajoDemandaAutoresArgentinaRoute =
+  BlogImpresionBajoDemandaAutoresArgentinaRouteImport.update({
+    id: '/blog/impresion-bajo-demanda-autores-argentina',
+    path: '/blog/impresion-bajo-demanda-autores-argentina',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByFullPath {
   '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
   '/api/contacto': typeof ApiContactoRoute
+  '/blog/impresion-bajo-demanda-autores-argentina': typeof BlogImpresionBajoDemandaAutoresArgentinaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +70,7 @@ export interface FileRoutesByTo {
   '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
   '/api/contacto': typeof ApiContactoRoute
+  '/blog/impresion-bajo-demanda-autores-argentina': typeof BlogImpresionBajoDemandaAutoresArgentinaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +80,7 @@ export interface FileRoutesById {
   '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
   '/api/contacto': typeof ApiContactoRoute
+  '/blog/impresion-bajo-demanda-autores-argentina': typeof BlogImpresionBajoDemandaAutoresArgentinaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +91,7 @@ export interface FileRouteTypes {
     | '/unite'
     | '/api/apply'
     | '/api/contacto'
+    | '/blog/impresion-bajo-demanda-autores-argentina'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +100,7 @@ export interface FileRouteTypes {
     | '/unite'
     | '/api/apply'
     | '/api/contacto'
+    | '/blog/impresion-bajo-demanda-autores-argentina'
   id:
     | '__root__'
     | '/'
@@ -97,6 +109,7 @@ export interface FileRouteTypes {
     | '/unite'
     | '/api/apply'
     | '/api/contacto'
+    | '/blog/impresion-bajo-demanda-autores-argentina'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,6 +119,7 @@ export interface RootRouteChildren {
   UniteRoute: typeof UniteRoute
   ApiApplyRoute: typeof ApiApplyRoute
   ApiContactoRoute: typeof ApiContactoRoute
+  BlogImpresionBajoDemandaAutoresArgentinaRoute: typeof BlogImpresionBajoDemandaAutoresArgentinaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -152,6 +166,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiContactoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/impresion-bajo-demanda-autores-argentina': {
+      id: '/blog/impresion-bajo-demanda-autores-argentina'
+      path: '/blog/impresion-bajo-demanda-autores-argentina'
+      fullPath: '/blog/impresion-bajo-demanda-autores-argentina'
+      preLoaderRoute: typeof BlogImpresionBajoDemandaAutoresArgentinaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -162,7 +183,19 @@ const rootRouteChildren: RootRouteChildren = {
   UniteRoute: UniteRoute,
   ApiApplyRoute: ApiApplyRoute,
   ApiContactoRoute: ApiContactoRoute,
+  BlogImpresionBajoDemandaAutoresArgentinaRoute:
+    BlogImpresionBajoDemandaAutoresArgentinaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
