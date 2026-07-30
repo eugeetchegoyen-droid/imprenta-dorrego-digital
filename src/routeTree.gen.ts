@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as UniteRouteImport } from './routes/unite'
 import { Route as ApiApplyRouteImport } from './routes/api/apply'
 import { Route as ApiContactoRouteImport } from './routes/api/contacto'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const ContactoRoute = ContactoRouteImport.update({
   id: '/contacto',
   path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const UniteRoute = UniteRouteImport.update({
@@ -44,6 +50,7 @@ const ApiContactoRoute = ApiContactoRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contacto': typeof ContactoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
   '/api/contacto': typeof ApiContactoRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contacto': typeof ContactoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
   '/api/contacto': typeof ApiContactoRoute
@@ -59,21 +67,42 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contacto': typeof ContactoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
   '/api/contacto': typeof ApiContactoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contacto' | '/unite' | '/api/apply' | '/api/contacto'
+  fullPaths:
+    | '/'
+    | '/contacto'
+    | '/sitemap.xml'
+    | '/unite'
+    | '/api/apply'
+    | '/api/contacto'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contacto' | '/unite' | '/api/apply' | '/api/contacto'
-  id: '__root__' | '/' | '/contacto' | '/unite' | '/api/apply' | '/api/contacto'
+  to:
+    | '/'
+    | '/contacto'
+    | '/sitemap.xml'
+    | '/unite'
+    | '/api/apply'
+    | '/api/contacto'
+  id:
+    | '__root__'
+    | '/'
+    | '/contacto'
+    | '/sitemap.xml'
+    | '/unite'
+    | '/api/apply'
+    | '/api/contacto'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactoRoute: typeof ContactoRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   UniteRoute: typeof UniteRoute
   ApiApplyRoute: typeof ApiApplyRoute
   ApiContactoRoute: typeof ApiContactoRoute
@@ -93,6 +122,13 @@ declare module '@tanstack/react-router' {
       path: '/contacto'
       fullPath: '/contacto'
       preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/unite': {
@@ -122,6 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactoRoute: ContactoRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   UniteRoute: UniteRoute,
   ApiApplyRoute: ApiApplyRoute,
   ApiContactoRoute: ApiContactoRoute,
@@ -129,3 +166,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
