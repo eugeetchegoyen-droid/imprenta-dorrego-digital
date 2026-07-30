@@ -21,7 +21,7 @@ export function GuiaPodAutores() {
             <span className="italic text-gold-soft">Argentina</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-paper/70">
-            Cómo imprimir libros en tiradas chicas —de 10 a 100 ejemplares— con
+            Cómo imprimir libros en tiradas chicas —sin cantidades mínimas— con
             calidad editorial y sin mínimos de impresión, usando la tecnología
             digital Xerox Iridesse en Buenos Aires.
           </p>
