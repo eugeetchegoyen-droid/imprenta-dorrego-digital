@@ -174,12 +174,12 @@ export function Hero() {
 
         {/* Headline — synced caption */}
         <div className="mt-8 max-w-[1100px]">
-          <div className="relative h-[24rem] overflow-visible md:h-[clamp(19rem,26vw,23rem)]">
+          <div className="relative h-[19rem] overflow-visible sm:h-[21rem] md:h-[clamp(17rem,22vw,20rem)]">
             <div key={i} className="hero-soft-fade absolute inset-0 flex flex-col overflow-visible">
-              <h1 className="font-display overflow-visible pr-[0.45em] text-[clamp(3rem,9vw,9.5rem)] font-light leading-[0.92] tracking-normal text-balance md:pr-[0.6em]">
+              <h1 className="font-display overflow-visible pr-[0.45em] text-[clamp(2.25rem,6.2vw,6rem)] font-light leading-[1.02] tracking-normal text-balance md:pr-[0.6em]">
                 {slide.title}
               </h1>
-              <p className="mt-6 max-w-xl text-base text-paper/75 md:mt-8 md:text-lg text-pretty">
+              <p className="mt-5 max-w-xl text-sm text-paper/75 md:mt-6 md:text-base text-pretty">
                 {slide.text}
               </p>
             </div>
