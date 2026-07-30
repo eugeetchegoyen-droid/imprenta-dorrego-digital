@@ -41,7 +41,7 @@ export function GuiaPodAutores() {
         <p className="font-display text-2xl font-light leading-snug text-ink md:text-3xl reveal">
           Publicar un libro dejó de requerir un depósito lleno de cajas. La
           impresión bajo demanda permite que imprimas exactamente la cantidad de
-          ejemplares que necesitás —desde diez— con la misma calidad de una
+          ejemplares que necesitás con la misma calidad de una
           edición tradicional. Para el autor independiente argentino, esto cambia
           las reglas del juego.
         </p>
