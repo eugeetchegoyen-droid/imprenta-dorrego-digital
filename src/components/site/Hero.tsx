@@ -206,17 +206,17 @@ export function Hero() {
 
         {/* Destacado sincronizado + controles del carrousel */}
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-6">
-          <div className="relative h-[13rem] max-w-2xl sm:h-[11rem] md:h-[10rem]">
+          <div className="relative h-[7.5rem] max-w-2xl sm:h-[11rem] md:h-[10rem]">
             <div
               key={`f-${i}`}
               className="hero-soft-fade absolute inset-0 flex flex-col justify-center border-l-2 border-gold bg-onyx/55 px-5 py-4 backdrop-blur-sm md:px-6 md:py-5"
             >
-              <div className="font-display text-xl leading-tight md:text-2xl">
+              <div className="font-display text-lg leading-tight sm:text-xl md:text-2xl">
                 {slide.featured.title}
                 <br />
                 <span className="gold-text">{slide.featured.sub}</span>
               </div>
-              <p className="mt-2 max-w-lg text-xs leading-relaxed text-paper/70 md:text-sm">
+              <p className="mt-2 hidden max-w-lg text-xs leading-relaxed text-paper/70 sm:block md:text-sm">
                 {slide.featured.body}
               </p>
             </div>
