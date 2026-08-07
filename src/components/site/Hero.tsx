@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import prensaAsset from "@/assets/hero-prensa.jpg.asset.json";
 import packagingAsset from "@/assets/hero-packaging.jpg.asset.json";
 import terminacionesAsset from "@/assets/hero-terminaciones.jpg.asset.json";
@@ -92,6 +92,10 @@ const SLIDES: Slide[] = [
 
 ];
 
+const HEADLINE_CLASS =
+  "font-display overflow-visible pr-[0.45em] text-[clamp(2.25rem,6.2vw,6rem)] font-light leading-[1.02] tracking-normal text-balance md:pr-[0.6em]";
+const BODY_CLASS =
+  "mt-5 max-w-xl text-sm text-paper/75 md:mt-6 md:text-base text-pretty";
 
 const INTERVAL = 6000;
 
@@ -99,6 +103,25 @@ export function Hero() {
   const [y, setY] = useState(0);
   const [i, setI] = useState(0);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+  const measureRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [slideHeights, setSlideHeights] = useState<number[]>([]);
+
+  const measure = useCallback(() => {
+    setSlideHeights(
+      measureRefs.current.map((el) => (el ? Math.round(el.getBoundingClientRect().height) : 0))
+    );
+  }, []);
+
+  useLayoutEffect(() => {
+    measure();
+    if (typeof document !== "undefined" && "fonts" in document) {
+      document.fonts.ready.then(measure);
+    }
+    const onResize = () => measure();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [measure]);
+
 
   useEffect(() => {
     const onScroll = () => setY(window.scrollY);
@@ -175,20 +198,44 @@ export function Hero() {
 
         {/* Headline — synced caption */}
         <div className="mt-8 max-w-[1100px]">
-          <div className="relative min-h-[17rem] overflow-visible sm:min-h-[21rem] md:min-h-[clamp(20rem,26vw,24rem)]">
+          <div
+            className={`relative overflow-visible ${
+              slideHeights.length
+                ? "transition-[min-height] duration-700 ease-out"
+                : "min-h-[15rem] sm:min-h-[18rem] md:min-h-[19rem]"
+            }`}
+            style={{
+              minHeight: slideHeights[i] ? `${slideHeights[i] + 12}px` : undefined,
+            }}
+          >
+            {/* Hidden sizing samples for each slide */}
+            <div
+              className="absolute inset-x-0 top-0 -z-50 h-auto opacity-0 pointer-events-none"
+              aria-hidden="true"
+            >
+              {SLIDES.map((s, idx) => (
+                <div
+                  key={idx}
+                  ref={(el) => {
+                    measureRefs.current[idx] = el;
+                  }}
+                  className="flex flex-col"
+                >
+                  <h1 className={HEADLINE_CLASS}>{s.title}</h1>
+                  <p className={BODY_CLASS}>{s.text}</p>
+                </div>
+              ))}
+            </div>
+
             <div key={i} className="hero-soft-fade absolute inset-0 flex flex-col overflow-visible">
-              <h1 className="font-display overflow-visible pr-[0.45em] text-[clamp(2.25rem,6.2vw,6rem)] font-light leading-[1.02] tracking-normal text-balance md:pr-[0.6em]">
-                {slide.title}
-              </h1>
-              <p className="mt-5 max-w-xl text-sm text-paper/75 md:mt-6 md:text-base text-pretty">
-                {slide.text}
-              </p>
+              <h1 className={HEADLINE_CLASS}>{slide.title}</h1>
+              <p className={BODY_CLASS}>{slide.text}</p>
             </div>
           </div>
 
 
 
-          <div className="mt-12 flex flex-wrap items-center gap-3 sm:gap-4">
+          <div className="mt-6 flex flex-wrap items-center gap-3 sm:gap-4">
             <a
               href="#cotizar"
               className="group inline-flex items-center gap-3 bg-gold px-6 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-onyx transition-all hover:bg-gold-soft hover:shadow-gold"
