@@ -175,7 +175,7 @@ export function Hero() {
 
         {/* Headline — synced caption */}
         <div className="mt-8 max-w-[1100px]">
-          <div className="relative min-h-[17rem] overflow-visible sm:min-h-[21rem] md:min-h-[clamp(20rem,26vw,24rem)]">
+          <div className="relative min-h-[15rem] overflow-visible sm:min-h-[18rem] md:min-h-[19rem]">
             <div key={i} className="hero-soft-fade absolute inset-0 flex flex-col overflow-visible">
               <h1 className="font-display overflow-visible pr-[0.45em] text-[clamp(2.25rem,6.2vw,6rem)] font-light leading-[1.02] tracking-normal text-balance md:pr-[0.6em]">
                 {slide.title}
@@ -188,7 +188,7 @@ export function Hero() {
 
 
 
-          <div className="mt-12 flex flex-wrap items-center gap-3 sm:gap-4">
+          <div className="mt-6 flex flex-wrap items-center gap-3 sm:gap-4">
             <a
               href="#cotizar"
               className="group inline-flex items-center gap-3 bg-gold px-6 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-onyx transition-all hover:bg-gold-soft hover:shadow-gold"
