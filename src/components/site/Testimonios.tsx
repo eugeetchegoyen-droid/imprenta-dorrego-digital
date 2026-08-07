@@ -163,7 +163,7 @@ export function Testimonios() {
               Experiencias de clientes
             </div>
             <h2 className="mt-6 font-display text-[clamp(2rem,4.8vw,4.4rem)] font-light leading-[1.02] tracking-[-0.02em] text-balance">
-              Qué dicen <span className="italic">nuestros clientes</span>.
+              Qué dicen <span>nuestros clientes</span>.
             </h2>
           </div>
         </header>

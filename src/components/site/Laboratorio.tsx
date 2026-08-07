@@ -21,7 +21,7 @@ export function Laboratorio() {
             Nuestra tecnología
           </div>
           <h2 className="max-w-3xl overflow-visible pr-[0.2em] font-display text-[clamp(2.2rem,5.5vw,5rem)] font-light leading-[1] tracking-normal text-balance">
-            La precisión del <span className="italic">oficio</span> en la era <span className="gold-text italic pr-[0.1em]">digital</span>
+            La precisión del <span>oficio</span> en la era <span className="gold-text pr-[0.1em]">digital</span>
           </h2>
           <p className="max-w-2xl text-paper/70 md:text-lg">
             Equipamiento y flujos de trabajo de última generación al servicio del oficio editorial.
@@ -69,9 +69,9 @@ export function Laboratorio() {
               WEB APPROVAL
             </div>
             <h3 className="mt-4 overflow-visible pr-[0.2em] font-display text-4xl tracking-normal md:pr-[0.28em] md:text-5xl">
-              Aprobá tu trabajo <span className="italic pr-[0.1em]">online</span>,
+              Aprobá tu trabajo <span className="pr-[0.1em]">online</span>,
               <br />
-              <span className="gold-text italic pr-[0.1em]">en tiempo real</span>
+              <span className="gold-text pr-[0.1em]">en tiempo real</span>
             </h3>
             <p className="mt-4 text-paper/70">
               Con <strong className="text-paper">Web Approval</strong>, nuestra plataforma de revisión digital

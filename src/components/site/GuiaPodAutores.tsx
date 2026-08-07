@@ -18,7 +18,7 @@ export function GuiaPodAutores() {
           </div>
           <h1 className="mt-8 max-w-4xl font-display text-[clamp(2.2rem,5.2vw,4.6rem)] font-light leading-[1.02] tracking-[-0.02em] text-balance">
             Impresión bajo demanda para autores independientes en{" "}
-            <span className="italic text-gold-soft">Argentina</span>
+            <span className="text-gold-soft">Argentina</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-paper/70">
             Cómo imprimir libros en tiradas chicas con calidad editorial y sin

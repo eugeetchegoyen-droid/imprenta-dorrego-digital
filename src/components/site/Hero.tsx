@@ -22,7 +22,7 @@ const SLIDES: Slide[] = [
       <>
         Impresión digital
         <br />
-        de <span className="gold-text inline-block overflow-visible pr-[0.45em] italic">máxima calidad</span>
+        de <span className="gold-text inline-block overflow-visible pr-[0.45em]">máxima calidad</span>
       </>
     ),
     text:
@@ -41,7 +41,7 @@ const SLIDES: Slide[] = [
       <>
         Packaging
         <br />
-        de <span className="gold-text inline-block overflow-visible pr-[0.45em] italic">alto impacto</span>
+        de <span className="gold-text inline-block overflow-visible pr-[0.45em]">alto impacto</span>
       </>
     ),
     text:
@@ -60,7 +60,7 @@ const SLIDES: Slide[] = [
       <>
         Terminaciones
         <br />
-        que hacen la <span className="gold-text inline-block overflow-visible pr-[0.45em] italic">diferencia</span>
+        que hacen la <span className="gold-text inline-block overflow-visible pr-[0.45em]">diferencia</span>
       </>
     ),
     text:
@@ -78,7 +78,7 @@ const SLIDES: Slide[] = [
     kicker: "Encuadernación profesional",
     title: (
       <>
-        Papel, tinta y <span className="gold-text inline-block overflow-visible pr-[0.45em] italic">trayectoria</span>
+        Papel, tinta y <span className="gold-text inline-block overflow-visible pr-[0.45em]">trayectoria</span>
       </>
     ),
     text:
