@@ -28,9 +28,9 @@ export function Manifesto() {
           </div>
           <div className="md:col-span-9 reveal">
             <p className="font-display text-[clamp(1.6rem,3.6vw,3.4rem)] font-light leading-[1.1] tracking-[-0.015em] text-balance">
-              Más de <span className="gold-text italic">70 años</span> de
+              Más de <span className="gold-text">70 años</span> de
               soluciones gráficas. Un oficio que se{" "}
-              <span className="italic">reinventa</span> con cada tecnología —
+              <span>reinventa</span> con cada tecnología —
               sin perder la precisión que nos define.
             </p>
             <p className="mt-10 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">

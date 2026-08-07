@@ -10,7 +10,7 @@ export function PodCalculator() {
                 Impresión por demanda
               </div>
               <h2 className="mt-6 font-display text-[clamp(2rem,4.8vw,4.4rem)] font-light leading-[1.02] tracking-[-0.02em] text-balance">
-                Imprimí solo lo que <span className="italic">necesitás</span>, cuando lo necesitás.
+                Imprimí solo lo que <span>necesitás</span>, cuando lo necesitás.
               </h2>
               <p className="mt-6 text-muted-foreground md:text-lg">
                 Diez, cien o mil ejemplares con un costo unitario similar. Sin
