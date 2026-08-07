@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import prensaAsset from "@/assets/hero-prensa.jpg.asset.json";
 import packagingAsset from "@/assets/hero-packaging.jpg.asset.json";
 import terminacionesAsset from "@/assets/hero-terminaciones.jpg.asset.json";
