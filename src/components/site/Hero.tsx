@@ -175,7 +175,7 @@ export function Hero() {
 
         {/* Headline — synced caption */}
         <div className="mt-8 max-w-[1100px]">
-          <div className="relative min-h-[19rem] overflow-visible sm:min-h-[24rem] md:min-h-[clamp(24rem,30vw,28rem)]">
+          <div className="relative min-h-[17rem] overflow-visible sm:min-h-[21rem] md:min-h-[clamp(20rem,26vw,24rem)]">
             <div key={i} className="hero-soft-fade absolute inset-0 flex flex-col overflow-visible">
               <h1 className="font-display overflow-visible pr-[0.45em] text-[clamp(2.25rem,6.2vw,6rem)] font-light leading-[1.02] tracking-normal text-balance md:pr-[0.6em]">
                 {slide.title}
