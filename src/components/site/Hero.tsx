@@ -103,6 +103,25 @@ export function Hero() {
   const [y, setY] = useState(0);
   const [i, setI] = useState(0);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+  const measureRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [slideHeights, setSlideHeights] = useState<number[]>([]);
+
+  const measure = useCallback(() => {
+    setSlideHeights(
+      measureRefs.current.map((el) => (el ? Math.round(el.getBoundingClientRect().height) : 0))
+    );
+  }, []);
+
+  useLayoutEffect(() => {
+    measure();
+    if (typeof document !== "undefined" && "fonts" in document) {
+      document.fonts.ready.then(measure);
+    }
+    const onResize = () => measure();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [measure]);
+
 
   useEffect(() => {
     const onScroll = () => setY(window.scrollY);
