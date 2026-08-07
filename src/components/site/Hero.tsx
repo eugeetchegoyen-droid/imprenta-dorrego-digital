@@ -92,6 +92,10 @@ const SLIDES: Slide[] = [
 
 ];
 
+const HEADLINE_CLASS =
+  "font-display overflow-visible pr-[0.45em] text-[clamp(2.25rem,6.2vw,6rem)] font-light leading-[1.02] tracking-normal text-balance md:pr-[0.6em]";
+const BODY_CLASS =
+  "mt-5 max-w-xl text-sm text-paper/75 md:mt-6 md:text-base text-pretty";
 
 const INTERVAL = 6000;
 
