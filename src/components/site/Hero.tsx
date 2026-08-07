@@ -188,7 +188,7 @@ export function Hero() {
 
 
 
-          <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+          <div className="mt-12 flex flex-wrap items-center gap-3 sm:gap-4">
             <a
               href="#cotizar"
               className="group inline-flex items-center gap-3 bg-gold px-6 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-onyx transition-all hover:bg-gold-soft hover:shadow-gold"
