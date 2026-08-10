@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/dorrego-logo.png.asset.json";
 
@@ -27,35 +27,23 @@ function isGroup(l: NavLink | NavGroup): l is NavGroup {
 }
 
 export function Nav() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [openSub, setOpenSub] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-paper/95 backdrop-blur-xl border-b border-border/60 shadow-[0_4px_30px_-12px_rgba(0,0,0,0.08)]"
-          : "bg-paper/60 backdrop-blur-2xl border-b border-white/20"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 bg-ink/95 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_-12px_rgba(0,0,0,0.3)]`}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 lg:px-10">
         <Link to="/" className="group flex items-center gap-3.5">
           <img
             src={logoAsset.url}
             alt="Imprenta Dorrego"
-            className="h-13 w-auto md:h-14 lg:h-[60px]"
+            className="h-13 w-auto brightness-0 invert md:h-14 lg:h-[60px]"
           />
           <div className="leading-tight">
-            <div className="font-display text-lg tracking-tight text-ink md:text-xl">Imprenta Dorrego</div>
-            <div className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">Editorial · Digital · POD</div>
+            <div className="font-display text-lg tracking-tight text-paper md:text-xl">Imprenta Dorrego</div>
+            <div className="text-[11px] uppercase tracking-[0.25em] text-paper/50">Editorial · Digital · POD</div>
           </div>
         </Link>
 
@@ -71,7 +59,7 @@ export function Nav() {
                 <button
                   type="button"
                   onClick={() => setOpenSub((v) => !v)}
-                  className="group relative flex items-center gap-1 text-sm font-medium text-ink/80 transition-colors hover:text-ink"
+                  className="group relative flex items-center gap-1 text-sm font-medium text-paper/80 transition-colors hover:text-paper"
                 >
                   {l.label}
                   <svg
@@ -91,14 +79,14 @@ export function Nav() {
                     openSub ? "visible opacity-100 translate-y-0" : "invisible opacity-0 -translate-y-1"
                   }`}
                 >
-                  <div className="min-w-[210px] border border-border/60 bg-paper py-2 shadow-card">
+                  <div className="min-w-[210px] border border-white/10 bg-ink py-2 shadow-card">
                     {l.children.map((c) => (
                       <Link
                         key={`${c.to}${c.hash ?? ""}`}
                         to={c.to}
                         hash={c.hash}
                         onClick={() => setOpenSub(false)}
-                        className="block px-5 py-2.5 text-sm font-medium text-ink/80 transition-colors hover:bg-bone hover:text-ink"
+                        className="block px-5 py-2.5 text-sm font-medium text-paper/80 transition-colors hover:bg-white/10 hover:text-paper"
                       >
                         {c.label}
                       </Link>
@@ -111,7 +99,7 @@ export function Nav() {
                 key={`${l.to}${l.hash ?? ""}`}
                 to={l.to}
                 hash={l.hash}
-                className={`group relative text-sm font-medium text-ink/80 transition-colors hover:text-ink ${
+                className={`group relative text-sm font-medium text-paper/80 transition-colors hover:text-paper ${
                   i === 0 ? "md:ml-4" : ""
                 }`}
               >
@@ -123,7 +111,7 @@ export function Nav() {
           <Link
             to="/"
             hash="approval"
-            className="inline-flex items-center gap-2 border border-ink px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-ink transition-all hover:bg-ink hover:text-paper"
+            className="inline-flex items-center gap-2 border border-paper/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-paper transition-all hover:bg-paper hover:text-ink"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
             Web Approval
@@ -135,19 +123,19 @@ export function Nav() {
           onClick={() => setOpen((v) => !v)}
           className="md:hidden flex h-10 w-10 flex-col items-center justify-center gap-1.5"
         >
-          <span className={`h-px w-6 bg-ink transition-transform ${open ? "translate-y-[6px] rotate-45" : ""}`} />
-          <span className={`h-px w-6 bg-ink transition-opacity ${open ? "opacity-0" : ""}`} />
-          <span className={`h-px w-6 bg-ink transition-transform ${open ? "-translate-y-[6px] -rotate-45" : ""}`} />
+          <span className={`h-px w-6 bg-paper transition-transform ${open ? "translate-y-[6px] rotate-45" : ""}`} />
+          <span className={`h-px w-6 bg-paper transition-opacity ${open ? "opacity-0" : ""}`} />
+          <span className={`h-px w-6 bg-paper transition-transform ${open ? "-translate-y-[6px] -rotate-45" : ""}`} />
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-border bg-paper">
+        <div className="md:hidden border-t border-white/10 bg-ink">
           <div className="flex flex-col px-6 py-6">
             {links.map((l) =>
               isGroup(l) ? (
-                <div key={l.label} className="border-b border-border/60 py-3">
-                  <div className="font-display text-2xl text-ink/60">{l.label}</div>
+                <div key={l.label} className="border-b border-white/10 py-3">
+                  <div className="font-display text-2xl text-paper/60">{l.label}</div>
                   <div className="mt-2 flex flex-col gap-1 pl-4">
                     {l.children.map((c) => (
                       <Link
@@ -155,7 +143,7 @@ export function Nav() {
                         to={c.to}
                         hash={c.hash}
                         onClick={() => setOpen(false)}
-                        className="py-2 font-display text-xl"
+                        className="py-2 font-display text-xl text-paper/90"
                       >
                         {c.label}
                       </Link>
@@ -168,7 +156,7 @@ export function Nav() {
                   to={l.to}
                   hash={l.hash}
                   onClick={() => setOpen(false)}
-                  className="border-b border-border/60 py-3 font-display text-2xl"
+                  className="border-b border-white/10 py-3 font-display text-2xl text-paper/90"
                 >
                   {l.label}
                 </Link>
@@ -178,7 +166,7 @@ export function Nav() {
               to="/"
               hash="approval"
               onClick={() => setOpen(false)}
-              className="mt-6 inline-flex items-center justify-between border border-ink px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em]"
+              className="mt-6 inline-flex items-center justify-between border border-paper/30 px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-paper"
             >
               Web Approval <span className="h-1.5 w-1.5 rounded-full bg-gold" />
             </Link>
