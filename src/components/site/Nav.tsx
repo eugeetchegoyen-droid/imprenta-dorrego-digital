@@ -40,7 +40,11 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 bg-paper/85 backdrop-blur-xl border-b border-border/60 shadow-[0_4px_30px_-12px_rgba(0,0,0,0.08)]`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-paper/95 backdrop-blur-xl border-b border-border/60 shadow-[0_4px_30px_-12px_rgba(0,0,0,0.08)]"
+          : "bg-paper/60 backdrop-blur-2xl border-b border-white/20"
+      }`}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 lg:px-10">
         <Link to="/" className="group flex items-center gap-3.5">
