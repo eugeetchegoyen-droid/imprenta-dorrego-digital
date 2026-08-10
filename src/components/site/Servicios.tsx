@@ -293,7 +293,7 @@ export function Servicios() {
             benefits={[
               { title: "Carga simple", body: "Subis tu PDF validado en fuentes y color." },
               { title: "Revision online", body: "Marcas cambios al instante, sin instalar nada." },
-              { title: "Aprobacion 1 clic", body: "Un clic y entra directo a produccion." },
+              { title: "Aproba en 1 clic", body: "Un clic y entra directo a produccion." },
               { title: "Todo en un lugar", body: "Sin mails perdidos ni idas y vueltas." },
             ]}
           />
