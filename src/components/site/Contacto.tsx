@@ -128,7 +128,7 @@ export function Contacto() {
           </div>
 
           {/* Columna derecha — vías de contacto */}
-          <div className="relative bg-onyx p-8 text-paper md:p-12 lg:col-span-5 lg:p-14" data-reveal>
+          <div className="relative bg-onyx p-8 text-paper md:p-12 lg:col-span-4 lg:p-14" data-reveal>
             <div className="absolute inset-0 opacity-[0.04] [background-image:radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:24px_24px]" />
             <div className="relative">
               <div className="text-[10px] uppercase tracking-[0.3em] text-gold">
