@@ -3,7 +3,7 @@ import { MapPin, Mail, Phone, Instagram, Linkedin } from "lucide-react";
 export function Footer() {
   return (
     <footer className="bg-onyx text-paper">
-      <div className="mx-auto max-w-[1400px] px-6 py-16 md:py-20 lg:px-10">
+      <div className="mx-auto max-w-[1400px] px-6 py-16 md:py-16 lg:px-10">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <div className="font-display text-4xl md:text-5xl">Imprenta Dorrego</div>

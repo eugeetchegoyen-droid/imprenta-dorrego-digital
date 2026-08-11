@@ -24,7 +24,7 @@ export function Portfolio() {
   const filtered = cat === "Todos" ? items : items.filter((i) => i.cat === cat);
 
   return (
-    <section id="portfolio" className="bg-paper py-16 md:py-44">
+    <section id="portfolio" className="bg-paper py-16 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <div className="reveal">
