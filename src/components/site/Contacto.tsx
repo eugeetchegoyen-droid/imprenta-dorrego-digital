@@ -101,7 +101,7 @@ export function Contacto() {
             )}
 
             {/* CTA reclutamiento */}
-            <div className="mt-10 pt-8">
+            <div className="mt-auto mb-auto pt-8">
               <div className="border-t border-border/60 pt-8">
                 <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
                   <div>
