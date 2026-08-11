@@ -182,7 +182,7 @@ export function Contacto() {
                 <div className="text-[10px] uppercase tracking-[0.25em] text-paper/40">
                   Horario de atención
                 </div>
-                <p className="mt-3 text-sm text-paper/80">
+                <p className="mt-3 text-xs text-paper/80">
                   Lunes a viernes · 9 a 18 hs
                 </p>
               </div>
