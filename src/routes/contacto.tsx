@@ -29,8 +29,8 @@ export const Route = createFileRoute("/contacto")({
           description:
             "Imprenta editorial y digital en Buenos Aires. Impresión bajo demanda, Web Approval, encuadernación PUR y tecnología Xerox Iridesse.",
           url: "https://imprenta-dorrego-digital.lovable.app",
-          telephone: "+54 11 4700 0000",
-          email: "hola@imprentadorrego.com.ar",
+          telephone: "+54 11 4855 5353",
+          email: "ventas@imprentadorrego.com.ar",
           image:
             "https://imprenta-dorrego-digital.lovable.app/__l5e/assets-v1/b590ed25-af65-4072-abcf-5ad13d7122e1/dorrego-logo.png",
           logo: "https://imprenta-dorrego-digital.lovable.app/__l5e/assets-v1/b590ed25-af65-4072-abcf-5ad13d7122e1/dorrego-logo.png",
