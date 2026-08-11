@@ -30,7 +30,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <div className="text-[10px] uppercase tracking-[0.3em] text-paper/70">Contacto</div>
             <div className="mt-4 space-y-2 text-sm">
-              <a href="mailto:hola@imprentadorrego.com.ar" className="block text-paper/80 hover:text-gold">hola@imprentadorrego.com.ar</a>
+              <a href="mailto:ventas@imprentadorrego.com.ar" className="block text-paper/80 hover:text-gold">Escribinos</a>
               <a href="tel:+541147000000" className="block text-paper/80 hover:text-gold">+54 11 4700 0000</a>
             </div>
           </div>
