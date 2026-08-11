@@ -11,7 +11,7 @@ export function Laboratorio() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="laboratorio" className="relative grain overflow-hidden bg-onyx text-paper py-32 md:py-44">
+    <section id="laboratorio" className="relative grain overflow-hidden bg-onyx text-paper py-16 md:py-44">
       <div className="pointer-events-none absolute -right-40 top-1/4 h-[600px] w-[600px] rounded-full bg-gold/8 blur-[180px]" />
 
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">

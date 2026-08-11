@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 
 export function QuoteCTA() {
   return (
-    <section className="bg-paper py-20 md:py-28">
+    <section className="bg-paper py-16 md:py-28">
       <div className="mx-auto max-w-[1100px] px-6 lg:px-10">
         <div className="relative overflow-hidden border border-border/60 bg-bone px-8 py-14 text-center md:px-16 md:py-20 reveal">
           <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-gold/10 blur-[140px]" />

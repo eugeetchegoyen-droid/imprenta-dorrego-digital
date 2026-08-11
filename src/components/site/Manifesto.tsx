@@ -2,7 +2,7 @@ import historiaImg from "@/assets/historia-dorrego.png.asset.json";
 
 export function Manifesto() {
   return (
-    <section className="relative overflow-hidden bg-paper py-32 md:py-48">
+    <section className="relative overflow-hidden bg-paper py-16 md:py-48">
       {/* Historical image — left margin, faded toward the text */}
       <div className="pointer-events-none absolute inset-y-0 left-0 w-[80%] md:w-[55%] lg:w-[48%]">
         <img

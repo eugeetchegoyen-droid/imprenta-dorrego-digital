@@ -28,7 +28,7 @@ export function QuoteWizard() {
   const formValid = name.trim().length > 1 && emailValid && phone.trim().length > 4;
 
   return (
-    <section id="cotizar" className="relative grain overflow-hidden bg-onyx py-32 text-paper md:py-44">
+    <section id="cotizar" className="relative grain overflow-hidden bg-onyx py-16 text-paper md:py-44">
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[500px] w-[500px] rounded-full bg-gold/10 blur-[160px]" />
 
       <div className="mx-auto max-w-[1100px] px-6 lg:px-10">
