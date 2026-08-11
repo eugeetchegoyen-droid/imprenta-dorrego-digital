@@ -272,7 +272,7 @@ function ContactItem({
       </span>
       <div>
         <div className="text-[10px] uppercase tracking-[0.25em] text-paper/40">{label}</div>
-        <div className="mt-0.5 font-display text-xl text-paper transition-colors group-hover:text-gold">
+        <div className="mt-0.5 font-display text-lg text-paper transition-colors group-hover:text-gold">
           {value}
         </div>
       </div>
