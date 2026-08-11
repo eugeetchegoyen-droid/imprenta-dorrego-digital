@@ -1,3 +1,5 @@
+import { MapPin, Mail, Phone } from "lucide-react";
+
 export function Footer() {
   return (
     <footer className="bg-onyx text-paper">
@@ -20,18 +22,31 @@ export function Footer() {
 
           <div className="md:col-span-3">
             <div className="text-[10px] uppercase tracking-[0.3em] text-paper/70">Visitanos</div>
-            <p className="mt-4 text-sm leading-relaxed text-paper/80">
-              Av Dorrego 1102<br />
-              C1414 CABA · Argentina<br />
-              Lun – Vie · 9 a 18 hs
-            </p>
+            <div className="mt-4 flex items-start gap-3 text-sm text-paper/80">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+              <p className="leading-relaxed">
+                Av Dorrego 1102<br />
+                C1414 CABA · Argentina<br />
+                Lun – Vie · 9 a 18 hs
+              </p>
+            </div>
           </div>
 
           <div className="md:col-span-2">
             <div className="text-[10px] uppercase tracking-[0.3em] text-paper/70">Contacto</div>
-            <div className="mt-4 space-y-2 text-sm">
-              <a href="mailto:ventas@imprentadorrego.com.ar" className="block text-paper/80 hover:text-gold">Escribinos</a>
-              <a href="tel:+541147000000" className="block text-paper/80 hover:text-gold">+54 11 4700 0000</a>
+            <div className="mt-4 space-y-3 text-sm">
+              <a href="mailto:ventas@imprentadorrego.com.ar" className="flex items-start gap-3 text-paper/80 hover:text-gold">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                Escribinos
+              </a>
+              <a href="tel:+541148555353" className="flex items-start gap-3 text-paper/80 hover:text-gold">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                +54 11 4855 5353
+              </a>
+              <a href="tel:+541148544644" className="flex items-start gap-3 text-paper/80 hover:text-gold">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                +54 11 4854 4644
+              </a>
             </div>
           </div>
 

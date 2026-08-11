@@ -143,20 +143,20 @@ export function Contacto() {
                 <ContactItem
                   icon={<Mail size={18} />}
                   label="Mail"
-                  value="hola@imprentadorrego.com.ar"
-                  href="mailto:hola@imprentadorrego.com.ar"
+                  value="ventas@imprentadorrego.com.ar"
+                  href="mailto:ventas@imprentadorrego.com.ar"
                 />
                 <ContactItem
                   icon={<Phone size={18} />}
                   label="Teléfono"
-                  value="+54 11 4700 0000"
-                  href="tel:+541147000000"
+                  value="+54 11 4855 5353"
+                  href="tel:+541148555353"
                 />
                 <ContactItem
                   icon={<MessageCircle size={18} />}
                   label="WhatsApp"
-                  value="+54 11 4700 0000"
-                  href="https://wa.me/541147000000"
+                  value="+54 11 4855 5353"
+                  href="https://wa.me/5491148555353"
                 />
                 <ContactItem
                   icon={<Instagram size={18} />}

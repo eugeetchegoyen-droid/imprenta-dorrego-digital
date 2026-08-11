@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 
-const WHATSAPP_NUMBER = "5491147000000";
+const WHATSAPP_NUMBER = "5491148555353";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hola, me interesa conocer más sobre los servicios de Imprenta Dorrego."
 );
