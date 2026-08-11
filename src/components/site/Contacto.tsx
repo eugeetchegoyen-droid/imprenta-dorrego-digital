@@ -161,8 +161,8 @@ export function Contacto() {
                 <ContactItem
                   icon={<MessageCircle size={18} />}
                   label="WhatsApp"
-                  value="+54 11 4855 5353"
-                  href="https://wa.me/5491148555353"
+                  value="+54 11 6610 1894"
+                  href="https://wa.me/5491166101894"
                 />
                 <ContactItem
                   icon={<Instagram size={18} />}
