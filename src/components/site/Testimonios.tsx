@@ -154,7 +154,7 @@ export function Testimonios() {
   }, [isPaused]);
 
   return (
-    <section id="testimonios" className="bg-paper pt-16 pb-16 md:py-44">
+    <section id="testimonios" className="bg-paper pt-16 pb-16 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <header className="mb-14">
           <div className="reveal max-w-3xl">

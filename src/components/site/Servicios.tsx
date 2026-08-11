@@ -268,7 +268,7 @@ export function Servicios() {
   const toggle = (id: string) => setActiveId((current) => (current === id ? null : id));
 
   return (
-    <section id="servicios" className="bg-paper py-16 md:py-44">
+    <section id="servicios" className="bg-paper py-16 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <header className="mb-16 max-w-3xl reveal">
           <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">

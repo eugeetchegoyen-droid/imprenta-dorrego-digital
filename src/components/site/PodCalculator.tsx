@@ -1,6 +1,6 @@
 export function PodCalculator() {
   return (
-    <section id="editorial" className="bg-bone py-16 md:py-44">
+    <section id="editorial" className="bg-bone py-16 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-5 reveal flex h-full flex-col items-start">
