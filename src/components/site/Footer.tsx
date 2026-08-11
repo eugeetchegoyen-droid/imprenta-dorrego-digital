@@ -40,7 +40,6 @@ export function Footer() {
             <div className="mt-4 flex flex-col gap-2 text-sm">
               <a href="#" className="text-paper/80 hover:text-gold">Instagram</a>
               <a href="#" className="text-paper/80 hover:text-gold">LinkedIn</a>
-              <a href="#" className="text-paper/80 hover:text-gold">Behance</a>
             </div>
           </div>
         </div>
