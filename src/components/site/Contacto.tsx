@@ -143,7 +143,7 @@ export function Contacto() {
                 <ContactItem
                   icon={<Mail size={18} />}
                   label="Mail"
-                  value="Escribinos"
+                  value="ventas@imprentadorrego.com.ar"
                   href="mailto:ventas@imprentadorrego.com.ar"
                 />
                 <ContactItem
