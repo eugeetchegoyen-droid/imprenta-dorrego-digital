@@ -48,7 +48,7 @@ export const Route = createFileRoute("/contacto")({
             longitude: -58.4385,
           },
           hasMap:
-            "https://www.google.com/maps/search/?api=1&query=Imprenta+Dorrego+Av.+Dorrego+1102+CABA",
+            "https://www.google.com/maps/search/?api=1&query=Imprenta+Dorrego+Av+Dorrego+1102+CABA",
           openingHours: "Mo-Fr 09:00-18:00",
           openingHoursSpecification: [
             {
