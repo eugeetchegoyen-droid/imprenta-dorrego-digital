@@ -36,7 +36,7 @@ export const Route = createFileRoute("/contacto")({
           logo: "https://imprenta-dorrego-digital.lovable.app/__l5e/assets-v1/b590ed25-af65-4072-abcf-5ad13d7122e1/dorrego-logo.png",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Av. Dorrego 1102",
+            streetAddress: "Av Dorrego 1102",
             addressLocality: "CABA",
             addressRegion: "Ciudad Autónoma de Buenos Aires",
             postalCode: "C1414CKT",
