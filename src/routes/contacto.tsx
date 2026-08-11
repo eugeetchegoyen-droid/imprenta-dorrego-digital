@@ -36,7 +36,7 @@ export const Route = createFileRoute("/contacto")({
           logo: "https://imprenta-dorrego-digital.lovable.app/__l5e/assets-v1/b590ed25-af65-4072-abcf-5ad13d7122e1/dorrego-logo.png",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Av. Dorrego 1102",
+            streetAddress: "Av Dorrego 1102",
             addressLocality: "CABA",
             addressRegion: "Ciudad Autónoma de Buenos Aires",
             postalCode: "C1414CKT",
@@ -48,7 +48,7 @@ export const Route = createFileRoute("/contacto")({
             longitude: -58.4385,
           },
           hasMap:
-            "https://www.google.com/maps/search/?api=1&query=Imprenta+Dorrego+Av.+Dorrego+1102+CABA",
+            "https://www.google.com/maps/search/?api=1&query=Imprenta+Dorrego+Av+Dorrego+1102+CABA",
           openingHours: "Mo-Fr 09:00-18:00",
           openingHoursSpecification: [
             {

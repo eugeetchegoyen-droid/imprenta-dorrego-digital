@@ -21,7 +21,7 @@ export function Footer() {
           <div className="md:col-span-3">
             <div className="text-[10px] uppercase tracking-[0.3em] text-paper/70">Visitanos</div>
             <p className="mt-4 text-sm leading-relaxed text-paper/80">
-              Av. Dorrego 1234<br />
+              Av Dorrego 1102<br />
               C1414 CABA · Argentina<br />
               Lun – Vie · 9 a 18 hs
             </p>
