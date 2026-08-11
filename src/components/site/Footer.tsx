@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Mail, Phone, Instagram, Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -52,9 +52,15 @@ export function Footer() {
 
           <div className="md:col-span-2">
             <div className="text-[10px] uppercase tracking-[0.3em] text-paper/70">Síguenos</div>
-            <div className="mt-4 flex flex-col gap-2 text-sm">
-              <a href="#" className="text-paper/80 hover:text-gold">Instagram</a>
-              <a href="#" className="text-paper/80 hover:text-gold">LinkedIn</a>
+            <div className="mt-4 flex flex-col gap-3 text-sm">
+              <a href="#" className="flex items-start gap-3 text-paper/80 hover:text-gold">
+                <Instagram className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                Instagram
+              </a>
+              <a href="#" className="flex items-start gap-3 text-paper/80 hover:text-gold">
+                <Linkedin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>
