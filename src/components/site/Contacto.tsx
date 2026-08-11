@@ -46,7 +46,7 @@ export function Contacto() {
 
         <div className="grid gap-px overflow-hidden border border-border/60 bg-border/60 lg:grid-cols-12">
           {/* Columna izquierda — formulario */}
-          <div className="flex flex-col bg-paper p-8 md:p-12 lg:col-span-7 lg:p-16" data-reveal>
+          <div className="flex flex-col bg-paper p-8 md:p-12 lg:col-span-8 lg:p-16" data-reveal>
             <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
               Contanos qué necesitás
             </div>
@@ -128,7 +128,7 @@ export function Contacto() {
           </div>
 
           {/* Columna derecha — vías de contacto */}
-          <div className="relative bg-onyx p-8 text-paper md:p-12 lg:col-span-5 lg:p-14" data-reveal>
+          <div className="relative bg-onyx p-8 text-paper md:p-12 lg:col-span-4 lg:p-14" data-reveal>
             <div className="absolute inset-0 opacity-[0.04] [background-image:radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:24px_24px]" />
             <div className="relative">
               <div className="text-[10px] uppercase tracking-[0.3em] text-gold">
