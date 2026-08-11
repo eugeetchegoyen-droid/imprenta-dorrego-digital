@@ -162,7 +162,7 @@ export function Contacto() {
                   icon={<Instagram size={18} />}
                   label="Instagram"
                   value="@imprentadorrego"
-                  href="https://instagram.com/imprentadorrego"
+                  href="https://www.instagram.com/imprentadorrego/"
                 />
                 <ContactItem
                   icon={<Linkedin size={18} />}

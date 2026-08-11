@@ -61,7 +61,7 @@ export const Route = createFileRoute("/contacto")({
           priceRange: "$$",
           areaServed: "Buenos Aires, Argentina",
           sameAs: [
-            "https://instagram.com/imprentadorrego",
+            "https://www.instagram.com/imprentadorrego/",
             "https://linkedin.com/company/imprenta-dorrego",
           ],
         }),
