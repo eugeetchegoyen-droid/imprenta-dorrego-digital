@@ -53,7 +53,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <div className="text-[10px] uppercase tracking-[0.3em] text-paper/70">Síguenos</div>
             <div className="mt-4 flex flex-col gap-3 text-sm">
-              <a href="#" className="flex items-start gap-3 text-paper/80 hover:text-gold">
+              <a href="https://www.instagram.com/imprentadorrego/" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-paper/80 hover:text-gold">
                 <Instagram className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 Instagram
               </a>
