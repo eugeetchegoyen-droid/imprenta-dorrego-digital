@@ -192,10 +192,10 @@ export function Contacto() {
                   <span className="mr-2 inline-block h-px w-8 align-middle bg-gold" />
                   Nuestra ubicación
                 </div>
-                <h3 className="mt-4 font-display text-2xl leading-tight">
+                <h3 className="mt-4 font-display text-xl leading-tight">
                   ¿Dónde estamos?
                 </h3>
-                <p className="mt-3 text-sm text-paper/80">
+                <p className="mt-3 text-xs text-paper/80">
                   Av Dorrego 1102, C1414CKT · Ciudad Autónoma de Buenos Aires
                 </p>
                 <div className="mt-4 h-64 w-full overflow-hidden border border-paper/15">
