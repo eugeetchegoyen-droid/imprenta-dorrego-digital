@@ -39,7 +39,7 @@ export function Contacto() {
             Hablemos
             <span className="ml-2 inline-block h-px w-8 align-middle bg-gold" />
           </div>
-          <h1 className="mt-6 font-display text-5xl leading-[1.05] md:text-6xl">
+          <h1 className="mt-6 font-display text-4xl leading-[1.05] md:text-5xl">
             Contacto<span className="text-gold">.</span>
           </h1>
         </div>
@@ -50,7 +50,7 @@ export function Contacto() {
             <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
               Contanos qué necesitás
             </div>
-            <h2 className="mt-4 font-display text-4xl leading-[1.1] text-ink md:text-[2.75rem]">
+            <h2 className="mt-4 font-display text-3xl leading-[1.1] text-ink md:text-4xl">
               Envianos tu consulta
             </h2>
 
@@ -143,7 +143,7 @@ export function Contacto() {
                 <ContactItem
                   icon={<Mail size={18} />}
                   label="Mail"
-                  value="ventas@imprentadorrego.com.ar"
+                  value="Escribinos"
                   href="mailto:ventas@imprentadorrego.com.ar"
                 />
                 <ContactItem
@@ -151,6 +151,12 @@ export function Contacto() {
                   label="Teléfono"
                   value="+54 11 4855 5353"
                   href="tel:+541148555353"
+                />
+                <ContactItem
+                  icon={<Phone size={18} />}
+                  label="Teléfono"
+                  value="+54 11 4854 4644"
+                  href="tel:+541148544644"
                 />
                 <ContactItem
                   icon={<MessageCircle size={18} />}
