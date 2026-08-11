@@ -84,15 +84,15 @@ export function Laboratorio() {
           </div>
 
           <div className="md:col-span-7">
-            <div className="grid grid-cols-3 gap-px bg-paper/10">
+            <div className="grid grid-cols-1 gap-px bg-paper/10 sm:grid-cols-3">
               {steps.map((s, i) => (
                 <button
                   key={s.k}
                   onClick={() => setActive(i)}
-                  className={`group p-6 text-left transition-all ${active === i ? "bg-paper text-onyx" : "bg-onyx text-paper hover:bg-paper/5"}`}
+                  className={`group p-4 text-left transition-all sm:p-6 ${active === i ? "bg-paper text-onyx" : "bg-onyx text-paper hover:bg-paper/5"}`}
                 >
-                  <div className={`font-display text-3xl ${active === i ? "text-gold" : "text-paper/40"}`}>{s.k}</div>
-                  <div className="mt-3 text-sm font-medium">{s.t}</div>
+                  <div className={`font-display text-2xl sm:text-3xl ${active === i ? "text-gold" : "text-paper/40"}`}>{s.k}</div>
+                  <div className="mt-2 text-sm font-medium sm:mt-3">{s.t}</div>
                 </button>
               ))}
             </div>

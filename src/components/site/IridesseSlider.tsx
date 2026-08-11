@@ -18,14 +18,16 @@ export function IridesseSlider() {
     <div className="reveal">
       <div
         ref={ref}
-        className="relative aspect-[1000/1154] w-full select-none overflow-hidden border border-paper/10 shadow-elegant"
+        style={{ touchAction: "pan-y" }}
+        className="relative aspect-[1000/1154] w-full max-w-full select-none overflow-hidden border border-paper/10 shadow-elegant"
         onMouseDown={(e) => { dragging.current = true; onMove(e.clientX); }}
         onMouseMove={(e) => dragging.current && onMove(e.clientX)}
         onMouseUp={() => (dragging.current = false)}
         onMouseLeave={() => (dragging.current = false)}
         onTouchStart={(e) => { dragging.current = true; onMove(e.touches[0].clientX); }}
-        onTouchMove={(e) => dragging.current && onMove(e.touches[0].clientX)}
+        onTouchMove={(e) => { if (dragging.current) { onMove(e.touches[0].clientX); } }}
         onTouchEnd={() => (dragging.current = false)}
+        onTouchCancel={() => (dragging.current = false)}
       >
         {/* Base */}
         <img src={baseImg} alt="Impresión convencional" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
@@ -35,10 +37,10 @@ export function IridesseSlider() {
         </div>
 
         {/* Labels */}
-        <div className="absolute left-4 top-4 bg-paper/10 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.25em] text-paper backdrop-blur">
+        <div className="absolute left-2 top-2 max-w-[45%] bg-paper/10 px-2 py-1 text-[8px] font-medium uppercase tracking-[0.18em] text-paper backdrop-blur sm:left-4 sm:top-4 sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.25em]">
           Impresión CMYK
         </div>
-        <div className="absolute right-4 top-4 bg-gold/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-onyx backdrop-blur">
+        <div className="absolute right-2 top-2 max-w-[45%] bg-gold/90 px-2 py-1 text-[8px] font-semibold uppercase tracking-[0.18em] text-onyx backdrop-blur sm:right-4 sm:top-4 sm:px-3 sm:py-1.5 sm:text-[10px] sm:tracking-[0.25em]">
           Xerox Iridesse · PINK
         </div>
 
@@ -47,7 +49,7 @@ export function IridesseSlider() {
           className="absolute inset-y-0 w-px bg-gold shadow-[0_0_30px_oklch(0.78_0.13_75/0.8)]"
           style={{ left: `${pos}%` }}
         >
-          <div className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full border border-gold bg-onyx text-gold shadow-gold cursor-ew-resize">
+          <div className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full border border-gold bg-onyx text-gold shadow-gold cursor-ew-resize sm:h-12 sm:w-12">
             <span className="font-display text-lg">⇆</span>
           </div>
         </div>
