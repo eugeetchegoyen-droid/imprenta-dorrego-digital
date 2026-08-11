@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 
-const RECIPIENT = "hola@imprentadorrego.com.ar";
+const RECIPIENT = "ventas@imprentadorrego.com.ar";
 
 const schema = z.object({
   nombre: z.string().trim().min(2, "Nombre inválido").max(120),
