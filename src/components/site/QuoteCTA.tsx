@@ -28,8 +28,6 @@ export function QuoteCTA() {
             </div>
           </div>
         </div>
-          </div>
-        </div>
       </div>
     </section>
   );
