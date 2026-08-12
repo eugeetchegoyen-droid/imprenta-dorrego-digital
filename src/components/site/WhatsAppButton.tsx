@@ -1,54 +1,127 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const WHATSAPP_NUMBER = "5491166101894";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hola, me interesa conocer más sobre los servicios de Imprenta Dorrego."
 );
 
+const EMAIL = "ventas@imprentadorrego.com.ar";
+
+const emailOptions = [
+  {
+    label: "Gmail",
+    href: `https://mail.google.com/mail/?view=cm&to=${encodeURIComponent(EMAIL)}`,
+  },
+  {
+    label: "Outlook",
+    href: `https://outlook.live.com/mail/0/deeplink/compose?to=${encodeURIComponent(EMAIL)}`,
+  },
+  {
+    label: "Yahoo Mail",
+    href: `https://compose.mail.yahoo.com/?to=${encodeURIComponent(EMAIL)}`,
+  },
+  {
+    label: "Otro cliente",
+    href: `mailto:${EMAIL}`,
+  },
+];
+
 export function WhatsAppButton() {
   const [open, setOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
+  const [emailMenuOpen, setEmailMenuOpen] = useState(false);
+  const emailRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!emailMenuOpen) return;
+    function handleClickOutside(e: MouseEvent) {
+      if (emailRef.current && !emailRef.current.contains(e.target as Node)) {
+        setEmailMenuOpen(false);
+      }
+    }
+    function handleEsc(e: KeyboardEvent) {
+      if (e.key === "Escape") setEmailMenuOpen(false);
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEsc);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEsc);
+    };
+  }, [emailMenuOpen]);
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-      {/* Paper plane — email */}
-      {contactOpen && (
-        <div className="mb-1 max-w-[260px] rounded-lg bg-onyx px-4 py-3 text-sm text-paper shadow-elegant">
-          <p className="leading-relaxed">
-            ¿Querés cotizar o hacer una consulta? Escribinos y te respondemos a
-            la brevedad.
-          </p>
-          <a
-            href="mailto:ventas@imprentadorrego.com.ar"
-            className="mt-3 inline-block text-xs font-semibold uppercase tracking-wider text-gold hover:underline"
-          >
-            Enviar mail →
-          </a>
-        </div>
-      )}
+      <div ref={emailRef} className="relative flex flex-col items-end gap-3">
+        {/* Email hover tooltip */}
+        {contactOpen && !emailMenuOpen && (
+          <div className="mb-1 max-w-[260px] rounded-lg bg-onyx px-4 py-3 text-sm text-paper shadow-elegant">
+            <p className="leading-relaxed">
+              ¿Querés cotizar o hacer una consulta? Escribinos y te respondemos
+              a la brevedad.
+            </p>
+            <button
+              onClick={() => setEmailMenuOpen(true)}
+              className="mt-3 inline-block text-xs font-semibold uppercase tracking-wider text-gold hover:underline"
+            >
+              Elegir correo →
+            </button>
+          </div>
+        )}
 
-      <a
-        href="mailto:ventas@imprentadorrego.com.ar"
-        onMouseEnter={() => setContactOpen(true)}
-        onMouseLeave={() => setContactOpen(false)}
-        aria-label="Enviar correo a ventas@imprentadorrego.com.ar"
-        className="group flex h-14 w-14 items-center justify-center rounded-full border border-gold/60 bg-onyx text-gold shadow-elegant transition-transform duration-300 hover:scale-110 hover:bg-gold hover:text-onyx"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={1.8}
-          strokeLinecap="round"
-          strokeLinejoin="round"
+        {/* Email client selection menu */}
+        {emailMenuOpen && (
+          <div className="mb-1 w-[260px] rounded-lg bg-onyx px-4 py-3 text-sm text-paper shadow-elegant">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-gold">
+              ¿Con qué correo querés escribirnos?
+            </p>
+            <div className="mt-3 space-y-1">
+              {emailOptions.map((option) => (
+                <a
+                  key={option.label}
+                  href={option.href}
+                  target={option.href.startsWith("http") ? "_blank" : undefined}
+                  rel={
+                    option.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  onClick={() => setEmailMenuOpen(false)}
+                  className="flex items-center justify-between rounded-md px-3 py-2 text-paper/90 transition hover:bg-paper/10 hover:text-gold"
+                >
+                  <span>{option.label}</span>
+                  <span className="text-xs text-paper/40">→</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <button
+          type="button"
+          onClick={() => setEmailMenuOpen((v) => !v)}
+          onMouseEnter={() => setContactOpen(true)}
+          onMouseLeave={() => setContactOpen(false)}
+          aria-label="Elegir cliente de correo"
+          aria-expanded={emailMenuOpen}
+          className="group flex h-14 w-14 items-center justify-center rounded-full border border-gold/60 bg-onyx text-gold shadow-elegant transition-transform duration-300 hover:scale-110 hover:bg-gold hover:text-onyx"
         >
-          <path d="M22 2 11 13" />
-          <path d="M22 2 15 22l-4-9-9-4 20-7z" />
-        </svg>
-      </a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={1.8}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M22 2 11 13" />
+            <path d="M22 2 15 22l-4-9-9-4 20-7z" />
+          </svg>
+        </button>
+      </div>
 
       {/* WhatsApp */}
       {open && (
