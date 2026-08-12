@@ -14,7 +14,7 @@ export function QuoteCTA() {
               <span className="h-px w-8 bg-gold" />
             </div>
             <h2 className="mx-auto mt-4 max-w-2xl font-display text-[clamp(1.6rem,3.5vw,2.6rem)] font-light leading-[1.1] tracking-[-0.02em] text-ink">
-              Cotizá tu proyecto y te respondemos en 24 horas hábiles.
+              Cotizá tu proyecto y te respondemos a la brevedad.
             </h2>
             <div className="mt-7">
               <Link
