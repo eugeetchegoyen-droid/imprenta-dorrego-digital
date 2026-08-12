@@ -20,6 +20,7 @@ export function QuoteWizard() {
   const [comments, setComments] = useState("");
   const [files, setFiles] = useState<File[]>([]);
   const [done, setDone] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const total = 4;
   const next = () => setStep((s) => Math.min(s + 1, total - 1));
