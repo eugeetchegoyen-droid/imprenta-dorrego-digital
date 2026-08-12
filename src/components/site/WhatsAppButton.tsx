@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "@tanstack/react-router";
 
 const WHATSAPP_NUMBER = "5491166101894";
 const WHATSAPP_MESSAGE = encodeURIComponent(
@@ -12,27 +11,27 @@ export function WhatsAppButton() {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-      {/* Paper plane — contact form */}
+      {/* Paper plane — email */}
       {contactOpen && (
         <div className="mb-1 max-w-[260px] rounded-lg bg-onyx px-4 py-3 text-sm text-paper shadow-elegant">
           <p className="leading-relaxed">
-            ¿Querés cotizar o hacer una consulta? Dejanos tus datos y te
-            respondemos a la brevedad.
+            ¿Querés cotizar o hacer una consulta? Escribinos y te respondemos a
+            la brevedad.
           </p>
-          <Link
-            to="/contacto"
+          <a
+            href="mailto:ventas@imprentadorrego.com.ar"
             className="mt-3 inline-block text-xs font-semibold uppercase tracking-wider text-gold hover:underline"
           >
-            Ir al formulario →
-          </Link>
+            Enviar mail →
+          </a>
         </div>
       )}
 
-      <Link
-        to="/contacto"
+      <a
+        href="mailto:ventas@imprentadorrego.com.ar"
         onMouseEnter={() => setContactOpen(true)}
         onMouseLeave={() => setContactOpen(false)}
-        aria-label="Ir al formulario de contacto"
+        aria-label="Enviar correo a ventas@imprentadorrego.com.ar"
         className="group flex h-14 w-14 items-center justify-center rounded-full border border-gold/60 bg-onyx text-gold shadow-elegant transition-transform duration-300 hover:scale-110 hover:bg-gold hover:text-onyx"
       >
         <svg
@@ -49,7 +48,7 @@ export function WhatsAppButton() {
           <path d="M22 2 11 13" />
           <path d="M22 2 15 22l-4-9-9-4 20-7z" />
         </svg>
-      </Link>
+      </a>
 
       {/* WhatsApp */}
       {open && (
