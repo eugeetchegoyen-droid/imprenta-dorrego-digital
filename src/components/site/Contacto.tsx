@@ -149,12 +149,6 @@ export function Contacto() {
                 <ContactItem
                   icon={<Phone size={18} />}
                   label="Teléfono"
-                  value="+54 11 4855 5353"
-                  href="tel:+541148555353"
-                />
-                <ContactItem
-                  icon={<Phone size={18} />}
-                  label="Teléfono"
                   value="+54 11 4854 4644"
                   href="tel:+541148544644"
                 />
