@@ -296,19 +296,22 @@ export function Hero() {
         </div>
 
         {/* Bottom metrics */}
-        <div className="mt-8 grid grid-cols-2 gap-6 border-t border-paper/15 pt-8 md:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 items-start gap-x-6 gap-y-8 border-t border-paper/15 pt-8 md:grid-cols-4">
           {[
           ["72 años", "de trayectoria editorial"],
           ["Sin mínimos", "de impresión"],
           ["6 tintas", "Xerox Iridesse · Oro / Plata / Blanco"],
           ["24h", "del archivo al lomo"],
           ].map(([n, l]) => (
-            <div key={n}>
-              <div className="font-display text-2xl md:text-3xl">{n}</div>
-              <div className="mt-1 text-[11px] uppercase tracking-[0.22em] text-paper/55">{l}</div>
+            <div key={n} className="flex flex-col">
+              <div className="font-display text-2xl leading-[1.15] md:text-3xl">{n}</div>
+              <div className="mt-2 text-[11px] uppercase leading-[1.5] tracking-[0.22em] text-paper/55 md:min-h-[2.2em]">
+                {l}
+              </div>
             </div>
           ))}
         </div>
+
       </div>
 
     </section>
