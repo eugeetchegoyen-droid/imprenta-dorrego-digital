@@ -219,11 +219,11 @@ export function QuoteWizard() {
 
                   <div className="md:col-span-2 mt-2">
                     <button
-                      disabled={!formValid}
-                      onClick={() => { setDone(true); next(); }}
+                      disabled={!formValid || sending}
+                      onClick={submit}
                       className="self-start bg-gold px-8 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-onyx transition-all disabled:cursor-not-allowed disabled:opacity-30 enabled:hover:bg-gold-soft enabled:hover:shadow-gold"
                     >
-                      Siguiente
+                      {sending ? "Enviando…" : "Siguiente"}
                     </button>
                   </div>
                 </div>
