@@ -18,8 +18,8 @@ const links: (NavLink | NavGroup)[] = [
     ],
   },
   { to: "/", hash: "portfolio", label: "Nuestros trabajos" },
-  { to: "/unite", label: "Unite al equipo" },
   { to: "/contacto", label: "Contacto" },
+  { to: "/unite", label: "Unite al equipo" },
 ];
 
 function isGroup(l: NavLink | NavGroup): l is NavGroup {
