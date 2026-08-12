@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "@tanstack/react-router";
 
 const WHATSAPP_NUMBER = "5491166101894";
 const WHATSAPP_MESSAGE = encodeURIComponent(
