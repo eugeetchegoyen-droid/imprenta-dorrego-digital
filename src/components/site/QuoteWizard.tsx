@@ -29,6 +29,32 @@ export function QuoteWizard() {
   const emailValid = email.includes("@") && email.includes(".");
   const formValid = name.trim().length > 1 && emailValid && phone.trim().length > 4;
 
+  async function submit() {
+    if (!formValid || sending) return;
+    setSending(true);
+    try {
+      const fd = new FormData();
+      fd.append("nombre", name);
+      fd.append("email", email);
+      fd.append("telefono", phone);
+      fd.append("producto", products.find((p) => p.k === product)?.t ?? "");
+      fd.append("cantidad", qty ?? "");
+      fd.append("comentarios", comments);
+      files.forEach((f) => fd.append("archivos", f));
+      const res = await fetch("/api/cotizacion", { method: "POST", body: fd });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(json?.error ?? "No se pudo enviar");
+      setDone(true);
+      next();
+      toast.success("¡Cotización enviada! Te respondemos a la brevedad.");
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "No se pudo enviar");
+    } finally {
+      setSending(false);
+    }
+  }
+
+
   return (
     <section id="cotizar" className="relative grain overflow-hidden bg-onyx py-16 text-paper md:py-32">
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[500px] w-[500px] rounded-full bg-gold/10 blur-[160px]" />
