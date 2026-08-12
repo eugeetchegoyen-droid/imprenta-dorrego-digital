@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "sonner";
 
 const products = [
   { k: "libro", t: "Libro", d: "Novela, ensayo, arte." },
@@ -19,6 +20,7 @@ export function QuoteWizard() {
   const [comments, setComments] = useState("");
   const [files, setFiles] = useState<File[]>([]);
   const [done, setDone] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const total = 4;
   const next = () => setStep((s) => Math.min(s + 1, total - 1));
@@ -26,6 +28,32 @@ export function QuoteWizard() {
 
   const emailValid = email.includes("@") && email.includes(".");
   const formValid = name.trim().length > 1 && emailValid && phone.trim().length > 4;
+
+  async function submit() {
+    if (!formValid || sending) return;
+    setSending(true);
+    try {
+      const fd = new FormData();
+      fd.append("nombre", name);
+      fd.append("email", email);
+      fd.append("telefono", phone);
+      fd.append("producto", products.find((p) => p.k === product)?.t ?? "");
+      fd.append("cantidad", qty ?? "");
+      fd.append("comentarios", comments);
+      files.forEach((f) => fd.append("archivos", f));
+      const res = await fetch("/api/cotizacion", { method: "POST", body: fd });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(json?.error ?? "No se pudo enviar");
+      setDone(true);
+      next();
+      toast.success("¡Cotización enviada! Te respondemos a la brevedad.");
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "No se pudo enviar");
+    } finally {
+      setSending(false);
+    }
+  }
+
 
   return (
     <section id="cotizar" className="relative grain overflow-hidden bg-onyx py-16 text-paper md:py-32">
@@ -191,11 +219,11 @@ export function QuoteWizard() {
 
                   <div className="md:col-span-2 mt-2">
                     <button
-                      disabled={!formValid}
-                      onClick={() => { setDone(true); next(); }}
+                      disabled={!formValid || sending}
+                      onClick={submit}
                       className="self-start bg-gold px-8 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-onyx transition-all disabled:cursor-not-allowed disabled:opacity-30 enabled:hover:bg-gold-soft enabled:hover:shadow-gold"
                     >
-                      Siguiente
+                      {sending ? "Enviando…" : "Siguiente"}
                     </button>
                   </div>
                 </div>

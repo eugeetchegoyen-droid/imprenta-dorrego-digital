@@ -15,6 +15,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as UniteRouteImport } from './routes/unite'
 import { Route as ApiApplyRouteImport } from './routes/api/apply'
 import { Route as ApiContactoRouteImport } from './routes/api/contacto'
+import { Route as ApiCotizacionRouteImport } from './routes/api/cotizacion'
 import { Route as BlogImpresionBajoDemandaAutoresArgentinaRouteImport } from './routes/blog.impresion-bajo-demanda-autores-argentina'
 
 const IndexRoute = IndexRouteImport.update({
@@ -47,6 +48,11 @@ const ApiContactoRoute = ApiContactoRouteImport.update({
   path: '/api/contacto',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiCotizacionRoute = ApiCotizacionRouteImport.update({
+  id: '/api/cotizacion',
+  path: '/api/cotizacion',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogImpresionBajoDemandaAutoresArgentinaRoute =
   BlogImpresionBajoDemandaAutoresArgentinaRouteImport.update({
     id: '/blog/impresion-bajo-demanda-autores-argentina',
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
   '/api/contacto': typeof ApiContactoRoute
+  '/api/cotizacion': typeof ApiCotizacionRoute
   '/blog/impresion-bajo-demanda-autores-argentina': typeof BlogImpresionBajoDemandaAutoresArgentinaRoute
 }
 export interface FileRoutesByTo {
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
   '/api/contacto': typeof ApiContactoRoute
+  '/api/cotizacion': typeof ApiCotizacionRoute
   '/blog/impresion-bajo-demanda-autores-argentina': typeof BlogImpresionBajoDemandaAutoresArgentinaRoute
 }
 export interface FileRoutesById {
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/unite': typeof UniteRoute
   '/api/apply': typeof ApiApplyRoute
   '/api/contacto': typeof ApiContactoRoute
+  '/api/cotizacion': typeof ApiCotizacionRoute
   '/blog/impresion-bajo-demanda-autores-argentina': typeof BlogImpresionBajoDemandaAutoresArgentinaRoute
 }
 export interface FileRouteTypes {
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/unite'
     | '/api/apply'
     | '/api/contacto'
+    | '/api/cotizacion'
     | '/blog/impresion-bajo-demanda-autores-argentina'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/unite'
     | '/api/apply'
     | '/api/contacto'
+    | '/api/cotizacion'
     | '/blog/impresion-bajo-demanda-autores-argentina'
   id:
     | '__root__'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/unite'
     | '/api/apply'
     | '/api/contacto'
+    | '/api/cotizacion'
     | '/blog/impresion-bajo-demanda-autores-argentina'
   fileRoutesById: FileRoutesById
 }
@@ -119,6 +131,7 @@ export interface RootRouteChildren {
   UniteRoute: typeof UniteRoute
   ApiApplyRoute: typeof ApiApplyRoute
   ApiContactoRoute: typeof ApiContactoRoute
+  ApiCotizacionRoute: typeof ApiCotizacionRoute
   BlogImpresionBajoDemandaAutoresArgentinaRoute: typeof BlogImpresionBajoDemandaAutoresArgentinaRoute
 }
 
@@ -166,6 +179,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiContactoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/cotizacion': {
+      id: '/api/cotizacion'
+      path: '/api/cotizacion'
+      fullPath: '/api/cotizacion'
+      preLoaderRoute: typeof ApiCotizacionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/impresion-bajo-demanda-autores-argentina': {
       id: '/blog/impresion-bajo-demanda-autores-argentina'
       path: '/blog/impresion-bajo-demanda-autores-argentina'
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   UniteRoute: UniteRoute,
   ApiApplyRoute: ApiApplyRoute,
   ApiContactoRoute: ApiContactoRoute,
+  ApiCotizacionRoute: ApiCotizacionRoute,
   BlogImpresionBajoDemandaAutoresArgentinaRoute:
     BlogImpresionBajoDemandaAutoresArgentinaRoute,
 }
