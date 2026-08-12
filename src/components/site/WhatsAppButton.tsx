@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 const WHATSAPP_NUMBER = "5491166101894";
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Hola, me interesa conocer más sobre los servicios de Imprenta Dorrego."
+  "Hola! Vi la web de Imprenta Dorrego y quiero hacer una consulta 🙂"
 );
 
 const EMAIL = "ventas@imprentadorrego.com.ar";
