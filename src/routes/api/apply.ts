@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 
-const RECIPIENT = "rrhh@imprentadorrego.com.ar";
+const RECIPIENT = "dorregodigital@gmail.com";
 const MAX_FILE_BYTES = 5 * 1024 * 1024; // 5 MB
 const ALLOWED_MIME = new Set([
   "application/pdf",
